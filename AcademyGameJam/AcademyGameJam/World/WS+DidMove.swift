@@ -22,6 +22,9 @@ extension WorldScene {
         //MARK: - CREATES VIRTUAL CONTROLLERS
         setupVirtualController()
         
+        //MARK: - ADD MAP
+        setupMap(center: .init(x: view.bounds.midX, y: view.bounds.midY))
+        
         //MARK: - PLAYER
         player = Player()
         player?.position = CGPoint(x: size.width / 2, y: size.height / 2) //Center from screen

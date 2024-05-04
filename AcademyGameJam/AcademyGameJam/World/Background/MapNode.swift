@@ -8,7 +8,7 @@
 import Foundation
 import SpriteKit
 
-class BackgroundNode: SKNode {
+class MapNode: SKNode {
     public let width: CGFloat
     public let height: CGFloat
     
