@@ -12,15 +12,13 @@ class BackgroundNode: SKNode {
     public let width: CGFloat
     public let height: CGFloat
     
-    // TODO: For now, this is a good way to have a lot of tiles, but this isn't the best, most performative or correct way of spawning the background.
-    private let tile: SKTexture = SKTexture(imageNamed: "tile-test")
-    
     init(tileSize: CGSize, gridSize: (width: Int, height: Int)) {
         self.width = CGFloat(gridSize.width) * tileSize.width
         self.height = CGFloat(gridSize.height) * tileSize.height
+        
         super.init()
         
-        let baseSprite = SKSpriteNode(texture: tile, size: tileSize)
+        let baseSprite = SKSpriteNode(texture: Textures.backgroundTile, size: tileSize)
         
         for column in 0..<gridSize.width {
             for row in 0..<gridSize.height {
@@ -32,6 +30,7 @@ class BackgroundNode: SKNode {
                 sprite.anchorPoint = .zero
                 sprite.colorBlendFactor = 1.0
                 sprite.color = Tokens.green()
+                sprite.name = "MapTile"
                 
                 addChild(sprite)
             }
