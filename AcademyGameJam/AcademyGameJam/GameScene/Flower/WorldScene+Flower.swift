@@ -8,7 +8,7 @@
 import Foundation
 import SpriteKit
 
-extension WorldScene {
+extension GameScene {
     internal func setupFlowers() {
         let range = (x: settings.flower.size.width/2  + bounds.minX..<bounds.maxX - settings.flower.size.width/2,
                      y: settings.flower.size.height/2 + bounds.minY..<bounds.maxY - settings.flower.size.height/2)

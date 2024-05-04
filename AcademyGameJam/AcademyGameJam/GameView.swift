@@ -9,11 +9,11 @@ import SwiftUI
 import SpriteKit
 
 struct GameView: View {
-    var scene: WorldScene = WorldScene()
+    var scene: GameScene = GameScene()
                                    
     var body: some View {
         GeometryReader { reader in
-            SpriteView(scene: scene)
+            SpriteView(scene: scene, debugOptions: [.showsPhysics, .showsFPS, .showsNodeCount])
                 .onAppear {
                     scene.size = reader.size
                 }

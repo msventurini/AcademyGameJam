@@ -1,24 +1,23 @@
+//
+//  WS+DidMove.swift
+//  AcademyGameJam
+//
+//  Created by Gustavo Zahorcsak Matias Silvano on 04/05/24.
+//
+
 import Foundation
 import SpriteKit
-import GameController
 
-class WorldScene: SKScene {
-    
-    var virtualController: GCVirtualController? //Controllers
-    var player: Player? // Adicione uma propriedade para armazenar o jogador
-    var cameraNode: SKCameraNode? // Propriedade para a câmera
-    var background: BackgroundNode? // O mapa
-    
-    var bounds: CGRect = .zero
-    
-    let settings: GameSettings = .init(
-        flower: .init(quantity: 2000, size: .init(width: 20, height: 20 * 0.8)),
-        map: .init(map: 200, tile: 25)
-    )
+extension GameScene {
     
     override func didMove(to view: SKView) {
-        self.scene?.size = view.bounds.size
-        self.backgroundColor = .clear
+        
+        //MARK: - PHYSICS WORLD SETUP
+        self.physicsWorld.contactDelegate = self
+        self.physicsWorld.gravity = CGVector(dx: 0.0, dy: 0.0)
+        
+        //MARK: - SCENE SETUP
+        self.backgroundColor = UIColor.clear
         self.scaleMode = .aspectFill
 
         let center = CGPoint.init(x: view.bounds.midX, y: view.bounds.midY)
@@ -26,8 +25,8 @@ class WorldScene: SKScene {
         //MARK: - CREATES VIRTUAL CONTROLLERS
         setupVirtualController()
         
-        //MARK: - ADD BACKGROUND
-        setupBackground(center: center)
+        //MARK: - ADD MAP
+        setupMap(center: .init(x: view.bounds.midX, y: view.bounds.midY))
         
         // MARK: - ADD FLOWERS
         setupFlowers()
@@ -46,13 +45,5 @@ class WorldScene: SKScene {
             self.camera = camera // Define a câmera da cena como a câmera que acabamos de criar
             addChild(camera)
         }
-    }
-    
-    override func update(_ currentTime: TimeInterval) {
-        if let player = player {
-            cameraNode?.position = player.position
-        }
-        
-        actionVirtualButtons()
     }
 }

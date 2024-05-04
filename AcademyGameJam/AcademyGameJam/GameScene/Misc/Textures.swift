@@ -2,7 +2,7 @@
 //  Textures.swift
 //  AcademyGameJam
 //
-//  Created by Gabriel Medeiros Martins on 04/05/24.
+//  Created by Gustavo Zahorcsak Matias Silvano on 04/05/24.
 //
 
 import Foundation
