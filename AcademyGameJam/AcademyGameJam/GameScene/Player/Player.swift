@@ -27,49 +27,27 @@ class Player: SKSpriteNode {
     
     func move(x: CGFloat, y: CGFloat) {
         
-        let playerMovementAction = SKAction.customAction(withDuration: 0.1) { node, eleapsedTime in
-            //
-//            if let playerNode = self.player {
-            
-            
-            
+        let playerMovementAction = SKAction.customAction(withDuration: 1) { node, eleapsedTime in
             if let node = node as? SKSpriteNode {
                 
-                
-                
-                node.position.x += x * 10
-                node.position.y += y * 10
-                
+                node.position.x += x * self.movementSpeed
+                node.position.y += y * self.movementSpeed
                 
             }
-            
-//                let currentXSpeed = self.movementSpeed * direction.dx
-//                let currentYSpeed = self.movementSpeed * direction.dy
-//                
-//                playerNode.move(x: T##CGFloat, y: T##CGFloat)
-                
-                //                let playerMovementAction = SKAction.move(by: direction, duration: 0.1)
-                //                print(direction)
-                //                let runningRigthConstantAnimation = SKAction.repeatForever(playerMovementAction)
-                //                playerNode.run(runningRigthConstantAnimation, withKey: "playerWalk")
-                
-//            }
+
         }
         
         let movementConstantAnimation = SKAction.repeatForever(playerMovementAction)
 
-        
         run(movementConstantAnimation, withKey: "walk")
-
-        
-        
-          // Move player based on controller input
-//          self.position.x += x * movementSpeed // Multiplica a entrada pelo movimentoSpeed
-//          self.position.y += y * movementSpeed // Multiplica a entrada pelo movimentoSpeed
-        
-        
-        
-        
         
       }
+    
+    func movementCancel() {
+        if action(forKey: "walk") != nil {
+            removeAction(forKey: "walk")
+        }
+    }
+    
+    
 }

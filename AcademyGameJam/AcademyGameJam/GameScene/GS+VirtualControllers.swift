@@ -15,31 +15,39 @@ extension GameScene {
         ]
         
         let controller = GCVirtualController(configuration: controllerConfig)
+        
         controller.connect()
         
         virtualController = controller
+        
+        actionVirtualButtons()
     }
     
     func actionVirtualButtons() {
-        guard let controller = GCController.controllers().first else { return }
-        
-        controller.extendedGamepad?.leftThumbstick.valueChangedHandler = { (dpad, xValue, yValue) in
+        if let controller = virtualController?.controller {
             
-            self.playerMovement(direction: CGVector(dx: CGFloat(xValue), dy: CGFloat(yValue)))
-        }
-        
-        controller.extendedGamepad?.buttonA.pressedChangedHandler = { button, value, pressed in
-            if pressed {
-                self.buttonAPressed()
+            controller.extendedGamepad?.leftThumbstick.valueChangedHandler = { (dpad, xValue, yValue) in
+                
+                self.player?.movementCancel()
+
+                    self.playerMovement(direction: CGVector(dx: CGFloat(xValue), dy: CGFloat(yValue)))
+
+
+
+            }
+            
+            controller.extendedGamepad?.buttonA.pressedChangedHandler = { button, value, pressed in
+                if pressed {
+                    self.buttonAPressed()
+                }
+            }
+            
+            controller.extendedGamepad?.buttonB.pressedChangedHandler = { button, value, pressed in
+                if pressed {
+                    self.buttonBPressed()
+                }
             }
         }
-        
-        controller.extendedGamepad?.buttonB.pressedChangedHandler = { button, value, pressed in
-            if pressed {
-                self.buttonBPressed()
-            }
-        }
-        
     }
     
     func buttonAPressed() {
