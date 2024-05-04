@@ -26,7 +26,7 @@ extension GameScene {
         setupVirtualController()
         
         //MARK: - ADD MAP
-        setupMap(center: .init(x: view.bounds.midX, y: view.bounds.midY))
+        setupMap(center: center)
         
         // MARK: - ADD FLOWERS
         setupFlowers()

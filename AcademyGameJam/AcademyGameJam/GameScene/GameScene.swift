@@ -40,8 +40,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
 //    }
     
     override func didFinishUpdate() {
-        if let player = player {
-            cameraNode?.position = player.position
+        if let player = player,
+           let camera = cameraNode,
+           let scene = scene {
+            
+            if player.position.x - scene.size.width/2 > bounds.minX && player.position.x + scene.size.width/2 < bounds.maxX {
+                camera.position.x = player.position.x
+            }
+            
+            if player.position.y - scene.size.height/2 > bounds.minY && player.position.y + scene.size.height/2 < bounds.maxY {
+                camera.position.y = player.position.y
+            }
         }
     }
 }
