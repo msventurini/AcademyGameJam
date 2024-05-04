@@ -9,9 +9,20 @@ import Foundation
 
 extension GameScene {
     internal func setupMap(center: CGPoint) {
-        let grid = MapNode(tileSize: .init(width: 25, height: 25), gridSize: (width: 200, height: 200))
+        let grid = MapNode(
+            tileSize: settings.map.tileSize,
+            gridSize: (width: settings.map.width,
+                       height: settings.map.height)
+        )
+        
         grid.position = .init(x: center.x - grid.width/2, y: center.y - grid.height/2)
         
-        addChild(grid)
+        let trueCenter = CGPoint(x: center.x - grid.width/2, y: center.y - grid.height/2)
+        grid.position = trueCenter
+        
+        bounds = .init(origin: trueCenter, size: .init(width: grid.width, height: grid.height))
+        
+        self.map = grid
+        self.addChild(grid)
     }
 }

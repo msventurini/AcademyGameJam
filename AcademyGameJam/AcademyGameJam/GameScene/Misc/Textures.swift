@@ -9,5 +9,6 @@ import Foundation
 import SpriteKit
 
 struct Textures {
-//    static let texture = SKTexture(imageNamed: "nomeDoAsset")
+    static let flower: SKTexture = SKTexture(imageNamed: "flower-test")
+    static let backgroundTile: SKTexture = SKTexture(imageNamed: "tile-test")
 }

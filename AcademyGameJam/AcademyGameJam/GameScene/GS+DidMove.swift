@@ -19,12 +19,17 @@ extension GameScene {
         //MARK: - SCENE SETUP
         self.backgroundColor = UIColor.clear
         self.scaleMode = .aspectFill
+
+        let center = CGPoint.init(x: view.bounds.midX, y: view.bounds.midY)
         
         //MARK: - CREATES VIRTUAL CONTROLLERS
         setupVirtualController()
         
         //MARK: - ADD MAP
         setupMap(center: .init(x: view.bounds.midX, y: view.bounds.midY))
+        
+        // MARK: - ADD FLOWERS
+        setupFlowers()
         
         //MARK: - PLAYER
         player = Player()

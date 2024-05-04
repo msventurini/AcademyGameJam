@@ -20,7 +20,6 @@ struct GameView: View {
         }
         .ignoresSafeArea(.all)
     }
-    
 }
 
 #Preview {
