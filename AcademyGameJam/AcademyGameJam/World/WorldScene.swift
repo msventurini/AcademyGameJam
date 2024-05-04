@@ -6,29 +6,18 @@ class WorldScene: SKScene {
     
     var virtualController: GCVirtualController? //Controllers
     var player: Player? // Adicione uma propriedade para armazenar o jogador
-    var background: BackgroundNode? // Adicione uma propriedade para armazenar o fundo
     var cameraNode: SKCameraNode? // Propriedade para a câmera
     
-    override init(size: CGSize) {
-        super.init(size: size)
-        self.backgroundColor = .clear
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func didMove(to view: SKView) {
+        self.scene?.size = view.bounds.size
+        self.backgroundColor = .clear
+        self.scaleMode = .aspectFill
+        
         //MARK: - CREATES VIRTUAL CONTROLLERS
         setupVirtualController()
         
         //MARK: - ADD BACKGROUND
-        background = BackgroundNode(imageNamed: "background-test", size: size)
-        if let background = background {
-            addChild(background)
-        }
-        
-        
+        setupBackground(center: .init(x: view.bounds.midX, y: view.bounds.midY))
         
         //MARK: - PLAYER
         player = Player()

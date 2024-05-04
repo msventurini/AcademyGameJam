@@ -9,11 +9,14 @@ import SwiftUI
 import SpriteKit
 
 struct GameView: View {
-    var scene: WorldScene = WorldScene(size: CGSize(width: 300, height: 300))
-                                       
+    var scene: WorldScene = WorldScene()
+                                   
     var body: some View {
-        ZStack {
+        GeometryReader { reader in
             SpriteView(scene: scene)
+                .onAppear {
+                    scene.size = reader.size
+                }
         }
         .ignoresSafeArea(.all)
     }
