@@ -8,10 +8,11 @@
 import Foundation
 import SpriteKit
 
-class GridNode: SKNode {
+class BackgroundNode: SKNode {
     public let width: CGFloat
     public let height: CGFloat
     
+    // TODO: For now, this is a good way to have a lot of tiles, but this isn't the best, most performative or correct way of spawning the background.
     private let tile: SKTexture = SKTexture(imageNamed: "tile-test")
     
     init(tileSize: CGSize, gridSize: (width: Int, height: Int)) {
