@@ -95,7 +95,7 @@
 			children = (
 				7B38A17E2BE5C33E00B4A99C /* Assets.xcassets */,
 				7B38A17A2BE5C33D00B4A99C /* AcademyGameJamApp.swift */,
-				7B38A18D2BE5C36200B4A99C /* GameView.swift */,
+				A75A14DF2BE6D1AC00033D5C /* GameView */,
 				A7F53B652BE5E43100BC64D7 /* Design */,
 				7B38A1912BE5C36200B4A99C /* GameScene */,
 				7B38A1802BE5C33E00B4A99C /* Preview Content */,
@@ -135,6 +135,14 @@
 				7B38A18F2BE5C36200B4A99C /* GS+VirtualControllers.swift */,
 			);
 			path = GameScene;
+			sourceTree = "<group>";
+		};
+		A75A14DF2BE6D1AC00033D5C /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				7B38A18D2BE5C36200B4A99C /* GameView.swift */,
+			);
+			path = GameView;
 			sourceTree = "<group>";
 		};
 		A7F53B622BE5DCC100BC64D7 /* Map */ = {
