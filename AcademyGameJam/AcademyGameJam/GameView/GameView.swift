@@ -18,52 +18,65 @@ struct GameView: View {
     }
     
     var body: some View {
-        GeometryReader { reader in
-            SpriteView(scene: scene, debugOptions: [.showsPhysics, .showsFPS, .showsNodeCount])
-                .onAppear {
-                    scene.size = reader.size
-                }
-            
-            VStack {
-                HStack {
-                    Text("Score: \(scene.score)")
-                        .font(.title3)
-                        .bold()
-                        .foregroundStyle(.white)
-                        .shadow(color: .black.opacity(0.65), radius: 5, y: 5)
+        ZStack {
+            GeometryReader { reader in
+                SpriteView(scene: scene, debugOptions: [.showsPhysics, .showsFPS, .showsNodeCount])
+                    .onAppear {
+                        scene.size = reader.size
+                    }
+                
+                VStack {
+                    HStack {
+                        Text("Score: \(scene.score)")
+                            .font(.title3)
+                            .bold()
+                            .foregroundStyle(.white)
+                            .shadow(color: .black.opacity(0.65), radius: 5, y: 5)
                         
+                        
+                        Spacer()
+                    }
                     
                     Spacer()
                 }
+                .padding()
+                .padding(.horizontal, 25)
                 
-                Spacer()
-            }
-            .padding()
-            .padding(.horizontal, 25)
-            
-            VStack {
-                HStack {
-                    Spacer()
-                    
-                    Text("\(time.hour):\(time.minute)")
-                        .font(.title)
-                        .foregroundStyle(.white)
-                        .padding(10)
-                        .background {
-                            RoundedRectangle(cornerRadius: 20)
-                                .foregroundStyle(.ultraThinMaterial)
-                                .frame(minWidth: reader.frame(in: .global).width * 0.15)
-                                .shadow(color: .black.opacity(0.65), radius: 5, y: 5)
+                VStack {
+                    HStack {
+                        Spacer()
+                        
+                        Text("\(time.hour):\(time.minute)")
+                            .font(.title)
+                            .foregroundStyle(.white)
+                            .padding(10)
+                            .background {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .foregroundStyle(.ultraThinMaterial)
+                                    .frame(minWidth: reader.frame(in: .global).width * 0.15)
+                                    .shadow(color: .black.opacity(0.65), radius: 5, y: 5)
+                            }
+                        
+                        Spacer()
+                        
+                        Button {
+                            scene.pausePlayDidTapped()
+                        } label: {
+                            Image(systemName: scene.isScenePaused ? "play.fill" : "pause.fill")
+                                .font(.largeTitle)
                         }
+                    }
                     
                     Spacer()
                 }
-                
-                Spacer()
+                .padding()
             }
-            .padding()
+            .ignoresSafeArea(.all)
+            
+            if scene.isScenePaused {
+                PauseMenu()
+            }
         }
-        .ignoresSafeArea(.all)
     }
 }
 

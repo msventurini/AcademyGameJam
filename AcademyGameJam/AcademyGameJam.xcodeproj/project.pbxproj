@@ -13,6 +13,7 @@
 		1C032EBE2BE6A38F00A9775B /* Layers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EBD2BE6A38F00A9775B /* Layers.swift */; };
 		1C032EC02BE6A39700A9775B /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EBF2BE6A39700A9775B /* Textures.swift */; };
 		1C032EC22BE6A3AA00A9775B /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EC12BE6A3AA00A9775B /* PhysicsCategory.swift */; };
+		23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */; };
 		7B38A17B2BE5C33D00B4A99C /* AcademyGameJamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A17A2BE5C33D00B4A99C /* AcademyGameJamApp.swift */; };
 		7B38A17F2BE5C33E00B4A99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B38A17E2BE5C33E00B4A99C /* Assets.xcassets */; };
 		7B38A1822BE5C33E00B4A99C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B38A1812BE5C33E00B4A99C /* Preview Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		1C032EBD2BE6A38F00A9775B /* Layers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layers.swift; sourceTree = "<group>"; };
 		1C032EBF2BE6A39700A9775B /* Textures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
 		1C032EC12BE6A3AA00A9775B /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenu.swift; sourceTree = "<group>"; };
 		7B38A1772BE5C33D00B4A99C /* AcademyGameJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcademyGameJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B38A17A2BE5C33D00B4A99C /* AcademyGameJamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyGameJamApp.swift; sourceTree = "<group>"; };
 		7B38A17E2BE5C33E00B4A99C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				7B38A18D2BE5C36200B4A99C /* GameView.swift */,
+				23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7F53B702BE6AFFE00BC64D7 /* GS+Flower.swift in Sources */,
+				23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenu.swift in Sources */,
 				A7F53B642BE5DD0400BC64D7 /* MapNode.swift in Sources */,
 				7B38A1992BE5C36200B4A99C /* GameScene.swift in Sources */,
 				A7F53B672BE5E43F00BC64D7 /* Tokens.swift in Sources */,

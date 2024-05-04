@@ -7,6 +7,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     
     @Published var timer: Int = 300 // Tempo de jogo
     @Published var score: Int = 0
+    @Published var isScenePaused = false
 
     var virtualController: GCVirtualController? //Controllers
     var player: Player? // Adicione uma propriedade para armazenar o jogador
@@ -25,13 +26,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     
     override var isPaused: Bool { // Cancelar todos os updaters quando for pausar o jogo (e adicionar de novo dps)
         didSet {
+            isScenePaused = isPaused
             if oldValue == isPaused { return }
-            
             if isPaused {
                 cancelUpdaters()
             } else {
                 addUpdaters()
             }
+        }
+    }
+
+    func pausePlayDidTapped() {
+        isPaused.toggle()
+        if isPaused {
+            virtualController = nil
+        } else {
+            setupVirtualController()
         }
     }
     
