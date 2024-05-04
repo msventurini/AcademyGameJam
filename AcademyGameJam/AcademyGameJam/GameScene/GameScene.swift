@@ -35,10 +35,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         }
     }
     
-    override func update(_ currentTime: TimeInterval) {
-        actionVirtualButtons()
-    }
-    
+//    override func update(_ currentTime: TimeInterval) {
+//        actionVirtualButtons()
+//    }
     
     override func didFinishUpdate() {
         if let player = player {
