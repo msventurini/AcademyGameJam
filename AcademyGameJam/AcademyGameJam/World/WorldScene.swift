@@ -7,7 +7,6 @@ class WorldScene: SKScene, SKPhysicsContactDelegate {
     
     var virtualController: GCVirtualController? //Controllers
     var player: Player? // Adicione uma propriedade para armazenar o jogador
-    var background: BackgroundNode? // Adicione uma propriedade para armazenar o fundo
     var cameraNode: SKCameraNode? // Propriedade para a câmera
     var cancellables: Set<AnyCancellable> = Set<AnyCancellable>() // Guarda todos os updaters canceláveis
     var timer: Int = 0 // Tempo de jogo

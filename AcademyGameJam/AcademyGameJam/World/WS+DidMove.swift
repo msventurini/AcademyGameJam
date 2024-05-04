@@ -22,12 +22,6 @@ extension WorldScene {
         //MARK: - CREATES VIRTUAL CONTROLLERS
         setupVirtualController()
         
-        //MARK: - ADD BACKGROUND
-        background = BackgroundNode(imageNamed: "background-test", size: size)
-        if let background = background {
-            addChild(background)
-        }
-        
         //MARK: - PLAYER
         player = Player()
         player?.position = CGPoint(x: size.width / 2, y: size.height / 2) //Center from screen

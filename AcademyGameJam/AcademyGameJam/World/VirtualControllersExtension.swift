@@ -26,7 +26,7 @@ extension WorldScene {
         controller.extendedGamepad?.leftThumbstick.valueChangedHandler = { (dpad, xValue, yValue) in
             
             self.playerMovement(direction: CGVector(dx: CGFloat(xValue), dy: CGFloat(yValue)))
-               }
+        }
         
         controller.extendedGamepad?.buttonA.pressedChangedHandler = { button, value, pressed in
             if pressed {
@@ -53,5 +53,8 @@ extension WorldScene {
     func playerMovement(direction: CGVector) {
         self.player?.move(x: direction.dx, y: direction.dy)
     }
-
+        
+        
+    
+    
 }
