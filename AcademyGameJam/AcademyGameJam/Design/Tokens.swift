@@ -11,6 +11,7 @@ import UIKit
 struct Tokens {}
 
 extension Tokens {
+    // TODO: This shouldn't be like this.
     static func green() -> UIColor {
         let green1: UIColor = .init(red: 82/255, green: 255/255, blue: 0/255, alpha: 1)
         let green2: UIColor = .init(red: 54/255, green: 169/255, blue: 0/255, alpha: 1)
