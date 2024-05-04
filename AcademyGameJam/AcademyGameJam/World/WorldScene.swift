@@ -9,7 +9,8 @@ class WorldScene: SKScene, SKPhysicsContactDelegate {
     var player: Player? // Adicione uma propriedade para armazenar o jogador
     var background: BackgroundNode? // Adicione uma propriedade para armazenar o fundo
     var cameraNode: SKCameraNode? // Propriedade para a câmera
-    var cancellables: Set<AnyCancellable> = Set<AnyCancellable>() // Guard todos os updaters canceláveis
+    var cancellables: Set<AnyCancellable> = Set<AnyCancellable>() // Guarda todos os updaters canceláveis
+    var timer: Int = 0 // Tempo de jogo
     
     override var isPaused: Bool { // Cancelar todos os updaters quando for pausar o jogo (e adicionar de novo dps)
         didSet {

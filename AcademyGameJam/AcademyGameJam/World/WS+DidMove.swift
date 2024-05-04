@@ -19,9 +19,6 @@ extension WorldScene {
         //MARK: - SCENE SETUP
         self.backgroundColor = UIColor.clear
         
-        //MARK: - ADD UPDATERS
-        addUpdaters()
-        
         //MARK: - CREATES VIRTUAL CONTROLLERS
         setupVirtualController()
         

@@ -11,11 +11,24 @@ import SpriteKit
 extension WorldScene {
     
     func addUpdaters() {
-        
+        addTimerUpdater()
     }
     
     func cancelUpdaters() {
         self.cancellables.removeAll()
     }
     
+    private func addTimerUpdater() {
+        let publisher = Timer.publish(every: 1.0, on: .main, in: .default)
+            .autoconnect()
+        let subscription = publisher
+        
+        subscription
+            .sink { [self] _ in
+                
+                self.timer += 1
+                print("timer: \(timer)")
+                
+            }.store(in: &cancellables)
+    }
 }
