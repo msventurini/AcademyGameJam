@@ -22,9 +22,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        actionVirtualButtons()
+    }
+    
+    override func didFinishUpdate() {
         if let player = player {
             cameraNode?.position = player.position
         }
-        actionVirtualButtons()
     }
 }
