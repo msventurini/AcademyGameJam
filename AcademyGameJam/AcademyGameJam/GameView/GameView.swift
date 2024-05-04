@@ -11,10 +11,11 @@ import SpriteKit
 struct GameView: View {
     @StateObject private var scene: GameScene = GameScene()
                                    
-    var time: (hour: Int, minute: Int) {
-        let q = scene.timer.quotientAndRemainder(dividingBy: 60)
+    var time: (hour: String, minute: String) {
+        let time = scene.timer.quotientAndRemainder(dividingBy: 60)
         
-        return (q.quotient, q.remainder)
+        return (hour: time.quotient > 9 ? "\(time.quotient)" : "0\(time.quotient)",
+                minute: time.remainder > 9 ? "\(time.remainder)" : "0\(time.remainder)")
     }
     
     var body: some View {
