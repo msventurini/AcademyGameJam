@@ -13,13 +13,13 @@ struct GameView: View {
                                        
     var body: some View {
         ZStack {
-            SpriteView(scene: scene)
+            SpriteView(scene: scene, debugOptions: [.showsPhysics, .showsFPS, .showsNodeCount])
         }
         .ignoresSafeArea(.all)
     }
     
 }
 
-#Preview {
-    GameView()
-}
+//#Preview {
+//    GameView()
+//}
