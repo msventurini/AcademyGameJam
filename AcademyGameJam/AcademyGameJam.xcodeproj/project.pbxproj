@@ -10,7 +10,6 @@
 		7B38A17B2BE5C33D00B4A99C /* AcademyGameJamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A17A2BE5C33D00B4A99C /* AcademyGameJamApp.swift */; };
 		7B38A17F2BE5C33E00B4A99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B38A17E2BE5C33E00B4A99C /* Assets.xcassets */; };
 		7B38A1822BE5C33E00B4A99C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B38A1812BE5C33E00B4A99C /* Preview Assets.xcassets */; };
-		7B38A1922BE5C36200B4A99C /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A1882BE5C36200B4A99C /* Background.swift */; };
 		7B38A1932BE5C36200B4A99C /* MyPlayerEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A1892BE5C36200B4A99C /* MyPlayerEnum.swift */; };
 		7B38A1942BE5C36200B4A99C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A18A2BE5C36200B4A99C /* Player.swift */; };
 		7B38A1952BE5C36200B4A99C /* Extentions+CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A18C2BE5C36200B4A99C /* Extentions+CGVector.swift */; };
@@ -19,6 +18,7 @@
 		7B38A1992BE5C36200B4A99C /* WorldScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A1902BE5C36200B4A99C /* WorldScene.swift */; };
 		A7F53B642BE5DD0400BC64D7 /* GridNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B632BE5DD0400BC64D7 /* GridNode.swift */; };
 		A7F53B672BE5E43F00BC64D7 /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B662BE5E43F00BC64D7 /* Tokens.swift */; };
+		A7F53B692BE6902700BC64D7 /* WorldScene+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B682BE6902700BC64D7 /* WorldScene+Background.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,6 @@
 		7B38A17A2BE5C33D00B4A99C /* AcademyGameJamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyGameJamApp.swift; sourceTree = "<group>"; };
 		7B38A17E2BE5C33E00B4A99C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B38A1812BE5C33E00B4A99C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7B38A1882BE5C36200B4A99C /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		7B38A1892BE5C36200B4A99C /* MyPlayerEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlayerEnum.swift; sourceTree = "<group>"; };
 		7B38A18A2BE5C36200B4A99C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		7B38A18C2BE5C36200B4A99C /* Extentions+CGVector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extentions+CGVector.swift"; sourceTree = "<group>"; };
@@ -35,6 +34,7 @@
 		7B38A1902BE5C36200B4A99C /* WorldScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldScene.swift; sourceTree = "<group>"; };
 		A7F53B632BE5DD0400BC64D7 /* GridNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridNode.swift; sourceTree = "<group>"; };
 		A7F53B662BE5E43F00BC64D7 /* Tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
+		A7F53B682BE6902700BC64D7 /* WorldScene+Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorldScene+Background.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,7 @@
 		A7F53B622BE5DCC100BC64D7 /* Background */ = {
 			isa = PBXGroup;
 			children = (
-				7B38A1882BE5C36200B4A99C /* Background.swift */,
+				A7F53B682BE6902700BC64D7 /* WorldScene+Background.swift */,
 				A7F53B632BE5DD0400BC64D7 /* GridNode.swift */,
 			);
 			path = Background;
@@ -209,7 +209,7 @@
 				7B38A17B2BE5C33D00B4A99C /* AcademyGameJamApp.swift in Sources */,
 				7B38A1942BE5C36200B4A99C /* Player.swift in Sources */,
 				7B38A1982BE5C36200B4A99C /* VirtualControllersExtension.swift in Sources */,
-				7B38A1922BE5C36200B4A99C /* Background.swift in Sources */,
+				A7F53B692BE6902700BC64D7 /* WorldScene+Background.swift in Sources */,
 				7B38A1962BE5C36200B4A99C /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

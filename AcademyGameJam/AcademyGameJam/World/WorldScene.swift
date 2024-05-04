@@ -6,7 +6,6 @@ class WorldScene: SKScene {
     
     var virtualController: GCVirtualController? //Controllers
     var player: Player? // Adicione uma propriedade para armazenar o jogador
-    var background: BackgroundNode? // Adicione uma propriedade para armazenar o fundo
     var cameraNode: SKCameraNode? // Propriedade para a câmera
     
     override func didMove(to view: SKView) {
@@ -18,9 +17,7 @@ class WorldScene: SKScene {
         setupVirtualController()
         
         //MARK: - ADD BACKGROUND
-        let grid = GridNode(tileSize: .init(width: 25, height: 25), gridSize: (width: 200, height: 200))
-        grid.position = .init(x: view.bounds.size.width/2 - grid.width/2, y: view.bounds.size.height/2 - grid.height/2)
-        addChild(grid)
+        setupBackground(center: .init(x: view.bounds.midX, y: view.bounds.midY))
         
         //MARK: - PLAYER
         player = Player()
