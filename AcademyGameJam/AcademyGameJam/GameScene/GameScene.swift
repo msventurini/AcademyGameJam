@@ -22,6 +22,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         map: .init(map: 200, tile: 25)
     )
     
+    
     override var isPaused: Bool { // Cancelar todos os updaters quando for pausar o jogo (e adicionar de novo dps)
         didSet {
             if oldValue == isPaused { return }
@@ -37,6 +38,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     override func update(_ currentTime: TimeInterval) {
         actionVirtualButtons()
     }
+    
     
     override func didFinishUpdate() {
         if let player = player {
