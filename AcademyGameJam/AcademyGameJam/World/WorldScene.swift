@@ -43,6 +43,6 @@ class WorldScene: SKScene {
             cameraNode?.position = player.position
         }
         
-        actionVirtualButtons()
+//        actionVirtualButtons()
     }
 }
