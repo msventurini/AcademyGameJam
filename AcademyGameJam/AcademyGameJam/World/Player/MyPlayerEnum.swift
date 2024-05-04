@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TypeAnimation{
+enum TypeAnimation {
     case stop
     case walk
     case swim
@@ -20,4 +20,3 @@ enum PlayerDirection {
     case right
     case stop
 }
-
