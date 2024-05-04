@@ -4,7 +4,7 @@ import SpriteKit
 
 //EXTENTION CONTROLLERS
 
-extension WorldScene {
+extension GameScene {
     
     func setupVirtualController() {
         let controllerConfig = GCVirtualController.Configuration()

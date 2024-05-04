@@ -8,7 +8,7 @@
 import Foundation
 import SpriteKit
 
-extension WorldScene {
+extension GameScene {
     
     func addUpdaters() {
         addTimerUpdater()

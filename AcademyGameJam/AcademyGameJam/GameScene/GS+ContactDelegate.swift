@@ -8,7 +8,7 @@
 import Foundation
 import SpriteKit
 
-extension WorldScene {
+extension GameScene {
     
     func didBegin(_ contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask

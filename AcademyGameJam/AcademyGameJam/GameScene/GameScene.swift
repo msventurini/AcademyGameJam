@@ -3,7 +3,7 @@ import Combine
 import SpriteKit
 import GameController
 
-class WorldScene: SKScene, SKPhysicsContactDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var virtualController: GCVirtualController? //Controllers
     var player: Player? // Adicione uma propriedade para armazenar o jogador

@@ -8,7 +8,7 @@
 import Foundation
 import SpriteKit
 
-extension WorldScene {
+extension GameScene {
     
     override func didMove(to view: SKView) {
         
@@ -18,6 +18,7 @@ extension WorldScene {
         
         //MARK: - SCENE SETUP
         self.backgroundColor = UIColor.clear
+        self.scaleMode = .aspectFill
         
         //MARK: - CREATES VIRTUAL CONTROLLERS
         setupVirtualController()
