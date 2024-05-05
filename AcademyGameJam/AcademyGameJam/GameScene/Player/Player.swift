@@ -52,7 +52,8 @@ class Player: SKSpriteNode {
 //        movementAnimationSouthWest()
 //        movementAnimationWest()
 //        movementAnimationEast()
-        movementAnimationSouthEast()
+//        movementAnimationSouthEast()
+        movementAnimationNorthWest()
         
     }
     
@@ -105,6 +106,37 @@ class Player: SKSpriteNode {
         
     }
     
+    func movementAnimationEast() {
+        
+        let animation = SKAction.animate(with: [.init(image: .playerEastTexture0), .init(image: .playerEastTexture1)], timePerFrame: 0.15)
+        
+        let movementAnimation = SKAction.repeatForever(animation)
+        
+        run(movementAnimation)
+        
+    }
+    
+    func movementAnimationWest() {
+        
+        let animation = SKAction.animate(with: [.init(image: .playerWestTexture0), .init(image: .playerWestTexture1)], timePerFrame: 0.15)
+        
+        let movementAnimation = SKAction.repeatForever(animation)
+        
+        run(movementAnimation)
+        
+    }
+    
+    
+    func movementAnimationNorthWest() {
+        
+        let animation = SKAction.animate(with: [.init(image: .playerNorthWestTexture0), .init(image: .playerNorthWestTexture1)], timePerFrame: 0.15)
+        
+        let movementAnimation = SKAction.repeatForever(animation)
+        
+        run(movementAnimation)
+        
+    }
+    
     func movementAnimationSouthWest() {
         
         let animation = SKAction.animate(with: [.init(image: .playerSouthWestTexture0), .init(image: .playerSouthWestTexture1)], timePerFrame: 0.15)
@@ -125,25 +157,9 @@ class Player: SKSpriteNode {
         
     }
     
-    func movementAnimationWest() {
-        
-        let animation = SKAction.animate(with: [.init(image: .playerWestTexture0), .init(image: .playerWestTexture1)], timePerFrame: 0.15)
-        
-        let movementAnimation = SKAction.repeatForever(animation)
-        
-        run(movementAnimation)
-        
-    }
+
     
-    func movementAnimationEast() {
-        
-        let animation = SKAction.animate(with: [.init(image: .playerEastTexture0), .init(image: .playerEastTexture1)], timePerFrame: 0.15)
-        
-        let movementAnimation = SKAction.repeatForever(animation)
-        
-        run(movementAnimation)
-        
-    }
+    
     
 
     
