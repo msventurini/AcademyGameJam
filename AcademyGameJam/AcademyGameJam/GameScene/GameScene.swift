@@ -1,4 +1,5 @@
 import Foundation
+import GameKit
 import Combine
 import SpriteKit
 import GameController
@@ -7,6 +8,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     
     @Published var timer: Int = 300 // Tempo de jogo
     @Published var score: Int = 0
+    @Published var isScenePaused = false
     @Published var pollen: Float = 0
 
     let settings: GameSettings = .init(
@@ -28,12 +30,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     
     override var isPaused: Bool { // Cancelar todos os updaters quando for pausar o jogo (e adicionar de novo dps)
         didSet {
+            isScenePaused = isPaused
             if oldValue == isPaused { return }
-            
             if isPaused {
                 cancelUpdaters()
             } else {
                 addUpdaters()
+            }
+        }
+    }
+
+    func pausePlayDidTapped() {
+        isPaused.toggle()
+        if isPaused {
+            virtualController = nil
+        } else {
+            setupVirtualController()
+        }
+    }
+    
+    func sendLeaderboard() async {
+        Task{
+            do {
+                try await GKLeaderboard.submitScore(
+                    self.score,
+                    context: 0,
+                    player: GKLocalPlayer.local,
+                    leaderboardIDs: ["finished10levels"]
+                )
+            } catch {
+                print("Error on: \(#function): \(error.localizedDescription)")
             }
         }
     }

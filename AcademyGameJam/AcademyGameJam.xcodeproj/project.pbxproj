@@ -13,6 +13,8 @@
 		1C032EBE2BE6A38F00A9775B /* Layers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EBD2BE6A38F00A9775B /* Layers.swift */; };
 		1C032EC02BE6A39700A9775B /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EBF2BE6A39700A9775B /* Textures.swift */; };
 		1C032EC22BE6A3AA00A9775B /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EC12BE6A3AA00A9775B /* PhysicsCategory.swift */; };
+		23B0DBEF2BE730140089CFAF /* GameCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B0DBEE2BE730140089CFAF /* GameCenterView.swift */; };
+		23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */; };
 		318A81FB2BE6FE61006A6E32 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A81FA2BE6FE61006A6E32 /* TreeNode.swift */; };
 		318A81FD2BE6FFA8006A6E32 /* GS+Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A81FC2BE6FFA8006A6E32 /* GS+Tree.swift */; };
 		7B38A17B2BE5C33D00B4A99C /* AcademyGameJamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A17A2BE5C33D00B4A99C /* AcademyGameJamApp.swift */; };
@@ -44,6 +46,9 @@
 		1C032EBD2BE6A38F00A9775B /* Layers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layers.swift; sourceTree = "<group>"; };
 		1C032EBF2BE6A39700A9775B /* Textures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
 		1C032EC12BE6A3AA00A9775B /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		23B0DBEE2BE730140089CFAF /* GameCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterView.swift; sourceTree = "<group>"; };
+		23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenu.swift; sourceTree = "<group>"; };
+		23B9A0FF2BE71F0000F4E5A0 /* AcademyGameJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AcademyGameJam.entitlements; sourceTree = "<group>"; };
 		318A81FA2BE6FE61006A6E32 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		318A81FC2BE6FFA8006A6E32 /* GS+Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Tree.swift"; sourceTree = "<group>"; };
 		7B38A1772BE5C33D00B4A99C /* AcademyGameJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcademyGameJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +96,14 @@
 			path = Misc;
 			sourceTree = "<group>";
 		};
+		23B0DBED2BE730020089CFAF /* GameCenter */ = {
+			isa = PBXGroup;
+			children = (
+				23B0DBEE2BE730140089CFAF /* GameCenterView.swift */,
+			);
+			path = GameCenter;
+			sourceTree = "<group>";
+		};
 		318A81F92BE6FE2C006A6E32 /* Tree */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +132,8 @@
 		7B38A1792BE5C33D00B4A99C /* AcademyGameJam */ = {
 			isa = PBXGroup;
 			children = (
+				23B0DBED2BE730020089CFAF /* GameCenter */,
+				23B9A0FF2BE71F0000F4E5A0 /* AcademyGameJam.entitlements */,
 				7B38A17E2BE5C33E00B4A99C /* Assets.xcassets */,
 				7B38A17A2BE5C33D00B4A99C /* AcademyGameJamApp.swift */,
 				A75A14DF2BE6D1AC00033D5C /* GameView */,
@@ -189,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				7B38A18D2BE5C36200B4A99C /* GameView.swift */,
+				23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -290,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7F53B702BE6AFFE00BC64D7 /* GS+Flower.swift in Sources */,
+				23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenu.swift in Sources */,
 				A7F53B642BE5DD0400BC64D7 /* MapNode.swift in Sources */,
 				7B38A1992BE5C36200B4A99C /* GameScene.swift in Sources */,
 				A7F53B672BE5E43F00BC64D7 /* Tokens.swift in Sources */,
@@ -312,6 +329,7 @@
 				318A81FB2BE6FE61006A6E32 /* TreeNode.swift in Sources */,
 				7B38A1962BE5C36200B4A99C /* GameView.swift in Sources */,
 				318A81FD2BE6FFA8006A6E32 /* GS+Tree.swift in Sources */,
+				23B0DBEF2BE730140089CFAF /* GameCenterView.swift in Sources */,
 				1C032EB92BE6A31F00A9775B /* GS+ContactDelegate.swift in Sources */,
 				1C032EC22BE6A3AA00A9775B /* PhysicsCategory.swift in Sources */,
 				A75A14E12BE6FFD800033D5C /* GS+Interactions.swift in Sources */,
@@ -445,24 +463,33 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = AcademyGameJam/AcademyGameJam.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyGameJam/Preview Content\"";
-				DEVELOPMENT_TEAM = 73DNAYF2TM;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TPM3CS87N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.adventure-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = gstvGameTest.AcademyGameJam;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gstvGameTest.AcademyGameJam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = GameJamProvisionProfile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -474,24 +501,32 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = AcademyGameJam/AcademyGameJam.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyGameJam/Preview Content\"";
-				DEVELOPMENT_TEAM = 73DNAYF2TM;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TPM3CS87N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.adventure-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = gstvGameTest.AcademyGameJam;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gstvGameTest.AcademyGameJam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = GameJamProvisionProfile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
