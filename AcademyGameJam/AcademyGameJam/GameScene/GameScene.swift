@@ -8,20 +8,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     @Published var timer: Int = 300 // Tempo de jogo
     @Published var score: Int = 0
 
+    let settings: GameSettings = .init(
+        flower: .init(quantity: 2000, size: .init(width: 40, height: 40 * 0.8)),
+        map: .init(map: 200, tile: 25),
+        player: .init(movementSpeed: 5)
+    )
+    
     var virtualController: GCVirtualController? //Controllers
     var player: Player? // Adicione uma propriedade para armazenar o jogador
     var cameraNode: SKCameraNode? // Propriedade para a câmera
     var cancellables: Set<AnyCancellable> = Set<AnyCancellable>() // Guarda todos os updaters canceláveis    
     
     var map: MapNode?
-    
     var bounds: CGRect = .zero
-        
-    let settings: GameSettings = .init(
-        flower: .init(quantity: 2000, size: .init(width: 20, height: 20 * 0.8)),
-        map: .init(map: 200, tile: 25)
-    )
     
+    var interactable: SKNode?
     
     override var isPaused: Bool { // Cancelar todos os updaters quando for pausar o jogo (e adicionar de novo dps)
         didSet {
