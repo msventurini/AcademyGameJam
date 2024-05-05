@@ -23,8 +23,17 @@ extension GameScene {
         //        }
         
         if contactMask == (PhysicsCategory.interactable | PhysicsCategory.player) {
-            guard let flower = (bodyA.node as? FlowerNode) ?? (bodyB.node as? FlowerNode) else { return }
-            enableInteraction(with: flower, highlightSize: flower.size)
+            guard let interactable = (bodyA.node as? InteractableNode) ?? (bodyB.node as? InteractableNode),
+                  let node = (interactable as? SKNode) else { return }
+            
+            let size: CGSize
+            if let sizeable = node as? Sizeable {
+                size = sizeable.size
+            } else {
+                size = node.frame.size
+            }
+            
+            enableInteraction(with: node, highlightSize: size)
         }
     }
     
@@ -36,8 +45,10 @@ extension GameScene {
         let contactMask = bodyA.categoryBitMask | bodyB.categoryBitMask
         
         if contactMask == (PhysicsCategory.interactable | PhysicsCategory.player) {
-            guard let flower = (bodyA.node as? FlowerNode) ?? (bodyB.node as? FlowerNode) else { return }
-            disableInteraction(of: flower)
+            guard let interactable = (bodyA.node as? InteractableNode) ?? (bodyB.node as? InteractableNode),
+                  let node = (interactable as? SKNode) else { return }
+            
+            disableInteraction(of: node)
         }
     }
 }

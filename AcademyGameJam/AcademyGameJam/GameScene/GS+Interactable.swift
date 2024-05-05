@@ -10,8 +10,7 @@ import SpriteKit
 
 extension GameScene {
     internal func enableInteraction(with node: SKNode, highlightSize: CGSize) {
-        guard interactable == nil else { return }
-        
+         
         interactable = node
         // TODO: Enable the interaction button
         
@@ -34,18 +33,22 @@ extension GameScene {
     }
     
     internal func disableInteraction(of node: SKNode) {
-        interactable = nil
-        node.childNode(withName: "outline")?.run(.scale(to: 0, duration: 0.1)) {
+        if interactable == node {
+            interactable = nil
+        }
+        
+        node.childNode(withName: "outline")?.run(.scale(to: 0, duration: 0.15)) {
             node.childNode(withName: "outline")?.removeFromParent()
         }
+        
         // TODO: Disable the interaction button
     }
     
     internal func interact() {
         guard let interactable else { return }
         
-        if let flower = interactable as? FlowerNode, !flower.hasBeenInteracted  {
-            addProgressBar(to: flower)
+        if let interactableNode = interactable as? InteractableNode, !interactableNode.hasBeenInteracted {
+            addProgressBar(to: interactable)
         }
     }
     
@@ -72,16 +75,28 @@ extension GameScene {
         node.addChild(progressBar)
         
         // TODO: Increase duration in relation to flower size (HOW THE FUCK DO I DO THIS????)
-        progressBar.innerBar?.run(.scaleX(to: 1, duration: 1)) {
-            if var interactable = node as? InteractableNode {
-                interactable.hasBeenInteracted = true
-            }
-            
-            if let pointGiver = node as? PointGiver {
-                self.score += pointGiver.points
-            }
-            
-            progressBar.removeFromParent()
-        }
+        progressBar.innerBar?.run(
+            .sequence([
+                .scaleX(to: 1, duration: 1),
+                .group([
+                    .run {
+                        if var interactable = node as? InteractableNode {
+                            interactable.hasBeenInteracted = true
+                        }
+                        
+                        if let pointGiver = node as? PointGiver {
+                            self.score += pointGiver.points
+                        }
+                        
+                        self.disableInteraction(of: node)
+                    },
+                    .run {
+                        progressBar.run(.scale(to: 0, duration: 0.15))
+                    }
+                ]),
+                .run {
+                    progressBar.removeFromParent()
+                }
+            ]))
     }
 }
