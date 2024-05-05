@@ -91,14 +91,22 @@ class Player: SKSpriteNode {
             
             if abs(x - y) < 0.25 {
                 movementAnimationSouthWest()
-            } else if x > y {
-                movementAnimationSouth()
-            } else {
+            } else if abs(x) > abs(y) {
                 movementAnimationWest()
+            } else {
+                movementAnimationSouth()
             }
             
             
         } else if x < 0 && y > 0 {
+            
+            if abs(abs(x) - y) < 0.25 {
+                movementAnimationNorthWest()
+            } else if abs(x) > abs(y) {
+                movementAnimationWest()
+            } else {
+                movementAnimationNorth()
+            }
             
         } else if x > 0 && y < 0 {
             
