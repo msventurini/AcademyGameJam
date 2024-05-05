@@ -28,6 +28,7 @@ struct GameSettings {
     struct Flower {
         let quantity: Int
         let size: CGSize
+        let pointMultiplier: Float
     }
     
     struct Tree {

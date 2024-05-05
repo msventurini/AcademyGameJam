@@ -8,10 +8,16 @@
 import Foundation
 import SpriteKit
 
-class FlowerNode: SKSpriteNode {
-    init(size: CGSize) {
+class FlowerNode: SKSpriteNode, PointGiver, InteractableNode {
+    let points: Int
+    var hasBeenInteracted: Bool = false
+    
+    init(size: CGSize, pointsMultiplier: Float) {
         let multiplier = CGFloat.random(in: 0.5...1.0)
         let trueSize = CGSize.init(width: size.width * multiplier, height: size.height * multiplier)
+        
+        self.points = Int(Float(trueSize.width + trueSize.height)/2 * pointsMultiplier)
+        
         super.init(texture: Textures.flower, color: .clear, size: trueSize)
         
         self.name = "Flower"

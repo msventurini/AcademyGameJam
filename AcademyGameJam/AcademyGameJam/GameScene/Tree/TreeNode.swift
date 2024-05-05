@@ -8,17 +8,21 @@
 import Foundation
 import SpriteKit
 
-class TreeNode: SKNode {
-    public let size: CGSize
+class TreeNode: SKSpriteNode, InteractableNode, PointGiver {
+    let points: Int = 300
+    var hasBeenInteracted: Bool = false
     
     init(size: CGSize) {
-        self.size = size
+        super.init(texture: Textures.flower, color: .clear, size: size)
         
-        super.init()
+        self.physicsBody = SKPhysicsBody(rectangleOf: size)
+        self.physicsBody?.isDynamic = false
         
-        let sprite = SKSpriteNode(texture: Textures.flower , size: size)
-        sprite.name = "Tree"
-        addChild(sprite)
+        self.physicsBody?.categoryBitMask = PhysicsCategory.interactable
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.player
+        self.physicsBody?.collisionBitMask = PhysicsCategory.interactable
+        
+        self.name = "Tree"
     }
     
     required init?(coder aDecoder: NSCoder) {
