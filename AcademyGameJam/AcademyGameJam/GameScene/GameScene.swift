@@ -56,7 +56,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
                     self.score,
                     context: 0,
                     player: GKLocalPlayer.local,
-                    leaderboardIDs: ["finished10levels"]
+                    leaderboardIDs: ["finishedlevelsADAJAM"]
                 )
             } catch {
                 print("Error on: \(#function): \(error.localizedDescription)")
