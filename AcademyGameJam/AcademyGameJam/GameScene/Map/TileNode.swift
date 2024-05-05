@@ -37,14 +37,8 @@ extension MapNode {
         func polinate(_ quantity: Float) -> Bool {
             if pollen + quantity >= maxPollen { return false }
             
-            
-            DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-
-                pollen += quantity
-                
-                color = color.interpolate(to: colorGoal, progress: CGFloat(pollen/maxPollen))
-            }
+            pollen += quantity
+            color = color.interpolate(to: colorGoal, progress: CGFloat(pollen/maxPollen))
             
             return true
         }

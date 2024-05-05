@@ -40,8 +40,6 @@ extension GameScene {
         rightpb.isDynamic = false
         rightBoundary.physicsBody = rightpb
         
-        print(bounds)
-        
         self.addChild(topBoundary)
         self.addChild(bottomBoundary)
         self.addChild(leftBoundary)

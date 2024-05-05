@@ -48,10 +48,14 @@ extension GameScene: PollenDelegate {
                     if pollen - settings.player.pollenDisperseRate <= 0 { return }
                     if Bool.random() { continue }
                     
-                    let polinated = tile.polinate(settings.player.pollenDisperseRate)
-                    if polinated {
-                        decreasePollen(settings.player.pollenDisperseRate)
-                        increaseScore(by: tile.pollen/tile.maxPollen)
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self else { return }
+                        
+                        let polinated = tile.polinate(settings.player.pollenDisperseRate)
+                        if polinated {
+                            decreasePollen(settings.player.pollenDisperseRate)
+                            increaseScore(by: tile.pollen/tile.maxPollen)
+                        }
                     }
                 }
                 
