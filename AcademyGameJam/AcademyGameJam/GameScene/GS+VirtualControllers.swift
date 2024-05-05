@@ -25,15 +25,9 @@ extension GameScene {
     
     func actionVirtualButtons() {
         if let controller = virtualController?.controller {
-            
             controller.extendedGamepad?.leftThumbstick.valueChangedHandler = { (dpad, xValue, yValue) in
-                
                 self.player?.movementCancel()
-
-                    self.playerMovement(direction: CGVector(dx: CGFloat(xValue), dy: CGFloat(yValue)))
-
-
-
+                self.playerMovement(direction: CGVector(dx: CGFloat(xValue), dy: CGFloat(yValue)))
             }
             
             controller.extendedGamepad?.buttonA.pressedChangedHandler = { button, value, pressed in
@@ -61,8 +55,8 @@ extension GameScene {
     func playerMovement(direction: CGVector) {
         self.player?.move(x: direction.dx, y: direction.dy)
     }
-        
-        
+    
+    
     
     
 }

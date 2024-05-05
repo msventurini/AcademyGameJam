@@ -23,6 +23,7 @@
 		7B38A1962BE5C36200B4A99C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A18D2BE5C36200B4A99C /* GameView.swift */; };
 		7B38A1982BE5C36200B4A99C /* GS+VirtualControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A18F2BE5C36200B4A99C /* GS+VirtualControllers.swift */; };
 		7B38A1992BE5C36200B4A99C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A1902BE5C36200B4A99C /* GameScene.swift */; };
+		A75A14E12BE6FFD800033D5C /* GS+Interactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75A14E02BE6FFD800033D5C /* GS+Interactable.swift */; };
 		A7F53B642BE5DD0400BC64D7 /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B632BE5DD0400BC64D7 /* MapNode.swift */; };
 		A7F53B672BE5E43F00BC64D7 /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B662BE5E43F00BC64D7 /* Tokens.swift */; };
 		A7F53B692BE6902700BC64D7 /* GS+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B682BE6902700BC64D7 /* GS+Map.swift */; };
@@ -49,6 +50,7 @@
 		7B38A18D2BE5C36200B4A99C /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		7B38A18F2BE5C36200B4A99C /* GS+VirtualControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GS+VirtualControllers.swift"; sourceTree = "<group>"; };
 		7B38A1902BE5C36200B4A99C /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		A75A14E02BE6FFD800033D5C /* GS+Interactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Interactable.swift"; sourceTree = "<group>"; };
 		A7F53B632BE5DD0400BC64D7 /* MapNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNode.swift; sourceTree = "<group>"; };
 		A7F53B662BE5E43F00BC64D7 /* Tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
 		A7F53B682BE6902700BC64D7 /* GS+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Map.swift"; sourceTree = "<group>"; };
@@ -140,13 +142,14 @@
 				1C032EBA2BE6A33100A9775B /* GS+DidMove.swift */,
 				1C032EB62BE6A30500A9775B /* GS+AddUpdaters.swift */,
 				1C032EB82BE6A31F00A9775B /* GS+ContactDelegate.swift */,
+				7B38A18F2BE5C36200B4A99C /* GS+VirtualControllers.swift */,
+				A75A14E02BE6FFD800033D5C /* GS+Interactable.swift */,
 				A7F53B712BE6B0D400BC64D7 /* GameSettings.swift */,
 				A7F53B6A2BE6ADB300BC64D7 /* Flower */,
 				A7F53B622BE5DCC100BC64D7 /* Map */,
 				318A81F92BE6FE2C006A6E32 /* Tree */,
 				7B38A18B2BE5C36200B4A99C /* Player */,
 				1C032EBC2BE6A34500A9775B /* Misc */,
-				7B38A18F2BE5C36200B4A99C /* GS+VirtualControllers.swift */,
 			);
 			path = GameScene;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				318A81FD2BE6FFA8006A6E32 /* GS+Tree.swift in Sources */,
 				1C032EB92BE6A31F00A9775B /* GS+ContactDelegate.swift in Sources */,
 				1C032EC22BE6A3AA00A9775B /* PhysicsCategory.swift in Sources */,
+				A75A14E12BE6FFD800033D5C /* GS+Interactable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +412,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyGameJam/Preview Content\"";
-				DEVELOPMENT_TEAM = R5UC247K67;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -437,7 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyGameJam/Preview Content\"";
-				DEVELOPMENT_TEAM = R5UC247K67;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
