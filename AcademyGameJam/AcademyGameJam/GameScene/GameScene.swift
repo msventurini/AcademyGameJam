@@ -14,7 +14,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     let settings: GameSettings = .init(
         flower: .init(quantity: 1000, size: .init(width: 40, height: 40 * 0.8), pointMultiplier: 2),
         map: .init(map: 200, tile: 25),
-        tree: .init(size: .init(width: 100, height: 100)),
+        tree: .init(quantity: 4, size: .init(width: 100, height: 100), numberOfFlowersAround: 10, treeRadius: 100),
         player: .init(movementSpeed: 5)
     )
     
