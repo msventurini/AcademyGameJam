@@ -12,29 +12,27 @@ class MapNode: SKNode {
     public let width: CGFloat
     public let height: CGFloat
     
-    init(tileSize: CGSize, gridSize: (width: Int, height: Int)) {
-        self.width = CGFloat(gridSize.width) * tileSize.width
-        self.height = CGFloat(gridSize.height) * tileSize.height
+    public private(set) var tiles: [TileNode] = []
+
+    init(settings: GameSettings.Map) {
+        self.width = CGFloat(settings.width) * settings.tileSize.width
+        self.height = CGFloat(settings.height) * settings.tileSize.height
         
         super.init()
         
-        let baseSprite = SKSpriteNode(texture: Textures.backgroundTile, size: tileSize)
-        
-        for column in 0..<gridSize.width {
-            for row in 0..<gridSize.height {
-                let sprite = (baseSprite.copy() as! SKSpriteNode)
+        for column in 0..<settings.width {
+            for row in 0..<settings.height {
+                let tile = TileNode(coordinate: .init(x: column, y: row), size: settings.tileSize, pollenRange: settings.tilePollenRange)
                 
-                sprite.position.x = CGFloat(column) * tileSize.width
-                sprite.position.y = CGFloat(row) * tileSize.height
-                sprite.zPosition = -1
-                sprite.anchorPoint = .zero
-                sprite.colorBlendFactor = 1.0
-                sprite.color = Tokens.green()
-                sprite.name = "MapTile"
+                tile.position.x = CGFloat(column) * settings.tileSize.width
+                tile.position.y = CGFloat(row) * settings.tileSize.height
                 
-                addChild(sprite)
+                addChild(tile)
+                tiles.append(tile)
             }
         }
+        
+        self.name = "Map"
     }
     
     required init?(coder aDecoder: NSCoder) {

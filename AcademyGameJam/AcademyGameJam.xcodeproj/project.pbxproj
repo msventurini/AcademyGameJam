@@ -32,6 +32,9 @@
 		A72134F52BE768DE003362B1 /* PollenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72134F42BE768DE003362B1 /* PollenDelegate.swift */; };
 		A72134F72BE7694B003362B1 /* GS+PollenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72134F62BE7694B003362B1 /* GS+PollenDelegate.swift */; };
 		A75A14E12BE6FFD800033D5C /* GS+Interactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */; };
+		A79BCD8E2BE7F0C800C2B4ED /* TileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BCD8D2BE7F0C800C2B4ED /* TileNode.swift */; };
+		A79BCD912BE7F4F200C2B4ED /* UIColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BCD902BE7F4F200C2B4ED /* UIColor+RGBA.swift */; };
+		A79BCD932BE8172200C2B4ED /* GS+Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BCD922BE8172200C2B4ED /* GS+Score.swift */; };
 		A7F53B642BE5DD0400BC64D7 /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B632BE5DD0400BC64D7 /* MapNode.swift */; };
 		A7F53B672BE5E43F00BC64D7 /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B662BE5E43F00BC64D7 /* Tokens.swift */; };
 		A7F53B692BE6902700BC64D7 /* GS+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B682BE6902700BC64D7 /* GS+Map.swift */; };
@@ -68,6 +71,9 @@
 		A72134F42BE768DE003362B1 /* PollenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenDelegate.swift; sourceTree = "<group>"; };
 		A72134F62BE7694B003362B1 /* GS+PollenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+PollenDelegate.swift"; sourceTree = "<group>"; };
 		A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Interactions.swift"; sourceTree = "<group>"; };
+		A79BCD8D2BE7F0C800C2B4ED /* TileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileNode.swift; sourceTree = "<group>"; };
+		A79BCD902BE7F4F200C2B4ED /* UIColor+RGBA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGBA.swift"; sourceTree = "<group>"; };
+		A79BCD922BE8172200C2B4ED /* GS+Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Score.swift"; sourceTree = "<group>"; };
 		A7F53B632BE5DD0400BC64D7 /* MapNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNode.swift; sourceTree = "<group>"; };
 		A7F53B662BE5E43F00BC64D7 /* Tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
 		A7F53B682BE6902700BC64D7 /* GS+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Map.swift"; sourceTree = "<group>"; };
@@ -139,8 +145,9 @@
 				7B38A17E2BE5C33E00B4A99C /* Assets.xcassets */,
 				7B38A17A2BE5C33D00B4A99C /* AcademyGameJamApp.swift */,
 				A75A14DF2BE6D1AC00033D5C /* GameView */,
-				A7F53B652BE5E43100BC64D7 /* Design */,
 				7B38A1912BE5C36200B4A99C /* GameScene */,
+				A7F53B652BE5E43100BC64D7 /* Design */,
+				A79BCD8F2BE7F4D400C2B4ED /* Extensions */,
 				7B38A1802BE5C33E00B4A99C /* Preview Content */,
 			);
 			path = AcademyGameJam;
@@ -174,6 +181,7 @@
 				A72134F62BE7694B003362B1 /* GS+PollenDelegate.swift */,
 				7B38A18F2BE5C36200B4A99C /* GS+VirtualControllers.swift */,
 				A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */,
+				A79BCD922BE8172200C2B4ED /* GS+Score.swift */,
 				A7F53B712BE6B0D400BC64D7 /* GameSettings.swift */,
 				A7F53B6A2BE6ADB300BC64D7 /* Flower */,
 				A7F53B622BE5DCC100BC64D7 /* Map */,
@@ -212,11 +220,20 @@
 			path = GameView;
 			sourceTree = "<group>";
 		};
+		A79BCD8F2BE7F4D400C2B4ED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A79BCD902BE7F4F200C2B4ED /* UIColor+RGBA.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A7F53B622BE5DCC100BC64D7 /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				A7F53B682BE6902700BC64D7 /* GS+Map.swift */,
 				A7F53B632BE5DD0400BC64D7 /* MapNode.swift */,
+				A79BCD8D2BE7F0C800C2B4ED /* TileNode.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -309,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7F53B702BE6AFFE00BC64D7 /* GS+Flower.swift in Sources */,
+				A79BCD932BE8172200C2B4ED /* GS+Score.swift in Sources */,
 				23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenu.swift in Sources */,
 				A7F53B642BE5DD0400BC64D7 /* MapNode.swift in Sources */,
 				1CA4FD442BE7FF77001FF87E /* GS+AddBoundaries.swift in Sources */,
@@ -326,11 +344,13 @@
 				A72134EC2BE7490D003362B1 /* ProgressBarNode.swift in Sources */,
 				7B38A1982BE5C36200B4A99C /* GS+VirtualControllers.swift in Sources */,
 				1C032EBE2BE6A38F00A9775B /* Layers.swift in Sources */,
+				A79BCD912BE7F4F200C2B4ED /* UIColor+RGBA.swift in Sources */,
 				A72134F52BE768DE003362B1 /* PollenDelegate.swift in Sources */,
 				1C032EBB2BE6A33100A9775B /* GS+DidMove.swift in Sources */,
 				1C032EC02BE6A39700A9775B /* Textures.swift in Sources */,
 				A7F53B692BE6902700BC64D7 /* GS+Map.swift in Sources */,
 				318A81FB2BE6FE61006A6E32 /* TreeNode.swift in Sources */,
+				A79BCD8E2BE7F0C800C2B4ED /* TileNode.swift in Sources */,
 				7B38A1962BE5C36200B4A99C /* GameView.swift in Sources */,
 				318A81FD2BE6FFA8006A6E32 /* GS+Tree.swift in Sources */,
 				23B0DBEF2BE730140089CFAF /* GameCenterView.swift in Sources */,
