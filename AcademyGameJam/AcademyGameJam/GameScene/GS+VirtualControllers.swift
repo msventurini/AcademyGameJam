@@ -28,28 +28,26 @@ extension GameScene {
             controller.extendedGamepad?.leftThumbstick.valueChangedHandler = { (dpad, xValue, yValue) in
                 self.player?.movementCancel()
                 self.playerMovement(direction: CGVector(dx: CGFloat(xValue), dy: CGFloat(yValue)))
+                
+                self.cancelInteraction()
             }
             
             controller.extendedGamepad?.buttonA.pressedChangedHandler = { button, value, pressed in
                 if pressed {
-                    self.buttonAPressed()
+                    self.interact()
+                } else {
+                    self.cancelInteraction()
                 }
             }
             
             controller.extendedGamepad?.buttonB.pressedChangedHandler = { button, value, pressed in
                 if pressed {
-                    self.buttonBPressed()
+                    print("B")
+                    
+                    self.cancelInteraction()
                 }
             }
         }
-    }
-    
-    func buttonAPressed() {
-        print("A")
-    }
-    
-    func buttonBPressed() {
-        print("B")
     }
     
     func playerMovement(direction: CGVector) {

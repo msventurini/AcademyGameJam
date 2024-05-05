@@ -12,6 +12,8 @@ extension GameScene{
     internal func setupTrees(center: CGPoint) {
         for i in 0..<settings.tree.quantity + 1{
             let tree = TreeNode(size: settings.tree.size)
+            tree.pollenDelegate = self
+            
             var point: CGPoint = .zero
             
             if i == 0 {
