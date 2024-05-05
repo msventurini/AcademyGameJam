@@ -8,6 +8,11 @@
 import Foundation
 import SpriteKit
 
+
+enum PlayerAnimationDirection {
+    case south
+}
+
 class Player: SKSpriteNode {
     // TODO: Why?   V
     var moveTimer: Timer? // Temporizador para controlar o movimento contínuo
@@ -16,12 +21,17 @@ class Player: SKSpriteNode {
     var movementSpeed: CGFloat // Velocidade de movimento do jogador
     
     init(movementSpeed: CGFloat) {
-        let playerSize = CGSize(width: 10, height: 10)
+        let playerSize = CGSize(width: 32, height: 32)
         let playerColor = UIColor.yellow
         
         self.movementSpeed = movementSpeed
         
-        super.init(texture: nil, color: playerColor, size: playerSize)
+        let defaultTexture = SKTexture(image: .playerSouthTexture0)
+        
+        super.init(texture: defaultTexture, color: .clear, size: playerSize)
+        
+        
+        self.name = "player"
         
         self.physicsBody = SKPhysicsBody(rectangleOf: playerSize)
         
@@ -46,6 +56,13 @@ class Player: SKSpriteNode {
 
         run(movementConstantAnimation, withKey: "walk")
       }
+    
+    func movementAnimation() {
+        
+        let animation = SKAction.animate(with: [.init(image: .playerSouthTexture0), .init(image: .playerSouthTexture1)], timePerFrame: 0.25)
+        
+        
+    }
     
     func movementCancel() {
         if action(forKey: "walk") != nil {
