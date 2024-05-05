@@ -28,6 +28,9 @@ extension GameScene {
         //MARK: - ADD MAP
         setupMap(center: center)
         
+        //MARK: - ADD TREES
+        setupTrees(center: center)
+        
         // MARK: - ADD FLOWERS
         setupFlowers()
         

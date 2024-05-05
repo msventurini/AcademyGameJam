@@ -10,6 +10,7 @@ import Foundation
 struct GameSettings {
     let flower: Flower
     let map: Map
+    let tree: Tree
     
     struct Map {
         let width: Int
@@ -25,6 +26,11 @@ struct GameSettings {
     
     struct Flower {
         let quantity: Int
+        let size: CGSize
+    }
+    
+    struct Tree {
+        let quantity = 4
         let size: CGSize
     }
 }
