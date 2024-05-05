@@ -16,7 +16,7 @@ extension GameScene {
         var instantiatedFlowers = [SKNode]()
         let initialPosition = CGPoint(x: bounds.maxX * 1.5, y: bounds.maxY * 1.5)
         for _ in 0..<settings.flower.quantity {
-            let flower = FlowerNode(size: settings.flower.size, pointsMultiplier: settings.flower.pointMultiplier)
+            let flower = FlowerNode(size: settings.flower.size, pollenMultiplier: settings.flower.pollenMultiplier)
             flower.pollenDelegate = self
             flower.position = initialPosition
             

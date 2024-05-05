@@ -7,21 +7,22 @@ import GameController
 class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     
     @Published var timer: Int = 300 // Tempo de jogo
-    @Published var score: Int = 0
+    @Published var score: Float = 0
     @Published var isScenePaused = false
     @Published var pollen: Float = 0
 
     let settings: GameSettings = .init(
-        flower: .init(quantity: 1000, size: .init(width: 40, height: 40 * 0.8), pointMultiplier: 2),
-        map: .init(map: 200, tile: 25),
+        flower: .init(quantity: 1000, size: .init(width: 40, height: 40 * 0.8), pollenMultiplier: 10),
+        map: .init(map: 200, tile: 25, tilePollenRange: 100..<500),
         tree: .init(quantity: 4, size: .init(width: 100, height: 100), numberOfFlowersAround: 10, treeRadius: 100),
-        player: .init(movementSpeed: 5)
+        player: .init(movementSpeed: 5, pollenDisperseRate: 0.5),
+        score: .init(basePoints: 0.5)
     )
     
     var virtualController: GCVirtualController? //Controllers
     var player: Player? // Adicione uma propriedade para armazenar o jogador
     var cameraNode: SKCameraNode? // Propriedade para a câmera
-    var cancellables: Set<AnyCancellable> = Set<AnyCancellable>() // Guarda todos os updaters canceláveis    
+    var cancellables: Set<AnyCancellable> = Set<AnyCancellable>() // Guarda todos os updaters canceláveis
     
     var map: MapNode?
     var bounds: CGRect = .zero
@@ -53,7 +54,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         Task{
             do {
                 try await GKLeaderboard.submitScore(
-                    self.score,
+                    Int(self.score),
                     context: 0,
                     player: GKLocalPlayer.local,
                     leaderboardIDs: ["finished10levels"]
@@ -84,9 +85,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let viewLocation = touches.first?.location(in: view) else { return }
-        
-        let sceneLocation = convertPoint(fromView: viewLocation)
-        print(nodes(at: sceneLocation).map(\.name))
+//        guard let viewLocation = touches.first?.location(in: view) else { return }
+//        
+//        let sceneLocation = convertPoint(fromView: viewLocation)
     }
 }
