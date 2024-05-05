@@ -49,11 +49,16 @@ class Player: SKSpriteNode {
         self.physicsBody = pb
         
 //        movementAnimationSouth()
-//        movementAnimationSouthWest()
+
+        //        movementAnimationNorth()
 //        movementAnimationWest()
 //        movementAnimationEast()
+        
+        //        movementAnimationSouthWest()
+                movementAnimationNorthEast()
 //        movementAnimationSouthEast()
-        movementAnimationNorthWest()
+//        movementAnimationNorthWest()
+
         
     }
     
@@ -65,7 +70,7 @@ class Player: SKSpriteNode {
         
         let playerMovementAction = SKAction.customAction(withDuration: 1.0) { node, eleapsedTime in
             
-//            if let playerNode = self.player {
+            //            if let playerNode = self.player {
             
             if let node = node as? SKSpriteNode {
                 node.position.x += x * self.movementSpeed
@@ -81,14 +86,39 @@ class Player: SKSpriteNode {
         }
         
         let movementConstantAnimation = SKAction.repeatForever(playerMovementAction)
-
-//        movementAnimationSouth()
+        
+        if x < 0 && y < 0 {
+            
+            if abs(x - y) < 0.25 {
+                movementAnimationSouthWest()
+            } else if x > y {
+                movementAnimationSouth()
+            } else {
+                movementAnimationWest()
+            }
+            
+            
+        } else if x < 0 && y > 0 {
+            
+        } else if x > 0 && y < 0 {
+            
+        } else if x > 0 && y > 0 {
+            
+        } else {
+            movementAnimationSouth()
+        }
+            
+        
+        
+        print(y.description)
+        
+        
         run(movementConstantAnimation, withKey: "walk")
       }
     
-    func movementAnimationNort() {
+    func movementAnimationNorth() {
         
-        let animation = SKAction.animate(with: [.init(image: .playerSouthTexture0), .init(image: .playerSouthTexture1)], timePerFrame: 0.15)
+        let animation = SKAction.animate(with: [.init(image: .playerNorthTexture0), .init(image: .playerNorthTexture1)], timePerFrame: 0.15)
         
         let movementAnimation = SKAction.repeatForever(animation)
         
@@ -130,6 +160,16 @@ class Player: SKSpriteNode {
     func movementAnimationNorthWest() {
         
         let animation = SKAction.animate(with: [.init(image: .playerNorthWestTexture0), .init(image: .playerNorthWestTexture1)], timePerFrame: 0.15)
+        
+        let movementAnimation = SKAction.repeatForever(animation)
+        
+        run(movementAnimation)
+        
+    }
+    
+    func movementAnimationNorthEast() {
+        
+        let animation = SKAction.animate(with: [.init(image: .playerNorthEastTexture0), .init(image: .playerNorthEastTexture0)], timePerFrame: 0.15)
         
         let movementAnimation = SKAction.repeatForever(animation)
         
