@@ -9,9 +9,16 @@ import Foundation
 import SpriteKit
 
 class FlowerNode: SKSpriteNode {
-    init(size: CGSize) {
+    private let pollen: Float
+    var interactionEnabled: Bool = true
+    weak var pollenDelegate: (any PollenDelegate)?
+    
+    init(size: CGSize, pollenMultiplier: Float) {
         let multiplier = CGFloat.random(in: 0.5...1.0)
         let trueSize = CGSize.init(width: size.width * multiplier, height: size.height * multiplier)
+        
+        self.pollen = Float(trueSize.width + trueSize.height)/2 * pollenMultiplier
+        
         super.init(texture: Textures.flower, color: .clear, size: trueSize)
         
         self.name = "Flower"
@@ -27,5 +34,12 @@ class FlowerNode: SKSpriteNode {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension FlowerNode: Interactable {
+    func interact() {
+        self.interactionEnabled = false
+        pollenDelegate?.increasePollen(pollen)
     }
 }

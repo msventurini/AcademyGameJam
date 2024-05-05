@@ -17,13 +17,14 @@ class Player: SKSpriteNode {
     // TODO: Why?   V
     var moveTimer: Timer? // Temporizador para controlar o movimento contínuo
     
+    weak var pollenDelegate: (any PollenDelegate)?
+    
     var playerDirection: CGVector = CGVector(dx: 0, dy: 0)
     var movementSpeed: CGFloat // Velocidade de movimento do jogador
     
     init(movementSpeed: CGFloat) {
         let playerSize = CGSize(width: 32, height: 32)
         let playerColor = UIColor.yellow
-        
         self.movementSpeed = movementSpeed
         
         let defaultTexture = SKTexture(image: .playerSouthTexture0)
@@ -33,11 +34,19 @@ class Player: SKSpriteNode {
         
         self.name = "player"
         
-        self.physicsBody = SKPhysicsBody(rectangleOf: playerSize)
+        let pb = SKPhysicsBody(circleOfRadius: playerSize.width / 2)
         
-        self.physicsBody?.categoryBitMask = PhysicsCategory.player
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.interactable
-        self.physicsBody?.collisionBitMask = PhysicsCategory.player
+        pb.isDynamic = true
+        pb.affectedByGravity = false
+        pb.mass = 0.1
+        pb.friction = 1.0
+        pb.allowsRotation = false
+
+        pb.categoryBitMask = PhysicsCategory.player
+        pb.contactTestBitMask = PhysicsCategory.interactable
+        pb.collisionBitMask = PhysicsCategory.player
+        
+        self.physicsBody = pb
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,10 +54,21 @@ class Player: SKSpriteNode {
     }
     
     func move(x: CGFloat, y: CGFloat) {
-        let playerMovementAction = SKAction.customAction(withDuration: 1) { node, eleapsedTime in
+        
+        let playerMovementAction = SKAction.customAction(withDuration: 1.0) { node, eleapsedTime in
+            
+//            if let playerNode = self.player {
+            
             if let node = node as? SKSpriteNode {
                 node.position.x += x * self.movementSpeed
                 node.position.y += y * self.movementSpeed
+                
+                
+                node.physicsBody?.velocity = CGVector(dx: x * 100, dy: y * 100)
+                
+                if x != 0 || y != 0 {
+                    self.pollenDelegate?.dispersePollen(at: node.position)
+                }
             }
         }
         

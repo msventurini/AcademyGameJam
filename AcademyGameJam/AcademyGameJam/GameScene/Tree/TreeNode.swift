@@ -8,20 +8,31 @@
 import Foundation
 import SpriteKit
 
-class TreeNode: SKNode {
-    public let size: CGSize
+class TreeNode: SKSpriteNode {
+    var interactionEnabled: Bool = false
+    weak var pollenDelegate: (any PollenDelegate)?
     
     init(size: CGSize) {
-        self.size = size
+        super.init(texture: Textures.flower, color: .clear, size: size)
         
-        super.init()
+        self.physicsBody = SKPhysicsBody(rectangleOf: size)
+        self.physicsBody?.isDynamic = false
         
-        let sprite = SKSpriteNode(texture: Textures.flower , size: size)
-        sprite.name = "Tree"
-        addChild(sprite)
+        self.physicsBody?.categoryBitMask = PhysicsCategory.interactable
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.player
+        self.physicsBody?.collisionBitMask = PhysicsCategory.interactable
+        
+        self.name = "Tree"
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension TreeNode: Interactable {
+    func interact() {
+        self.interactionEnabled = false
+        pollenDelegate?.increasePollen(300)
     }
 }
