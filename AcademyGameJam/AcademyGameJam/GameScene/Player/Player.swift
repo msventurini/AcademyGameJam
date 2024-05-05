@@ -110,8 +110,22 @@ class Player: SKSpriteNode {
             
         } else if x > 0 && y < 0 {
             
-        } else if x > 0 && y > 0 {
+            if abs((x) - abs(y)) < 0.25 {
+                movementAnimationSouthEast()
+            } else if abs(x) > abs(y) {
+                movementAnimationEast()
+            } else {
+                movementAnimationSouth()
+            }
             
+        } else if x > 0 && y > 0 {
+            if abs(x - y) < 0.25 {
+                movementAnimationNorthEast()
+            } else if x > y {
+                movementAnimationEast()
+            } else {
+                movementAnimationNorth()
+            }
         } else {
             movementAnimationSouth()
         }
@@ -177,7 +191,7 @@ class Player: SKSpriteNode {
     
     func movementAnimationNorthEast() {
         
-        let animation = SKAction.animate(with: [.init(image: .playerNorthEastTexture0), .init(image: .playerNorthEastTexture0)], timePerFrame: 0.15)
+        let animation = SKAction.animate(with: [.init(image: .playerNorthEastTexture0), .init(image: .playerNorthEastTexture1)], timePerFrame: 0.15)
         
         let movementAnimation = SKAction.repeatForever(animation)
         
