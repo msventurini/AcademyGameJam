@@ -9,7 +9,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     @Published var score: Int = 0
 
     let settings: GameSettings = .init(
-        flower: .init(quantity: 2000, size: .init(width: 40, height: 40 * 0.8)),
+        flower: .init(quantity: 1000, size: .init(width: 40, height: 40 * 0.8)),
         map: .init(map: 200, tile: 25),
         tree: .init(size: .init(width: 100, height: 100)),
         player: .init(movementSpeed: 5)
@@ -54,5 +54,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
                 camera.position.y = player.position.y
             }
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let viewLocation = touches.first?.location(in: view) else { return }
+        
+        let sceneLocation = convertPoint(fromView: viewLocation)
+        print(nodes(at: sceneLocation).map(\.name))
     }
 }
