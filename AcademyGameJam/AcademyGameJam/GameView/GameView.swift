@@ -28,7 +28,7 @@ struct GameView: View {
                 
                 VStack {
                     HStack {
-                        Text("Score: \(scene.score)")
+                        Text("Score: \(Int(scene.score))")
                             .font(.title3)
                             .bold()
                             .foregroundStyle(.white)

@@ -7,15 +7,16 @@ import GameController
 class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     
     @Published var timer: Int = 300 // Tempo de jogo
-    @Published var score: Int = 0
+    @Published var score: Float = 0
     @Published var isScenePaused = false
     @Published var pollen: Float = 0
 
     let settings: GameSettings = .init(
-        flower: .init(quantity: 1000, size: .init(width: 40, height: 40 * 0.8), pointMultiplier: 10),
+        flower: .init(quantity: 1000, size: .init(width: 40, height: 40 * 0.8), pollenMultiplier: 10),
         map: .init(map: 200, tile: 25, tilePollenRange: 10..<200),
         tree: .init(size: .init(width: 100, height: 100)),
-        player: .init(movementSpeed: 5, pollenDisperseRate: 1.5)
+        player: .init(movementSpeed: 5, pollenDisperseRate: 1.5),
+        score: .init(basePoints: 1)
     )
     
     var virtualController: GCVirtualController? //Controllers
@@ -53,7 +54,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         Task{
             do {
                 try await GKLeaderboard.submitScore(
-                    self.score,
+                    Int(self.score),
                     context: 0,
                     player: GKLocalPlayer.local,
                     leaderboardIDs: ["finished10levels"]

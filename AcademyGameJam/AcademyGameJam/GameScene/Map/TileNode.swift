@@ -10,10 +10,10 @@ import SpriteKit
 
 extension MapNode {
     class TileNode: SKSpriteNode {
-        private let maxPollen: Float
-        private let goal = Tokens.green()
+        private let colorGoal = Tokens.green()
         
-        private var pollen: Float = 0
+        public let maxPollen: Float
+        public private(set) var pollen: Float = 0
         
         let coordinate: CGPoint
         
@@ -40,7 +40,7 @@ extension MapNode {
             pollen += quantity
             
             let progress = CGFloat(pollen/maxPollen)
-            color = color.interpolate(to: goal, progress: progress)
+            color = color.interpolate(to: colorGoal, progress: progress)
             
             return true
         }

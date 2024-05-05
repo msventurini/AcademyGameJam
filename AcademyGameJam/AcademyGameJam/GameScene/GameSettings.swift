@@ -12,6 +12,7 @@ struct GameSettings {
     let map: Map
     let tree: Tree
     let player: Player
+    let score: Score
     
     struct Map {
         let width: Int
@@ -30,7 +31,7 @@ struct GameSettings {
     struct Flower {
         let quantity: Int
         let size: CGSize
-        let pointMultiplier: Float
+        let pollenMultiplier: Float
     }
     
     struct Tree {
@@ -41,5 +42,9 @@ struct GameSettings {
     struct Player {
         let movementSpeed: CGFloat
         let pollenDisperseRate: Float
+    }
+    
+    struct Score {
+        let basePoints: Float
     }
 }
