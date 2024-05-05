@@ -28,11 +28,14 @@ extension GameScene {
         //MARK: - ADD MAP
         setupMap(center: center)
         
+        //MARK: - ADD TREES
+        setupTrees(center: center)
+        
         // MARK: - ADD FLOWERS
         setupFlowers()
         
         //MARK: - PLAYER
-        player = Player()
+        player = Player(movementSpeed: settings.player.movementSpeed)
         player?.position = CGPoint(x: size.width / 2, y: size.height / 2) //Center from screen
         
         if let playerNode = player {

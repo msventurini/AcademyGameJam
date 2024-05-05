@@ -25,8 +25,8 @@ extension GameScene {
         let subscription = publisher
         subscription
             .sink { [self] _ in
+                if self.timer < 1 { return }
                 self.timer -= 1
-                print("timer: \(timer)")
             }
             .store(in: &cancellables)
     }
