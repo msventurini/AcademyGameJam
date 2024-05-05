@@ -12,6 +12,8 @@ class Player: SKSpriteNode {
     // TODO: Why?   V
     var moveTimer: Timer? // Temporizador para controlar o movimento contínuo
     
+    weak var pollenDelegate: (any PollenDelegate)?
+    
     var playerDirection: CGVector = CGVector(dx: 0, dy: 0)
     var movementSpeed: CGFloat // Velocidade de movimento do jogador
     
@@ -39,6 +41,8 @@ class Player: SKSpriteNode {
             if let node = node as? SKSpriteNode {
                 node.position.x += x * self.movementSpeed
                 node.position.y += y * self.movementSpeed
+                
+                self.pollenDelegate?.dispersePollen(at: node.position)
             }
         }
         
