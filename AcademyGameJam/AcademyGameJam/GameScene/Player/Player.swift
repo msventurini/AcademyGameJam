@@ -20,16 +20,22 @@ class Player: SKSpriteNode {
     init(movementSpeed: CGFloat) {
         let playerSize = CGSize(width: 10, height: 10)
         let playerColor = UIColor.yellow
-        
         self.movementSpeed = movementSpeed
-        
         super.init(texture: nil, color: playerColor, size: playerSize)
         
-        self.physicsBody = SKPhysicsBody(rectangleOf: playerSize)
+        let pb = SKPhysicsBody(circleOfRadius: playerSize.width / 2)
         
-        self.physicsBody?.categoryBitMask = PhysicsCategory.player
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.interactable
-        self.physicsBody?.collisionBitMask = PhysicsCategory.player
+        pb.isDynamic = true
+        pb.affectedByGravity = false
+        pb.mass = 0.1
+        pb.friction = 1.0
+        pb.allowsRotation = false
+
+        pb.categoryBitMask = PhysicsCategory.player
+        pb.contactTestBitMask = PhysicsCategory.interactable
+        pb.collisionBitMask = PhysicsCategory.player
+        
+        self.physicsBody = pb
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,10 +43,17 @@ class Player: SKSpriteNode {
     }
     
     func move(x: CGFloat, y: CGFloat) {
-        let playerMovementAction = SKAction.customAction(withDuration: 1) { node, eleapsedTime in
+        
+        let playerMovementAction = SKAction.customAction(withDuration: 1.0) { node, eleapsedTime in
+            
+//            if let playerNode = self.player {
+            
             if let node = node as? SKSpriteNode {
                 node.position.x += x * self.movementSpeed
                 node.position.y += y * self.movementSpeed
+                
+                
+                node.physicsBody?.velocity = CGVector(dx: x * 100, dy: y * 100)
                 
                 self.pollenDelegate?.dispersePollen(at: node.position)
             }

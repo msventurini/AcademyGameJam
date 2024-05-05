@@ -19,6 +19,7 @@ extension GameScene {
         //MARK: - SCENE SETUP
         self.backgroundColor = UIColor.clear
         self.scaleMode = .aspectFill
+        
 
         let center = CGPoint.init(x: view.bounds.midX, y: view.bounds.midY)
         
@@ -27,6 +28,7 @@ extension GameScene {
         
         //MARK: - ADD MAP
         setupMap(center: center)
+        addBoundaries()
         
         //MARK: - ADD TREES
         setupTrees(center: center)
