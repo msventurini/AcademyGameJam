@@ -17,8 +17,17 @@ class Player: SKSpriteNode {
     init() {
         let playerSize = CGSize(width: 10, height: 10)
         let playerColor = UIColor.yellow
-        
         super.init(texture: nil, color: playerColor, size: playerSize)
+        
+        let pb = SKPhysicsBody(circleOfRadius: 10)
+        
+        pb.isDynamic = true
+        pb.affectedByGravity = false
+        pb.mass = 0.1
+        pb.friction = 1.0
+        
+        self.physicsBody = pb
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,18 +37,17 @@ class Player: SKSpriteNode {
     func move(x: CGFloat, y: CGFloat) {
         
         let playerMovementAction = SKAction.customAction(withDuration: 0.1) { node, eleapsedTime in
-            //
+            
 //            if let playerNode = self.player {
-            
-            
             
             if let node = node as? SKSpriteNode {
                 
                 
+                node.physicsBody?.velocity = CGVector(dx: x * 1000, dy: y * 1000)
                 
-                node.position.x += x * 10
-                node.position.y += y * 10
                 
+//                node.position.x += x * 10
+//                node.position.y += y * 10
                 
             }
             
