@@ -49,7 +49,9 @@ class Player: SKSpriteNode {
         self.physicsBody = pb
         
 //        movementAnimationSouth()
-        movementAnimationSouthWest()
+//        movementAnimationSouthWest()
+//        movementAnimationWest()
+        movementAnimationEast()
         
     }
     
@@ -114,7 +116,7 @@ class Player: SKSpriteNode {
     
     func movementAnimationWest() {
         
-        let animation = SKAction.animate(with: [.init(image: .playerSouthTexture0), .init(image: .playerSouthTexture1)], timePerFrame: 0.15)
+        let animation = SKAction.animate(with: [.init(image: .playerWestTexture0), .init(image: .playerWestTexture1)], timePerFrame: 0.15)
         
         let movementAnimation = SKAction.repeatForever(animation)
         
@@ -124,7 +126,7 @@ class Player: SKSpriteNode {
     
     func movementAnimationEast() {
         
-        let animation = SKAction.animate(with: [.init(image: .playerSouthTexture0), .init(image: .playerSouthTexture1)], timePerFrame: 0.15)
+        let animation = SKAction.animate(with: [.init(image: .playerEastTexture0), .init(image: .playerEastTexture1)], timePerFrame: 0.15)
         
         let movementAnimation = SKAction.repeatForever(animation)
         
