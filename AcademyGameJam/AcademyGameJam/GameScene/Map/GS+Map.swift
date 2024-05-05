@@ -15,8 +15,6 @@ extension GameScene {
                        height: settings.map.height)
         )
         
-        grid.position = .init(x: center.x - grid.width/2, y: center.y - grid.height/2)
-        
         let trueCenter = CGPoint(x: center.x - grid.width/2, y: center.y - grid.height/2)
         grid.position = trueCenter
         
