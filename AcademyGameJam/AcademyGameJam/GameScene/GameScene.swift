@@ -7,6 +7,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     
     @Published var timer: Int = 300 // Tempo de jogo
     @Published var score: Int = 0
+    @Published var pollen: Float = 0
 
     let settings: GameSettings = .init(
         flower: .init(quantity: 1000, size: .init(width: 40, height: 40 * 0.8), pointMultiplier: 2),

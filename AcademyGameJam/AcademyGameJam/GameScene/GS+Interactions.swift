@@ -10,7 +10,8 @@ import SpriteKit
 
 extension GameScene {
     internal func enableInteraction(with node: SKNode, highlightSize: CGSize) {
-         
+        if let interactable = node as? Interactable, !interactable.interactionEnabled { return }
+        
         interactable = node
         // TODO: Enable the interaction button
         
@@ -37,9 +38,10 @@ extension GameScene {
             interactable = nil
         }
         
-        node.childNode(withName: "outline")?.run(.scale(to: 0, duration: 0.15)) {
-            node.childNode(withName: "outline")?.removeFromParent()
-        }
+        node.childNode(withName: "outline")?
+            .run(.scale(to: 0, duration: 0.15)) {
+                node.childNode(withName: "outline")?.removeFromParent()
+            }
         
         // TODO: Disable the interaction button
     }
@@ -47,7 +49,7 @@ extension GameScene {
     internal func interact() {
         guard let interactable else { return }
         
-        if let interactableNode = interactable as? InteractableNode, !interactableNode.hasBeenInteracted {
+        if let interactableNode = interactable as? Interactable, interactableNode.interactionEnabled {
             addProgressBar(to: interactable)
         }
     }
@@ -59,8 +61,11 @@ extension GameScene {
             progressBar.removeFromParent()
         }
     }
-    
-    private func addProgressBar(to node: SKNode) {
+}
+
+
+extension GameScene {
+    fileprivate func addProgressBar(to node: SKNode) {
         let size: CGSize
         if let sizeable = node as? Sizeable {
             size = sizeable.size
@@ -80,12 +85,8 @@ extension GameScene {
                 .scaleX(to: 1, duration: 1),
                 .group([
                     .run {
-                        if var interactable = node as? InteractableNode {
-                            interactable.hasBeenInteracted = true
-                        }
-                        
-                        if let pointGiver = node as? PointGiver {
-                            self.score += pointGiver.points
+                        if let interactable = node as? Interactable {
+                            interactable.interact()
                         }
                         
                         self.disableInteraction(of: node)

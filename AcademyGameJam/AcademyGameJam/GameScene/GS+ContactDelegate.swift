@@ -23,7 +23,7 @@ extension GameScene {
         //        }
         
         if contactMask == (PhysicsCategory.interactable | PhysicsCategory.player) {
-            guard let interactable = (bodyA.node as? InteractableNode) ?? (bodyB.node as? InteractableNode),
+            guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable),
                   let node = (interactable as? SKNode) else { return }
             
             let size: CGSize
@@ -45,7 +45,7 @@ extension GameScene {
         let contactMask = bodyA.categoryBitMask | bodyB.categoryBitMask
         
         if contactMask == (PhysicsCategory.interactable | PhysicsCategory.player) {
-            guard let interactable = (bodyA.node as? InteractableNode) ?? (bodyB.node as? InteractableNode),
+            guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable),
                   let node = (interactable as? SKNode) else { return }
             
             disableInteraction(of: node)

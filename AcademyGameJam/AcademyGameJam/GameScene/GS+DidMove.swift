@@ -36,6 +36,7 @@ extension GameScene {
         
         //MARK: - PLAYER
         player = Player(movementSpeed: settings.player.movementSpeed)
+        player?.pollenDelegate = self
         player?.position = CGPoint(x: size.width / 2, y: size.height / 2) //Center from screen
         
         if let playerNode = player {

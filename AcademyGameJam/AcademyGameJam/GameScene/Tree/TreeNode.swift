@@ -8,9 +8,9 @@
 import Foundation
 import SpriteKit
 
-class TreeNode: SKSpriteNode, InteractableNode, PointGiver {
-    let points: Int = 300
-    var hasBeenInteracted: Bool = false
+class TreeNode: SKSpriteNode {
+    var interactionEnabled: Bool = false
+    weak var pollenDelegate: (any PollenDelegate)?
     
     init(size: CGSize) {
         super.init(texture: Textures.flower, color: .clear, size: size)
@@ -27,5 +27,12 @@ class TreeNode: SKSpriteNode, InteractableNode, PointGiver {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension TreeNode: Interactable {
+    func interact() {
+        self.interactionEnabled = false
+        pollenDelegate?.increasePollen(300)
     }
 }
