@@ -9,25 +9,33 @@ import Foundation
 import SpriteKit
 
 class Player: SKSpriteNode {
+    // TODO: Why?   V
     var moveTimer: Timer? // Temporizador para controlar o movimento contínuo
     
-    var playerDirection: CGVector = CGVector(dx: 0, dy: 0)
-    var movementSpeed: CGFloat = 5.0 // Velocidade de movimento do jogador
+    weak var pollenDelegate: (any PollenDelegate)?
     
-    init() {
+    var playerDirection: CGVector = CGVector(dx: 0, dy: 0)
+    var movementSpeed: CGFloat // Velocidade de movimento do jogador
+    
+    init(movementSpeed: CGFloat) {
         let playerSize = CGSize(width: 10, height: 10)
         let playerColor = UIColor.yellow
+        self.movementSpeed = movementSpeed
         super.init(texture: nil, color: playerColor, size: playerSize)
         
-        let pb = SKPhysicsBody(circleOfRadius: 10)
+        let pb = SKPhysicsBody(circleOfRadius: playerSize.width / 2)
         
         pb.isDynamic = true
         pb.affectedByGravity = false
         pb.mass = 0.1
         pb.friction = 1.0
+        pb.allowsRotation = false
+
+        pb.categoryBitMask = PhysicsCategory.player
+        pb.contactTestBitMask = PhysicsCategory.interactable
+        pb.collisionBitMask = PhysicsCategory.player
         
         self.physicsBody = pb
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,48 +44,29 @@ class Player: SKSpriteNode {
     
     func move(x: CGFloat, y: CGFloat) {
         
-        let playerMovementAction = SKAction.customAction(withDuration: 0.1) { node, eleapsedTime in
+        let playerMovementAction = SKAction.customAction(withDuration: 1.0) { node, eleapsedTime in
             
 //            if let playerNode = self.player {
             
             if let node = node as? SKSpriteNode {
+                node.position.x += x * self.movementSpeed
+                node.position.y += y * self.movementSpeed
                 
                 
-                node.physicsBody?.velocity = CGVector(dx: x * 1000, dy: y * 1000)
+                node.physicsBody?.velocity = CGVector(dx: x * 100, dy: y * 100)
                 
-                
-//                node.position.x += x * 10
-//                node.position.y += y * 10
-                
+                self.pollenDelegate?.dispersePollen(at: node.position)
             }
-            
-//                let currentXSpeed = self.movementSpeed * direction.dx
-//                let currentYSpeed = self.movementSpeed * direction.dy
-//                
-//                playerNode.move(x: T##CGFloat, y: T##CGFloat)
-                
-                //                let playerMovementAction = SKAction.move(by: direction, duration: 0.1)
-                //                print(direction)
-                //                let runningRigthConstantAnimation = SKAction.repeatForever(playerMovementAction)
-                //                playerNode.run(runningRigthConstantAnimation, withKey: "playerWalk")
-                
-//            }
         }
         
         let movementConstantAnimation = SKAction.repeatForever(playerMovementAction)
 
-        
         run(movementConstantAnimation, withKey: "walk")
-
-        
-        
-          // Move player based on controller input
-//          self.position.x += x * movementSpeed // Multiplica a entrada pelo movimentoSpeed
-//          self.position.y += y * movementSpeed // Multiplica a entrada pelo movimentoSpeed
-        
-        
-        
-        
-        
       }
+    
+    func movementCancel() {
+        if action(forKey: "walk") != nil {
+            removeAction(forKey: "walk")
+        }
+    }
 }

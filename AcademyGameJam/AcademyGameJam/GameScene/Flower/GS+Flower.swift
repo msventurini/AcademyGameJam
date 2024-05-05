@@ -13,23 +13,37 @@ extension GameScene {
         let range = (x: settings.flower.size.width/2  + bounds.minX..<bounds.maxX - settings.flower.size.width/2,
                      y: settings.flower.size.height/2 + bounds.minY..<bounds.maxY - settings.flower.size.height/2)
         
+        var instantiatedFlowers = [SKNode]()
+        let initialPosition = CGPoint(x: bounds.maxX * 1.5, y: bounds.maxY * 1.5)
         for _ in 0..<settings.flower.quantity {
-            let flower = FlowerNode(size: settings.flower.size)
+            let flower = FlowerNode(size: settings.flower.size, pointsMultiplier: settings.flower.pointMultiplier)
+            flower.pollenDelegate = self
+            flower.position = initialPosition
             
-            var point: CGPoint = .zero
+            self.addChild(flower)
+            instantiatedFlowers.append(flower)
+        }
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            var positionatedFlowers = [SKNode]()
             
-            while true {
-                let x = CGFloat.random(in: range.x)
-                let y = CGFloat.random(in: range.y)
-                
-                point = CGPoint(x: x, y: y)
-                let nodes = self.nodes(at: point)
-                
-                if !nodes.contains(where: { $0.name == "Flower" }) { break }
+            for flower in instantiatedFlowers {
+                var point: CGPoint
+                repeat {
+                    point = CGPoint(
+                        x: CGFloat.random(in: range.x),
+                        y: CGFloat.random(in: range.y)
+                    )
+                    
+                    flower.position = point
+                    
+                    if positionatedFlowers.allSatisfy({ !$0.intersects(flower) }) {
+                        positionatedFlowers.append(flower)
+                        break
+                    }
+                }
+                while true
             }
-            
-            flower.position = point
-            addChild(flower)
         }
     }
 }

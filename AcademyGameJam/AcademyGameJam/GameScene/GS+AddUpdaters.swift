@@ -9,7 +9,6 @@ import Foundation
 import SpriteKit
 
 extension GameScene {
-    
     func addUpdaters() {
         addTimerUpdater()
     }
@@ -19,16 +18,16 @@ extension GameScene {
     }
     
     private func addTimerUpdater() {
-        let publisher = Timer.publish(every: 1.0, on: .main, in: .default)
+        let publisher = Timer
+            .publish(every: 1.0, on: .main, in: .default)
             .autoconnect()
-        let subscription = publisher
         
+        let subscription = publisher
         subscription
             .sink { [self] _ in
-                
-                self.timer += 1
-                print("timer: \(timer)")
-                
-            }.store(in: &cancellables)
+                if self.timer < 1 { return }
+                self.timer -= 1
+            }
+            .store(in: &cancellables)
     }
 }

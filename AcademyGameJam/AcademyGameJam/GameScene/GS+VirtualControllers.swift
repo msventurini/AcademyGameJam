@@ -15,46 +15,46 @@ extension GameScene {
         ]
         
         let controller = GCVirtualController(configuration: controllerConfig)
+        
         controller.connect()
         
         virtualController = controller
+        
+        actionVirtualButtons()
     }
     
     func actionVirtualButtons() {
-        guard let controller = GCController.controllers().first else { return }
-        
-        controller.extendedGamepad?.leftThumbstick.valueChangedHandler = { (dpad, xValue, yValue) in
+        if let controller = virtualController?.controller {
+            controller.extendedGamepad?.leftThumbstick.valueChangedHandler = { (dpad, xValue, yValue) in
+                self.player?.movementCancel()
+                self.playerMovement(direction: CGVector(dx: CGFloat(xValue), dy: CGFloat(yValue)))
+                
+                self.cancelInteraction()
+            }
             
-            self.playerMovement(direction: CGVector(dx: CGFloat(xValue), dy: CGFloat(yValue)))
-        }
-        
-        controller.extendedGamepad?.buttonA.pressedChangedHandler = { button, value, pressed in
-            if pressed {
-                self.buttonAPressed()
+            controller.extendedGamepad?.buttonA.pressedChangedHandler = { button, value, pressed in
+                if pressed {
+                    self.interact()
+                } else {
+                    self.cancelInteraction()
+                }
+            }
+            
+            controller.extendedGamepad?.buttonB.pressedChangedHandler = { button, value, pressed in
+                if pressed {
+                    print("B")
+                    
+                    self.cancelInteraction()
+                }
             }
         }
-        
-        controller.extendedGamepad?.buttonB.pressedChangedHandler = { button, value, pressed in
-            if pressed {
-                self.buttonBPressed()
-            }
-        }
-        
-    }
-    
-    func buttonAPressed() {
-        print("A")
-    }
-    
-    func buttonBPressed() {
-        print("B")
     }
     
     func playerMovement(direction: CGVector) {
         self.player?.move(x: direction.dx, y: direction.dy)
     }
-        
-        
+    
+    
     
     
 }

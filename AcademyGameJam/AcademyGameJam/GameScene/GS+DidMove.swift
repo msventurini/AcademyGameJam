@@ -27,14 +27,18 @@ extension GameScene {
         setupVirtualController()
         
         //MARK: - ADD MAP
-        setupMap(center: .init(x: view.bounds.midX, y: view.bounds.midY))
+        setupMap(center: center)
         addBoundaries()
+        
+        //MARK: - ADD TREES
+        setupTrees(center: center)
         
         // MARK: - ADD FLOWERS
         setupFlowers()
         
         //MARK: - PLAYER
-        player = Player()
+        player = Player(movementSpeed: settings.player.movementSpeed)
+        player?.pollenDelegate = self
         player?.position = CGPoint(x: size.width / 2, y: size.height / 2) //Center from screen
         
         if let playerNode = player {
@@ -47,5 +51,8 @@ extension GameScene {
             self.camera = camera // Define a câmera da cena como a câmera que acabamos de criar
             addChild(camera)
         }
+        
+        cancelUpdaters()
+        addUpdaters()
     }
 }
