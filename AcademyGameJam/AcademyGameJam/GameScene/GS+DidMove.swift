@@ -48,5 +48,8 @@ extension GameScene {
             self.camera = camera // Define a câmera da cena como a câmera que acabamos de criar
             addChild(camera)
         }
+        
+        cancelUpdaters()
+        addUpdaters()
     }
 }
