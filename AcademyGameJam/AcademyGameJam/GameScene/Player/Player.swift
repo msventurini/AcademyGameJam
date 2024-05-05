@@ -42,7 +42,9 @@ class Player: SKSpriteNode {
                 node.position.x += x * self.movementSpeed
                 node.position.y += y * self.movementSpeed
                 
-                self.pollenDelegate?.dispersePollen(at: node.position)
+                if x != 0 || y != 0 {
+                    self.pollenDelegate?.dispersePollen(at: node.position)
+                }
             }
         }
         

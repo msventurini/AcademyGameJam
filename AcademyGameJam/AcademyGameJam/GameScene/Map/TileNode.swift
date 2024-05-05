@@ -1,0 +1,48 @@
+//
+//  TileNode.swift
+//  AcademyGameJam
+//
+//  Created by Gabriel Medeiros Martins on 05/05/24.
+//
+
+import Foundation
+import SpriteKit
+
+extension MapNode {
+    class TileNode: SKSpriteNode {
+        private let maxPollen: Float
+        private let goal = Tokens.green()
+        
+        private var pollen: Float = 0
+        
+        let coordinate: CGPoint
+        
+        init(coordinate: CGPoint, size: CGSize, pollenRange: Range<Float>) {
+            self.maxPollen = .random(in: pollenRange)
+            self.coordinate = coordinate
+            
+            super.init(texture: Textures.backgroundTile, color: .clear, size: size)
+            
+            self.zPosition = -1
+            self.anchorPoint = .zero
+            self.colorBlendFactor = 1.0
+            self.color = Tokens.yellow()
+            self.name = "MapTile"
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        func polinate(_ quantity: Float) -> Bool {
+            if pollen + quantity >= maxPollen { return false }
+            
+            pollen += quantity
+            
+            let progress = CGFloat(pollen/maxPollen)
+            color = color.interpolate(to: goal, progress: progress)
+            
+            return true
+        }
+    }
+}

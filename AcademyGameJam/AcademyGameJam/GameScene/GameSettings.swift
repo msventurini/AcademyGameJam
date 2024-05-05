@@ -17,11 +17,13 @@ struct GameSettings {
         let width: Int
         let height: Int
         let tileSize: CGSize
+        let tilePollenRange: Range<Float>
         
-        init(map: Int, tile: Double) {
+        init(map: Int, tile: Double, tilePollenRange: Range<Float>) {
             self.width = map
             self.height = map
             self.tileSize = .init(width: tile, height: tile)
+            self.tilePollenRange = tilePollenRange
         }
     }
     
@@ -38,5 +40,6 @@ struct GameSettings {
     
     struct Player {
         let movementSpeed: CGFloat
+        let pollenDisperseRate: Float
     }
 }

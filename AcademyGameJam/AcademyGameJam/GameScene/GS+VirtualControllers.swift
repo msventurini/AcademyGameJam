@@ -53,8 +53,4 @@ extension GameScene {
     func playerMovement(direction: CGVector) {
         self.player?.move(x: direction.dx, y: direction.dy)
     }
-    
-    
-    
-    
 }
