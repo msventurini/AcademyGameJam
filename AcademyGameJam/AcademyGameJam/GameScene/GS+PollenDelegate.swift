@@ -10,11 +10,15 @@ import SpriteKit
 
 extension GameScene: PollenDelegate {
     internal func increasePollen(_ quantity: Float) {
-        pollen += quantity
+        DispatchQueue.main.async {
+            self.pollen += quantity
+        }
     }
         
     internal func decreasePollen(_ quantity: Float) {
-        pollen -= quantity
+        DispatchQueue.main.async {
+            self.pollen -= quantity
+        }
     }
     
     internal func dispersePollen(at position: CGPoint) {
@@ -22,6 +26,7 @@ extension GameScene: PollenDelegate {
         
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
             guard let self else { return }
+            
             for node in nodes {
                 guard let centralTile = node as? MapNode.TileNode else { continue }
                 
@@ -49,6 +54,7 @@ extension GameScene: PollenDelegate {
                         increaseScore(by: tile.pollen/tile.maxPollen)
                     }
                 }
+                
             }
         }
     }

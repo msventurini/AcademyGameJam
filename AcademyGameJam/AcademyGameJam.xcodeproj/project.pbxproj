@@ -13,6 +13,7 @@
 		1C032EBE2BE6A38F00A9775B /* Layers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EBD2BE6A38F00A9775B /* Layers.swift */; };
 		1C032EC02BE6A39700A9775B /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EBF2BE6A39700A9775B /* Textures.swift */; };
 		1C032EC22BE6A3AA00A9775B /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EC12BE6A3AA00A9775B /* PhysicsCategory.swift */; };
+		1CA4FD442BE7FF77001FF87E /* GS+AddBoundaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4FD432BE7FF77001FF87E /* GS+AddBoundaries.swift */; };
 		23B0DBEF2BE730140089CFAF /* GameCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B0DBEE2BE730140089CFAF /* GameCenterView.swift */; };
 		23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */; };
 		318A81FB2BE6FE61006A6E32 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A81FA2BE6FE61006A6E32 /* TreeNode.swift */; };
@@ -49,6 +50,7 @@
 		1C032EBD2BE6A38F00A9775B /* Layers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layers.swift; sourceTree = "<group>"; };
 		1C032EBF2BE6A39700A9775B /* Textures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
 		1C032EC12BE6A3AA00A9775B /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		1CA4FD432BE7FF77001FF87E /* GS+AddBoundaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+AddBoundaries.swift"; sourceTree = "<group>"; };
 		23B0DBEE2BE730140089CFAF /* GameCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterView.swift; sourceTree = "<group>"; };
 		23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenu.swift; sourceTree = "<group>"; };
 		23B9A0FF2BE71F0000F4E5A0 /* AcademyGameJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AcademyGameJam.entitlements; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				1C032EBA2BE6A33100A9775B /* GS+DidMove.swift */,
 				1C032EB62BE6A30500A9775B /* GS+AddUpdaters.swift */,
 				1C032EB82BE6A31F00A9775B /* GS+ContactDelegate.swift */,
+				1CA4FD432BE7FF77001FF87E /* GS+AddBoundaries.swift */,
 				A72134F62BE7694B003362B1 /* GS+PollenDelegate.swift */,
 				7B38A18F2BE5C36200B4A99C /* GS+VirtualControllers.swift */,
 				A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */,
@@ -326,6 +329,7 @@
 				A79BCD932BE8172200C2B4ED /* GS+Score.swift in Sources */,
 				23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenu.swift in Sources */,
 				A7F53B642BE5DD0400BC64D7 /* MapNode.swift in Sources */,
+				1CA4FD442BE7FF77001FF87E /* GS+AddBoundaries.swift in Sources */,
 				7B38A1992BE5C36200B4A99C /* GameScene.swift in Sources */,
 				A7F53B672BE5E43F00BC64D7 /* Tokens.swift in Sources */,
 				A72134F72BE7694B003362B1 /* GS+PollenDelegate.swift in Sources */,
@@ -489,7 +493,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyGameJam/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = V9T7U9428G;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TPM3CS87N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -527,7 +531,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyGameJam/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = V9T7U9428G;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TPM3CS87N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
