@@ -13,9 +13,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
 
     let settings: GameSettings = .init(
         flower: .init(quantity: 1000, size: .init(width: 40, height: 40 * 0.8), pollenMultiplier: 10),
-        map: .init(map: 200, tile: 25, tilePollenRange: 100..<500),
+        map: .init(map: 200, tile: 25, tilePollenRange: 50..<500),
         tree: .init(quantity: 4, size: .init(width: 100, height: 100), numberOfFlowersAround: 10, treeRadius: 100),
-        player: .init(movementSpeed: 5, pollenDisperseRate: 0.5),
+        player: .init(movementSpeed: 5, pollenDisperseRate: 1),
         score: .init(basePoints: 0.5)
     )
     
