@@ -3,9 +3,6 @@
 //
 //  Created by Filipe Ilunga on 04/05/24.
 //
-
-import SwiftUI
-import GameKit
 import SwiftUI
 import GameKit
 
@@ -14,71 +11,30 @@ struct PauseMenu: View {
     @State var showSettings: Bool = false
     
     var body: some View {
-        VStack {
-            
-            Button {
+        NavigationStack {
+            VStack {
+                CustomButton(label: "Restart", iconName: "arrow.counterclockwise.circle.fill")
+                CustomButton(label: "Ranking", iconName: "list.number").onTapGesture {
+                    showRanking.toggle()
+                }
+                                
+                CustomButton(label: "Settings", iconName: "gearshape.fill")
                 
-            } label: {
-                HStack {
-                    Image(systemName: "arrow.counterclockwise.circle.fill")
-                        .font(.title)
-                        .bold()
-                    Text("Restart")
-                        .font(.title3)
+                NavigationLink(destination: CreditsView()) {
+                   
+                    CustomButton(label: "Credits", iconName: "list.star")
                 }
-                .foregroundStyle(.white)
-                .padding(5)
-                .padding(.horizontal, 10)
-                .background {
-                    RoundedRectangle(cornerRadius: 20)
-                        .foregroundStyle(.ultraThinMaterial)
-                        .shadow(color: .black.opacity(0.45), radius: 5, y: 5)
-                }
+                .padding(.top, 20)
+                
             }
-            
-            Button {
-                showRanking.toggle()
-            } label: {
-                HStack {
-                    Image(systemName: "list.number")
-                        .font(.title)
-                        .bold()
-                    Text("Ranking")
-                        .font(.title3)
-                }
-                .foregroundStyle(.white)
-                .padding(5)
-                .padding(.horizontal, 10)
-                .background {
-                    RoundedRectangle(cornerRadius: 20)
-                        .foregroundStyle(.ultraThinMaterial)
-                        .shadow(color: .black.opacity(0.45), radius: 5, y: 5)
-                }
-            }
-            
-            NavigationLink {
-                Text("ola")
-            } label: {
-                HStack {
-                    Image(systemName: "gearshape.fill")
-                        .font(.title)
-                        .bold()
-                    Text("Settings")
-                        .font(.title3)
-                }
-                .foregroundStyle(.white)
-                .padding(5)
-                .padding(.horizontal, 10)
-                .background {
-                    RoundedRectangle(cornerRadius: 20)
-                        .foregroundStyle(.ultraThinMaterial)
-                        .shadow(color: .black.opacity(0.45), radius: 5, y: 5)
-                }
-            }
+            .padding(.horizontal, 80)
+            .padding(.vertical, 20)
+            .background(Color.white)
+            .cornerRadius(10)
         }
-        .frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.5)
-        .background(Color.green)
+        .frame(maxWidth: UIScreen.main.bounds.width * 0.5, maxHeight: UIScreen.main.bounds.height * 0.80)
         .cornerRadius(10)
+
         .onAppear {
             DispatchQueue.main.async {
                 if !GKLocalPlayer.local.isAuthenticated {

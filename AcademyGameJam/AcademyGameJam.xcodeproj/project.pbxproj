@@ -16,6 +16,8 @@
 		1CA4FD442BE7FF77001FF87E /* GS+AddBoundaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4FD432BE7FF77001FF87E /* GS+AddBoundaries.swift */; };
 		23B0DBEF2BE730140089CFAF /* GameCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B0DBEE2BE730140089CFAF /* GameCenterView.swift */; };
 		23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */; };
+		23C1158D2BE8544000922780 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1158C2BE8544000922780 /* CustomButton.swift */; };
+		23C1158F2BE8545A00922780 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1158E2BE8545A00922780 /* CreditsView.swift */; };
 		318A81FB2BE6FE61006A6E32 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A81FA2BE6FE61006A6E32 /* TreeNode.swift */; };
 		318A81FD2BE6FFA8006A6E32 /* GS+Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A81FC2BE6FFA8006A6E32 /* GS+Tree.swift */; };
 		7B38A17B2BE5C33D00B4A99C /* AcademyGameJamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A17A2BE5C33D00B4A99C /* AcademyGameJamApp.swift */; };
@@ -54,6 +56,8 @@
 		23B0DBEE2BE730140089CFAF /* GameCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterView.swift; sourceTree = "<group>"; };
 		23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenu.swift; sourceTree = "<group>"; };
 		23B9A0FF2BE71F0000F4E5A0 /* AcademyGameJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AcademyGameJam.entitlements; sourceTree = "<group>"; };
+		23C1158C2BE8544000922780 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		23C1158E2BE8545A00922780 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		318A81FA2BE6FE61006A6E32 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		318A81FC2BE6FFA8006A6E32 /* GS+Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Tree.swift"; sourceTree = "<group>"; };
 		7B38A1772BE5C33D00B4A99C /* AcademyGameJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcademyGameJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +220,8 @@
 			children = (
 				7B38A18D2BE5C36200B4A99C /* GameView.swift */,
 				23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */,
+				23C1158C2BE8544000922780 /* CustomButton.swift */,
+				23C1158E2BE8545A00922780 /* CreditsView.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -354,6 +360,8 @@
 				7B38A1962BE5C36200B4A99C /* GameView.swift in Sources */,
 				318A81FD2BE6FFA8006A6E32 /* GS+Tree.swift in Sources */,
 				23B0DBEF2BE730140089CFAF /* GameCenterView.swift in Sources */,
+				23C1158F2BE8545A00922780 /* CreditsView.swift in Sources */,
+				23C1158D2BE8544000922780 /* CustomButton.swift in Sources */,
 				1C032EB92BE6A31F00A9775B /* GS+ContactDelegate.swift in Sources */,
 				1C032EC22BE6A3AA00A9775B /* PhysicsCategory.swift in Sources */,
 				A75A14E12BE6FFD800033D5C /* GS+Interactions.swift in Sources */,
@@ -491,12 +499,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyGameJam/Preview Content\"";
 				DEVELOPMENT_TEAM = V9T7U9428G;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TPM3CS87N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FlowerHive;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.adventure-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -529,12 +538,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyGameJam/Preview Content\"";
 				DEVELOPMENT_TEAM = V9T7U9428G;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TPM3CS87N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FlowerHive;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.adventure-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
