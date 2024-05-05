@@ -23,6 +23,7 @@
 		7B38A1962BE5C36200B4A99C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A18D2BE5C36200B4A99C /* GameView.swift */; };
 		7B38A1982BE5C36200B4A99C /* GS+VirtualControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A18F2BE5C36200B4A99C /* GS+VirtualControllers.swift */; };
 		7B38A1992BE5C36200B4A99C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A1902BE5C36200B4A99C /* GameScene.swift */; };
+		A72134EC2BE7490D003362B1 /* ProgressBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72134EB2BE7490D003362B1 /* ProgressBarNode.swift */; };
 		A75A14E12BE6FFD800033D5C /* GS+Interactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75A14E02BE6FFD800033D5C /* GS+Interactable.swift */; };
 		A7F53B642BE5DD0400BC64D7 /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B632BE5DD0400BC64D7 /* MapNode.swift */; };
 		A7F53B672BE5E43F00BC64D7 /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B662BE5E43F00BC64D7 /* Tokens.swift */; };
@@ -50,6 +51,7 @@
 		7B38A18D2BE5C36200B4A99C /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		7B38A18F2BE5C36200B4A99C /* GS+VirtualControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GS+VirtualControllers.swift"; sourceTree = "<group>"; };
 		7B38A1902BE5C36200B4A99C /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		A72134EB2BE7490D003362B1 /* ProgressBarNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarNode.swift; sourceTree = "<group>"; };
 		A75A14E02BE6FFD800033D5C /* GS+Interactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Interactable.swift"; sourceTree = "<group>"; };
 		A7F53B632BE5DD0400BC64D7 /* MapNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNode.swift; sourceTree = "<group>"; };
 		A7F53B662BE5E43F00BC64D7 /* Tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		1C032EBC2BE6A34500A9775B /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				A72134EA2BE74900003362B1 /* Nodes */,
 				1C032EBD2BE6A38F00A9775B /* Layers.swift */,
 				1C032EBF2BE6A39700A9775B /* Textures.swift */,
 				1C032EC12BE6A3AA00A9775B /* PhysicsCategory.swift */,
@@ -152,6 +155,14 @@
 				1C032EBC2BE6A34500A9775B /* Misc */,
 			);
 			path = GameScene;
+			sourceTree = "<group>";
+		};
+		A72134EA2BE74900003362B1 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				A72134EB2BE7490D003362B1 /* ProgressBarNode.swift */,
+			);
+			path = Nodes;
 			sourceTree = "<group>";
 		};
 		A75A14DF2BE6D1AC00033D5C /* GameView */ = {
@@ -268,6 +279,7 @@
 				7B38A17B2BE5C33D00B4A99C /* AcademyGameJamApp.swift in Sources */,
 				7B38A1942BE5C36200B4A99C /* Player.swift in Sources */,
 				1C032EB72BE6A30500A9775B /* GS+AddUpdaters.swift in Sources */,
+				A72134EC2BE7490D003362B1 /* ProgressBarNode.swift in Sources */,
 				7B38A1982BE5C36200B4A99C /* GS+VirtualControllers.swift in Sources */,
 				1C032EBE2BE6A38F00A9775B /* Layers.swift in Sources */,
 				1C032EBB2BE6A33100A9775B /* GS+DidMove.swift in Sources */,
