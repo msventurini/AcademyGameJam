@@ -149,7 +149,6 @@
 				A75A14DF2BE6D1AC00033D5C /* GameView */,
 				7B38A1912BE5C36200B4A99C /* GameScene */,
 				A7F53B652BE5E43100BC64D7 /* Design */,
-				A79BCD8F2BE7F4D400C2B4ED /* Extensions */,
 				7B38A1802BE5C33E00B4A99C /* Preview Content */,
 			);
 			path = AcademyGameJam;
@@ -158,6 +157,7 @@
 		7B38A1802BE5C33E00B4A99C /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				A79BCD8F2BE7F4D400C2B4ED /* Extensions */,
 				7B38A1812BE5C33E00B4A99C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -497,7 +497,6 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyGameJam/Preview Content\"";
-				DEVELOPMENT_TEAM = R5UC247K67;
 				DEVELOPMENT_TEAM = V9T7U9428G;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TPM3CS87N5;
 				ENABLE_PREVIEWS = YES;
@@ -536,7 +535,6 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyGameJam/Preview Content\"";
-				DEVELOPMENT_TEAM = R5UC247K67;
 				DEVELOPMENT_TEAM = V9T7U9428G;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TPM3CS87N5;
 				ENABLE_PREVIEWS = YES;

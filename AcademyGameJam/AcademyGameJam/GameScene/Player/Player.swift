@@ -47,6 +47,10 @@ class Player: SKSpriteNode {
         pb.collisionBitMask = PhysicsCategory.player
         
         self.physicsBody = pb
+        
+//        movementAnimationSouth()
+        movementAnimationSouthWest()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -74,15 +78,61 @@ class Player: SKSpriteNode {
         
         let movementConstantAnimation = SKAction.repeatForever(playerMovementAction)
 
+//        movementAnimationSouth()
         run(movementConstantAnimation, withKey: "walk")
       }
     
-    func movementAnimation() {
+    func movementAnimationNort() {
         
-        let animation = SKAction.animate(with: [.init(image: .playerSouthTexture0), .init(image: .playerSouthTexture1)], timePerFrame: 0.25)
+        let animation = SKAction.animate(with: [.init(image: .playerSouthTexture0), .init(image: .playerSouthTexture1)], timePerFrame: 0.15)
         
+        let movementAnimation = SKAction.repeatForever(animation)
+        
+        run(movementAnimation)
         
     }
+    
+    func movementAnimationSouth() {
+        
+        let animation = SKAction.animate(with: [.init(image: .playerSouthTexture0), .init(image: .playerSouthTexture1)], timePerFrame: 0.15)
+        
+        let movementAnimation = SKAction.repeatForever(animation)
+        
+        run(movementAnimation)
+        
+    }
+    
+    func movementAnimationSouthWest() {
+        
+        let animation = SKAction.animate(with: [.init(image: .playerSouthWestTexture0), .init(image: .playerSouthWestTexture1)], timePerFrame: 0.15)
+        
+        let movementAnimation = SKAction.repeatForever(animation)
+        
+        run(movementAnimation)
+        
+    }
+    
+    func movementAnimationWest() {
+        
+        let animation = SKAction.animate(with: [.init(image: .playerSouthTexture0), .init(image: .playerSouthTexture1)], timePerFrame: 0.15)
+        
+        let movementAnimation = SKAction.repeatForever(animation)
+        
+        run(movementAnimation)
+        
+    }
+    
+    func movementAnimationEast() {
+        
+        let animation = SKAction.animate(with: [.init(image: .playerSouthTexture0), .init(image: .playerSouthTexture1)], timePerFrame: 0.15)
+        
+        let movementAnimation = SKAction.repeatForever(animation)
+        
+        run(movementAnimation)
+        
+    }
+    
+
     
     func movementCancel() {
         if action(forKey: "walk") != nil {
