@@ -8,17 +8,11 @@
 import Foundation
 import SpriteKit
 
-class TreeNode: SKNode {
-    public let size: CGSize
-    
+class TreeNode: SKSpriteNode {
     init(size: CGSize) {
-        self.size = size
+        super.init(texture: Textures.flower, color: .clear, size: size)
         
-        super.init()
-        
-        let sprite = SKSpriteNode(texture: Textures.flower , size: size)
-        sprite.name = "Tree"
-        addChild(sprite)
+        self.name = "Tree"
     }
     
     required init?(coder aDecoder: NSCoder) {

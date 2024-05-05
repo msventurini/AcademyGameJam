@@ -35,7 +35,9 @@ extension GameScene {
     
     internal func disableInteraction(of node: SKNode) {
         interactable = nil
-        node.childNode(withName: "outline")?.removeFromParent()
+        node.childNode(withName: "outline")?.run(.scale(to: 0, duration: 0.1)) {
+            node.childNode(withName: "outline")?.removeFromParent()
+        }
         // TODO: Disable the interaction button
     }
     
@@ -43,19 +45,7 @@ extension GameScene {
         guard let interactable else { return }
         
         if let flower = interactable as? FlowerNode, !flower.hasBeenInteracted  {
-            let progressBar = ProgressBarNode(size: .init(width: flower.size.width * 2, height: settings.map.tileSize.height/3))
-            
-            progressBar.zPosition = flower.zPosition + 1
-            progressBar.position.y = progressBar.position.y - progressBar.size.height - flower.size.height * 0.5
-            flower.addChild(progressBar)
-            
-            // TODO: Increase duration in relation to flower size (HOW THE FUCK DO I DO THIS????)
-            progressBar.innerBar?.run(.scaleX(to: 1, duration: 1)) {
-                flower.hasBeenInteracted = true
-                self.score += Int(flower.points)
-                
-                progressBar.removeFromParent()
-            }
+            addProgressBar(to: flower)
         }
     }
     
@@ -63,6 +53,34 @@ extension GameScene {
         guard let interactable else { return }
         
         if let progressBar = interactable.childNode(withName: "ProgressBar") {
+            progressBar.removeFromParent()
+        }
+    }
+    
+    private func addProgressBar(to node: SKNode) {
+        let size: CGSize
+        if let sizeable = node as? Sizeable {
+            size = sizeable.size
+        } else {
+            size = node.frame.size
+        }
+        
+        let progressBar = ProgressBarNode(size: .init(width: size.width * 2, height: settings.map.tileSize.height/3))
+        
+        progressBar.zPosition = node.zPosition + 1
+        progressBar.position.y = progressBar.position.y - progressBar.size.height - size.height * 0.5
+        node.addChild(progressBar)
+        
+        // TODO: Increase duration in relation to flower size (HOW THE FUCK DO I DO THIS????)
+        progressBar.innerBar?.run(.scaleX(to: 1, duration: 1)) {
+            if var interactable = node as? InteractableNode {
+                interactable.hasBeenInteracted = true
+            }
+            
+            if let pointGiver = node as? PointGiver {
+                self.score += pointGiver.points
+            }
+            
             progressBar.removeFromParent()
         }
     }
