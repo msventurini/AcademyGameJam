@@ -1,4 +1,5 @@
 import Foundation
+import GameKit
 import Combine
 import SpriteKit
 import GameController
@@ -42,6 +43,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
             virtualController = nil
         } else {
             setupVirtualController()
+        }
+    }
+    
+    func sendLeaderboard() async {
+        Task{
+            do {
+                try await GKLeaderboard.submitScore(
+                    self.score,
+                    context: 0,
+                    player: GKLocalPlayer.local,
+                    leaderboardIDs: ["finished10levels"]
+                )
+            } catch {
+                print("Error on: \(#function): \(error.localizedDescription)")
+            }
         }
     }
     
