@@ -48,18 +48,8 @@ class Player: SKSpriteNode {
         
         self.physicsBody = pb
         
-//        movementAnimationSouth()
+        movementAnimationSouth()
 
-        //        movementAnimationNorth()
-//        movementAnimationWest()
-//        movementAnimationEast()
-        
-        //        movementAnimationSouthWest()
-                movementAnimationNorthEast()
-//        movementAnimationSouthEast()
-//        movementAnimationNorthWest()
-
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
