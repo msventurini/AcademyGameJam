@@ -18,13 +18,6 @@ extension GameScene {
         self.cancellables.removeAll()
     }
     
-    private func addBirdSpawner() {
-        let publisher = Timer
-            .publish(every: 5, on: .main, in: .default)
-            .autoconnect()
-        
-    }
-    
     private func addTimerUpdater() {
         let publisher = Timer
             .publish(every: 1.0, on: .main, in: .default)
@@ -33,7 +26,10 @@ extension GameScene {
         let subscription = publisher
         subscription
             .sink { [self] _ in
-                if timer < 1 { return }
+                if self.timer < 1 {
+                    endGame()
+                    return
+                }
                 self.timer -= 1
                 
                 if CGFloat.random(in: 0...1) < self.birdSpawnnerChance {

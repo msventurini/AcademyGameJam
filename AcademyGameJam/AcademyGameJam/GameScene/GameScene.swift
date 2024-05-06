@@ -10,6 +10,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     @Published var score: Float = 0
     @Published var isScenePaused = false
     @Published var pollen: Float = 0
+    @Published var gameEnd = false
+    @Published var pauseIsEnable = true
 
     let settings: GameSettings = .init(
         flower: .init(quantity: 1000, size: .init(width: 40, height: 40 * 0.8), pollenMultiplier: 10),
@@ -52,6 +54,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         } else {
             setupVirtualController()
         }
+    }
+    
+    func endGame(){
+        cancelUpdaters()
+        player?.movementCancel()
+        virtualController = nil
+        pauseIsEnable = false
+        gameEnd = true
     }
     
     func sendLeaderboard() async {

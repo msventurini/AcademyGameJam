@@ -34,7 +34,7 @@ struct PauseMenu: View {
             }
             .padding(.horizontal, 80)
             .padding(.vertical, 20)
-            .background(Color.white)
+            .background(.ultraThinMaterial)
             .cornerRadius(10)
         }
         .frame(maxWidth: UIScreen.main.bounds.width * 0.5, maxHeight: UIScreen.main.bounds.height * 0.80)
