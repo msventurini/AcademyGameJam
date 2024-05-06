@@ -13,6 +13,11 @@
 		1C032EBE2BE6A38F00A9775B /* Layers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EBD2BE6A38F00A9775B /* Layers.swift */; };
 		1C032EC02BE6A39700A9775B /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EBF2BE6A39700A9775B /* Textures.swift */; };
 		1C032EC22BE6A3AA00A9775B /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EC12BE6A3AA00A9775B /* PhysicsCategory.swift */; };
+		1C8564DF2BE8134D00051EA2 /* PollutionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8564DE2BE8134D00051EA2 /* PollutionNode.swift */; };
+		1C8564E22BE8138100051EA2 /* GS+Pollution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8564E12BE8138100051EA2 /* GS+Pollution.swift */; };
+		1C8564E42BE82D5100051EA2 /* EnemyTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8564E32BE82D5100051EA2 /* EnemyTypes.swift */; };
+		1C8564E72BE854BA00051EA2 /* Pollution.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C8564E52BE854BA00051EA2 /* Pollution.sks */; };
+		1C8564E82BE854BA00051EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C8564E62BE854BA00051EA2 /* Assets.xcassets */; };
 		1CA4FD442BE7FF77001FF87E /* GS+AddBoundaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4FD432BE7FF77001FF87E /* GS+AddBoundaries.swift */; };
 		23B0DBEF2BE730140089CFAF /* GameCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B0DBEE2BE730140089CFAF /* GameCenterView.swift */; };
 		23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */; };
@@ -50,6 +55,11 @@
 		1C032EBD2BE6A38F00A9775B /* Layers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layers.swift; sourceTree = "<group>"; };
 		1C032EBF2BE6A39700A9775B /* Textures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
 		1C032EC12BE6A3AA00A9775B /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		1C8564DE2BE8134D00051EA2 /* PollutionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionNode.swift; sourceTree = "<group>"; };
+		1C8564E12BE8138100051EA2 /* GS+Pollution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Pollution.swift"; sourceTree = "<group>"; };
+		1C8564E32BE82D5100051EA2 /* EnemyTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyTypes.swift; sourceTree = "<group>"; };
+		1C8564E52BE854BA00051EA2 /* Pollution.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Pollution.sks; sourceTree = "<group>"; };
+		1C8564E62BE854BA00051EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CA4FD432BE7FF77001FF87E /* GS+AddBoundaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+AddBoundaries.swift"; sourceTree = "<group>"; };
 		23B0DBEE2BE730140089CFAF /* GameCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterView.swift; sourceTree = "<group>"; };
 		23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenu.swift; sourceTree = "<group>"; };
@@ -104,6 +114,16 @@
 			path = Misc;
 			sourceTree = "<group>";
 		};
+		1C8564E02BE8135400051EA2 /* Pollution */ = {
+			isa = PBXGroup;
+			children = (
+				1C8564E12BE8138100051EA2 /* GS+Pollution.swift */,
+				1C8564DE2BE8134D00051EA2 /* PollutionNode.swift */,
+				1C8564E32BE82D5100051EA2 /* EnemyTypes.swift */,
+			);
+			path = Pollution;
+			sourceTree = "<group>";
+		};
 		23B0DBED2BE730020089CFAF /* GameCenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +144,8 @@
 		7B38A16E2BE5C33D00B4A99C = {
 			isa = PBXGroup;
 			children = (
+				1C8564E52BE854BA00051EA2 /* Pollution.sks */,
+				1C8564E62BE854BA00051EA2 /* Assets.xcassets */,
 				7B38A1792BE5C33D00B4A99C /* AcademyGameJam */,
 				7B38A1782BE5C33D00B4A99C /* Products */,
 			);
@@ -183,6 +205,7 @@
 				A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */,
 				A79BCD922BE8172200C2B4ED /* GS+Score.swift */,
 				A7F53B712BE6B0D400BC64D7 /* GameSettings.swift */,
+				1C8564E02BE8135400051EA2 /* Pollution */,
 				A7F53B6A2BE6ADB300BC64D7 /* Flower */,
 				A7F53B622BE5DCC100BC64D7 /* Map */,
 				318A81F92BE6FE2C006A6E32 /* Tree */,
@@ -315,6 +338,8 @@
 			files = (
 				7B38A1822BE5C33E00B4A99C /* Preview Assets.xcassets in Resources */,
 				7B38A17F2BE5C33E00B4A99C /* Assets.xcassets in Resources */,
+				1C8564E72BE854BA00051EA2 /* Pollution.sks in Resources */,
+				1C8564E82BE854BA00051EA2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,10 +368,12 @@
 				1C032EB72BE6A30500A9775B /* GS+AddUpdaters.swift in Sources */,
 				A72134EC2BE7490D003362B1 /* ProgressBarNode.swift in Sources */,
 				7B38A1982BE5C36200B4A99C /* GS+VirtualControllers.swift in Sources */,
+				1C8564E22BE8138100051EA2 /* GS+Pollution.swift in Sources */,
 				1C032EBE2BE6A38F00A9775B /* Layers.swift in Sources */,
 				A79BCD912BE7F4F200C2B4ED /* UIColor+RGBA.swift in Sources */,
 				A72134F52BE768DE003362B1 /* PollenDelegate.swift in Sources */,
 				1C032EBB2BE6A33100A9775B /* GS+DidMove.swift in Sources */,
+				1C8564DF2BE8134D00051EA2 /* PollutionNode.swift in Sources */,
 				1C032EC02BE6A39700A9775B /* Textures.swift in Sources */,
 				A7F53B692BE6902700BC64D7 /* GS+Map.swift in Sources */,
 				318A81FB2BE6FE61006A6E32 /* TreeNode.swift in Sources */,
@@ -356,6 +383,7 @@
 				23B0DBEF2BE730140089CFAF /* GameCenterView.swift in Sources */,
 				1C032EB92BE6A31F00A9775B /* GS+ContactDelegate.swift in Sources */,
 				1C032EC22BE6A3AA00A9775B /* PhysicsCategory.swift in Sources */,
+				1C8564E42BE82D5100051EA2 /* EnemyTypes.swift in Sources */,
 				A75A14E12BE6FFD800033D5C /* GS+Interactions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
