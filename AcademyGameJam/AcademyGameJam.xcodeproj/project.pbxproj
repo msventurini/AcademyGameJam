@@ -18,6 +18,9 @@
 		23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */; };
 		23C1158D2BE8544000922780 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1158C2BE8544000922780 /* CustomButton.swift */; };
 		23C1158F2BE8545A00922780 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1158E2BE8545A00922780 /* CreditsView.swift */; };
+		23C115912BE8580300922780 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C115902BE8580300922780 /* MusicController.swift */; };
+		23C115942BE8589100922780 /* MusicGameCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C115932BE8589100922780 /* MusicGameCard.swift */; };
+		23C115962BE85A1700922780 /* backgroundmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23C115952BE85A1700922780 /* backgroundmusic.mp3 */; };
 		318A81FB2BE6FE61006A6E32 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A81FA2BE6FE61006A6E32 /* TreeNode.swift */; };
 		318A81FD2BE6FFA8006A6E32 /* GS+Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A81FC2BE6FFA8006A6E32 /* GS+Tree.swift */; };
 		7B38A17B2BE5C33D00B4A99C /* AcademyGameJamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A17A2BE5C33D00B4A99C /* AcademyGameJamApp.swift */; };
@@ -58,6 +61,10 @@
 		23B9A0FF2BE71F0000F4E5A0 /* AcademyGameJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AcademyGameJam.entitlements; sourceTree = "<group>"; };
 		23C1158C2BE8544000922780 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		23C1158E2BE8545A00922780 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		23C115902BE8580300922780 /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
+		23C115932BE8589100922780 /* MusicGameCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicGameCard.swift; sourceTree = "<group>"; };
+		23C115952BE85A1700922780 /* backgroundmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = backgroundmusic.mp3; path = ../../../../../../../Downloads/backgroundmusic.mp3; sourceTree = "<group>"; };
+		23C115972BE85A1F00922780 /* backgroundmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundmusic.mp3; sourceTree = "<group>"; };
 		318A81FA2BE6FE61006A6E32 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		318A81FC2BE6FFA8006A6E32 /* GS+Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Tree.swift"; sourceTree = "<group>"; };
 		7B38A1772BE5C33D00B4A99C /* AcademyGameJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcademyGameJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +123,14 @@
 			path = GameCenter;
 			sourceTree = "<group>";
 		};
+		23C115922BE8587300922780 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				23C115902BE8580300922780 /* MusicController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		318A81F92BE6FE2C006A6E32 /* Tree */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +159,8 @@
 		7B38A1792BE5C33D00B4A99C /* AcademyGameJam */ = {
 			isa = PBXGroup;
 			children = (
+				23C115972BE85A1F00922780 /* backgroundmusic.mp3 */,
+				23C115922BE8587300922780 /* Controllers */,
 				23B0DBED2BE730020089CFAF /* GameCenter */,
 				23B9A0FF2BE71F0000F4E5A0 /* AcademyGameJam.entitlements */,
 				7B38A17E2BE5C33E00B4A99C /* Assets.xcassets */,
@@ -160,6 +177,7 @@
 		7B38A1802BE5C33E00B4A99C /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				23C115952BE85A1700922780 /* backgroundmusic.mp3 */,
 				7B38A1812BE5C33E00B4A99C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -222,6 +240,7 @@
 				23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */,
 				23C1158C2BE8544000922780 /* CustomButton.swift */,
 				23C1158E2BE8545A00922780 /* CreditsView.swift */,
+				23C115932BE8589100922780 /* MusicGameCard.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -320,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B38A1822BE5C33E00B4A99C /* Preview Assets.xcassets in Resources */,
+				23C115962BE85A1700922780 /* backgroundmusic.mp3 in Resources */,
 				7B38A17F2BE5C33E00B4A99C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +362,8 @@
 				7B38A1932BE5C36200B4A99C /* MyPlayerEnum.swift in Sources */,
 				A7F53B722BE6B0D400BC64D7 /* GameSettings.swift in Sources */,
 				A72134F32BE75B7F003362B1 /* Sizeable.swift in Sources */,
+				23C115942BE8589100922780 /* MusicGameCard.swift in Sources */,
+				23C115912BE8580300922780 /* MusicController.swift in Sources */,
 				A7F53B6C2BE6ADC100BC64D7 /* FlowerNode.swift in Sources */,
 				7B38A17B2BE5C33D00B4A99C /* AcademyGameJamApp.swift in Sources */,
 				A72134EF2BE75995003362B1 /* Interactable.swift in Sources */,

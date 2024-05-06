@@ -10,21 +10,20 @@ import SwiftUI
 struct CreditsView: View {
     var body: some View {
         VStack(spacing: 10) {
-            Text("Créditos")
-                .font(.title)
-                .foregroundColor(.blue)
-                .padding(.top, 20)
             
-            Text("Desenvolvido por:")
-                .font(.headline)
-                .foregroundColor(.gray)
+            Text("Developed by:")
+                .font(.title2)
+                .foregroundColor(.green)
+                .bold()
             
-            Text("Matheus")
-            Text("Gabriel")
-            Text("Gustavo")
-            Text("Filipe")
-            Text("Leandro")
-            Text("Gustavo (gst)")
+            Text("Gabriel Martins")
+            Text("Gustavo Silvano")
+            Text("Matheus Silveira Venturini")
+            Text("Leandro da Nóbrega Silva")
+            Text("Filipe Ilunga Xindanhi")
+            Text("Leandro da Nóbrega")
+            Text("Gustavo Diefenbach")
+
                 .padding(.bottom, 20)
 
         }

@@ -10,6 +10,8 @@ import SpriteKit
 
 struct GameView: View {
     @StateObject private var scene: GameScene = GameScene()
+    @StateObject var soundManager: MusicController = MusicController()
+
                                    
     var time: (hour: String, minute: String) {
         let time = scene.timer.quotientAndRemainder(dividingBy: 60)
@@ -83,6 +85,7 @@ struct GameView: View {
             
             if scene.isScenePaused {
                 PauseMenu()
+                    .environmentObject(soundManager)
             }
         }
     }
