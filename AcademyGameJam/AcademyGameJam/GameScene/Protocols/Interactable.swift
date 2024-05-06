@@ -10,6 +10,11 @@ import Foundation
 protocol Interactable {
     var interactionEnabled: Bool { get set }
     
-    func interact()
-    // TODO: Have a closure of what to do when interaction happens.
+    func startInteraction()
+    func endInteraction()
+}
+
+extension Interactable {
+    func startInteraction() {}
+    func endInteraction() {}
 }
