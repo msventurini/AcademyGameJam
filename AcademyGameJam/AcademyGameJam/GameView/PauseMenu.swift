@@ -7,29 +7,15 @@ import SwiftUI
 import GameKit
 
 struct PauseMenu: View {
-    @State var showRanking: Bool = false
     @State var showSettings: Bool = false
     @EnvironmentObject var soundManager: MusicController
     
     var body: some View {
         NavigationStack {
             VStack {
-                CustomButton(label: "Restart", iconName: "arrow.counterclockwise.circle.fill")
-                
-                CustomButton(label: "Ranking", iconName: "list.number").onTapGesture {
-                    showRanking.toggle()
-                }
-                
-                
                 NavigationLink(destination: MusicGameCard()) {
-                   
                     CustomButton(label: "Settings", iconName: "gearshape.fill")
                 }
-                
-                NavigationLink(destination: CreditsView()) {
-                    CustomButton(label: "Credits", iconName: "list.star")
-                }
-                .padding(.top, 20)
                 
             }
             .padding(.horizontal, 80)
@@ -46,10 +32,6 @@ struct PauseMenu: View {
                     authenticateUser()
                 }
             }
-        }
-        .fullScreenCover(isPresented: $showRanking) {
-            GameCenterView()
-                .ignoresSafeArea()
         }
     }
     

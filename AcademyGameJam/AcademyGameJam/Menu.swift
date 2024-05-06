@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Menu: View {
+    @EnvironmentObject var soundManager: MusicController
+    @State var showRanking: Bool = false
+    
     var body: some View {
        GeometryReader { reader in
             HStack {
@@ -29,6 +32,11 @@ struct Menu: View {
                     }
                     .padding(.bottom)
                     
+                    CustomButton(label: "Ranking", iconName: "list.number", buttonWidth: reader.size.width * 0.3)
+                        .onTapGesture {
+                        showRanking.toggle()
+                    }
+                    
                     NavigationLink {
                         CreditsView()
                     } label: {
@@ -40,6 +48,13 @@ struct Menu: View {
             }
             .padding()
         }
+       .fullScreenCover(isPresented: $showRanking) {
+           GameCenterView()
+               .ignoresSafeArea()
+       }
+       .onAppear {
+           soundManager.pauseSound()
+       }
     }
 }
 

@@ -9,11 +9,14 @@ import SwiftUI
 
 @main
 struct AcademyGameJamApp: App {
+    @StateObject var soundManager: MusicController = MusicController()
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {
                 Menu()
             }
+            .environmentObject(soundManager)
         }
     }
 }
