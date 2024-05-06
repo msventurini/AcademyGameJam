@@ -32,7 +32,7 @@ class Player: SKSpriteNode {
         pb.allowsRotation = false
 
         pb.categoryBitMask = PhysicsCategory.player
-        pb.contactTestBitMask = PhysicsCategory.interactable
+        pb.contactTestBitMask = PhysicsCategory.interactable + PhysicsCategory.pollution
         pb.collisionBitMask = PhysicsCategory.player
         
         self.physicsBody = pb
