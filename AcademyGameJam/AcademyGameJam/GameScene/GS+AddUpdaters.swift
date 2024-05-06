@@ -25,7 +25,12 @@ extension GameScene {
         let subscription = publisher
         subscription
             .sink { [self] _ in
-                if self.timer < 1 { return }
+                if self.timer < 1 {
+                    gameEnd = true
+                    cancelUpdaters()
+                    virtualController = nil
+                    return
+                }
                 self.timer -= 1
             }
             .store(in: &cancellables)

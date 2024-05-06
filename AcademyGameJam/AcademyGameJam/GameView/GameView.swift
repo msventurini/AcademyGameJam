@@ -77,6 +77,8 @@ struct GameView: View {
             if scene.isScenePaused {
                 PauseMenu()
             }
+            if scene.gameEnd{
+                EndGameView()            }
         }
     }
 }

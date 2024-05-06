@@ -6,10 +6,11 @@ import GameController
 
 class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     
-    @Published var timer: Int = 300 // Tempo de jogo
+    @Published var timer: Int = 5 // Tempo de jogo
     @Published var score: Float = 0
     @Published var isScenePaused = false
     @Published var pollen: Float = 0
+    @Published var gameEnd = false
 
     let settings: GameSettings = .init(
         flower: .init(quantity: 1000, size: .init(width: 40, height: 40 * 0.8), pollenMultiplier: 10),

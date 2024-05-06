@@ -18,6 +18,7 @@
 		23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */; };
 		318A81FB2BE6FE61006A6E32 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A81FA2BE6FE61006A6E32 /* TreeNode.swift */; };
 		318A81FD2BE6FFA8006A6E32 /* GS+Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A81FC2BE6FFA8006A6E32 /* GS+Tree.swift */; };
+		318A81FF2BE84A94006A6E32 /* EndGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A81FE2BE84A93006A6E32 /* EndGameView.swift */; };
 		7B38A17B2BE5C33D00B4A99C /* AcademyGameJamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A17A2BE5C33D00B4A99C /* AcademyGameJamApp.swift */; };
 		7B38A17F2BE5C33E00B4A99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B38A17E2BE5C33E00B4A99C /* Assets.xcassets */; };
 		7B38A1822BE5C33E00B4A99C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B38A1812BE5C33E00B4A99C /* Preview Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		23B9A0FF2BE71F0000F4E5A0 /* AcademyGameJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AcademyGameJam.entitlements; sourceTree = "<group>"; };
 		318A81FA2BE6FE61006A6E32 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		318A81FC2BE6FFA8006A6E32 /* GS+Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Tree.swift"; sourceTree = "<group>"; };
+		318A81FE2BE84A93006A6E32 /* EndGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameView.swift; sourceTree = "<group>"; };
 		7B38A1772BE5C33D00B4A99C /* AcademyGameJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcademyGameJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B38A17A2BE5C33D00B4A99C /* AcademyGameJamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyGameJamApp.swift; sourceTree = "<group>"; };
 		7B38A17E2BE5C33E00B4A99C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				7B38A18D2BE5C36200B4A99C /* GameView.swift */,
 				23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */,
+				318A81FE2BE84A93006A6E32 /* EndGameView.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				A72134F32BE75B7F003362B1 /* Sizeable.swift in Sources */,
 				A7F53B6C2BE6ADC100BC64D7 /* FlowerNode.swift in Sources */,
 				7B38A17B2BE5C33D00B4A99C /* AcademyGameJamApp.swift in Sources */,
+				318A81FF2BE84A94006A6E32 /* EndGameView.swift in Sources */,
 				A72134EF2BE75995003362B1 /* Interactable.swift in Sources */,
 				7B38A1942BE5C36200B4A99C /* Player.swift in Sources */,
 				1C032EB72BE6A30500A9775B /* GS+AddUpdaters.swift in Sources */,
