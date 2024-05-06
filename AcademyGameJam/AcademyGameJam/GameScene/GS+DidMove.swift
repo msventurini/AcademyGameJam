@@ -41,6 +41,13 @@ extension GameScene {
         player?.position = CGPoint(x: size.width / 2, y: size.height / 2) //Center from screen
         
         if let playerNode = player {
+            
+            let emitter = SKEmitterNode(fileNamed: "PolenTrail") ?? SKEmitterNode()
+            
+            emitter.targetNode = self
+            
+            playerNode.addChild(emitter)
+            
             addChild(playerNode)
         }
         
