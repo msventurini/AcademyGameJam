@@ -18,13 +18,6 @@ extension GameScene {
         self.cancellables.removeAll()
     }
     
-    private func addBirdSpawner() {
-        let publisher = Timer
-            .publish(every: 5, on: .main, in: .default)
-            .autoconnect()
-        
-    }
-    
     private func addTimerUpdater() {
         let publisher = Timer
             .publish(every: 1.0, on: .main, in: .default)

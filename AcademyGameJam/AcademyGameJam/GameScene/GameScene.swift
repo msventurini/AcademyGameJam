@@ -6,7 +6,7 @@ import GameController
 
 class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     
-    @Published var timer: Int = 5 // Tempo de jogo
+    @Published var timer: Int = 300 // Tempo de jogo
     @Published var score: Float = 0
     @Published var isScenePaused = false
     @Published var pollen: Float = 0
@@ -58,6 +58,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     
     func endGame(){
         cancelUpdaters()
+        player?.movementCancel()
         virtualController = nil
         pauseIsEnable = false
         gameEnd = true
