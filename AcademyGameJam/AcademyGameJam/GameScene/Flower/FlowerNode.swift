@@ -9,15 +9,15 @@ import Foundation
 import SpriteKit
 
 class FlowerNode: SKSpriteNode {
-    private let points: Float
+    private let pollen: Float
     var interactionEnabled: Bool = true
     weak var pollenDelegate: (any PollenDelegate)?
     
-    init(size: CGSize, pointsMultiplier: Float) {
+    init(size: CGSize, pollenMultiplier: Float) {
         let multiplier = CGFloat.random(in: 0.5...1.0)
         let trueSize = CGSize.init(width: size.width * multiplier, height: size.height * multiplier)
         
-        self.points = Float(trueSize.width + trueSize.height)/2 * pointsMultiplier
+        self.pollen = Float(trueSize.width + trueSize.height)/2 * pollenMultiplier
         
         super.init(texture: Textures.flower, color: .clear, size: trueSize)
         
@@ -40,6 +40,6 @@ class FlowerNode: SKSpriteNode {
 extension FlowerNode: Interactable {
     func interact() {
         self.interactionEnabled = false
-        pollenDelegate?.increasePollen(points)
+        pollenDelegate?.increasePollen(pollen)
     }
 }

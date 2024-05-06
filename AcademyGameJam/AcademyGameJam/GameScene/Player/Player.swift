@@ -55,7 +55,9 @@ class Player: SKSpriteNode {
                 
                 node.physicsBody?.velocity = CGVector(dx: x * 100, dy: y * 100)
                 
-                self.pollenDelegate?.dispersePollen(at: node.position)
+                if x != 0 || y != 0 {
+                    self.pollenDelegate?.dispersePollen(at: node.position)
+                }
             }
         }
         

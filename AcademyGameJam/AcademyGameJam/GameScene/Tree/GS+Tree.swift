@@ -48,7 +48,7 @@ extension GameScene{
             let yOffset = radius * sin(angle)
             let flowerPosition = CGPoint(x: treePosition.x + xOffset, y: treePosition.y + yOffset)
             
-            let flower = FlowerNode(size: settings.flower.size, pointsMultiplier: settings.flower.pointMultiplier)
+            let flower = FlowerNode(size: settings.flower.size, pollenMultiplier: settings.flower.pollenMultiplier)
             flower.pollenDelegate = self
             flower.position = flowerPosition
             
