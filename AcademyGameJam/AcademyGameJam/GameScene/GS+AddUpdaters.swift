@@ -26,9 +26,9 @@ extension GameScene {
         subscription
             .sink { [self] _ in
                 if self.timer < 1 {
-                    gameEnd = true
                     cancelUpdaters()
                     virtualController = nil
+                    gameEnd = true
                     return
                 }
                 self.timer -= 1

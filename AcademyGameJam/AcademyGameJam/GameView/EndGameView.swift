@@ -10,45 +10,32 @@ import GameKit
 
 struct EndGameView: View {
     @State var show: Bool = false
+    @Binding var score: Float
     
     var body: some View {
         VStack {
-            Text("score")
+            Text("\(Int(score))")
                 .font(.title)
-                .frame(width: 200, height: 100)
-                .padding(.vertical, 16)
-                .padding(.horizontal, 32)
                 .foregroundStyle(.white)
-                .cornerRadius(32)
+                .frame(width: UIScreen.main.bounds.width * 0.30, height: 60)
+                .padding(.horizontal, 10)
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.green) // Definindo a cor de fundo do botão
+                        .shadow(color: .black.opacity(0.45), radius: 5, y: 5)
+                )
             
-            Button {
-                
-            } label: {
-                Text("Restart")
-                    .frame(width: 200, height: 100)
-                    .padding(.vertical, 16)
-                    .padding(.horizontal, 32)
-                    .foregroundStyle(.white)
-                    .cornerRadius(32)
-            }
+            CustomButton(label: "Restart", iconName: "arrow.counterclockwise.circle.fill")
             
-            Button {
-                // Implement your submit score functionality here
-            } label: {
-                Text("Menu")
-                    .frame(width: 200, height: 100)
-                    .padding(.vertical, 16)
-                    .padding(.horizontal, 32)
-                    .foregroundStyle(.white)
-                    .cornerRadius(32)
-            }
+            CustomButton(label: "Menu", iconName: "line.3.horizontal")
         }
-        .frame(width: UIScreen.main.bounds.width * 0.6, height: UIScreen.main.bounds.height * 0.8)
-        .background(Color.green)
+        .padding(.horizontal, 80)
+        .padding(.vertical, 20)
+        .background(Color.white)
         .cornerRadius(10)
     }
 }
 
 #Preview {
-    EndGameView()
+    EndGameView(score: .constant(10))
 }
