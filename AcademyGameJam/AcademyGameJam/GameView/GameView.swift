@@ -11,6 +11,8 @@ import SpriteKit
 struct GameView: View {
     @StateObject private var scene: GameScene = GameScene()
     @StateObject var soundManager: MusicController = MusicController()
+    @State var finalScore: Float = 0.0
+    
 
                                    
     var time: (hour: String, minute: String) {
@@ -75,6 +77,7 @@ struct GameView: View {
                                         .shadow(color: .black.opacity(0.45), radius: 5, y: 5)
                                 }
                         }
+                        .disabled(!scene.pauseIsEnable)
                     }
                     
                     Spacer()
@@ -86,6 +89,9 @@ struct GameView: View {
             if scene.isScenePaused {
                 PauseMenu()
                     .environmentObject(soundManager)
+            }
+            if scene.gameEnd{
+                EndGameView(score: $scene.score)
             }
         }
     }
