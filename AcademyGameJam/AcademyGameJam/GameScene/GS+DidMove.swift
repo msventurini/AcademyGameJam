@@ -20,7 +20,6 @@ extension GameScene {
         self.backgroundColor = UIColor.clear
         self.scaleMode = .aspectFill
         
-
         let center = CGPoint.init(x: view.bounds.midX, y: view.bounds.midY)
         
         //MARK: - CREATES VIRTUAL CONTROLLERS
@@ -33,7 +32,7 @@ extension GameScene {
         //MARK: - ADD TREES
         setupTrees(center: center)
         
-        // MARK: - ADD FLOWERS
+        //MARK: - ADD FLOWERS
         setupFlowers()
         
         //MARK: - PLAYER
@@ -45,7 +44,10 @@ extension GameScene {
             addChild(playerNode)
         }
         
-        // MARK: - Cria e adiciona a câmera
+        //MARK: - POLLUTION ENEMY
+        addPollution()
+        
+        //MARK: - Cria e adiciona a câmera
         cameraNode = SKCameraNode()
         if let camera = cameraNode {
             self.camera = camera // Define a câmera da cena como a câmera que acabamos de criar

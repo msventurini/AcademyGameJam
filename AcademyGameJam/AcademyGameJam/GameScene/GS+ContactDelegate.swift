@@ -15,13 +15,6 @@ extension GameScene {
         let bodyB = contact.bodyB
         let contactMask = bodyA.categoryBitMask | bodyB.categoryBitMask
         
-        //        if contactMask == (PhysicsCategory1) | (PhysicsCategory2) {
-        //
-        //            guard let node1 = bodyA.node as? SKSpriteNode else { return }
-        //            guard let node2 = bodyB.node as? SKSpriteNode else { return }
-        //
-        //        }
-        
         if contactMask == (PhysicsCategory.interactable | PhysicsCategory.player) {
             guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable),
                   let node = (interactable as? SKNode) else { return }
@@ -40,6 +33,12 @@ extension GameScene {
             guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable) else { return }
             interactable.startInteraction()
         }
+
+        if contactMask == (PhysicsCategory.pollution | PhysicsCategory.player) {    
+            // if pollution touched player...
+            self.player?.movementSpeed = 0.5
+            decreasePollen(50.0)
+        }
     }
     
     
@@ -54,6 +53,11 @@ extension GameScene {
                   let node = (interactable as? SKNode) else { return }
             
             disableInteraction(of: node)
+        }
+        
+        if contactMask == (PhysicsCategory.pollution | PhysicsCategory.player) {
+            // if pollution stopped touching player...
+            self.player?.movementSpeed = 5
         }
     }
 }

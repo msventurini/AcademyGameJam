@@ -9,11 +9,12 @@ import Foundation
 import SpriteKit
 
 extension GameScene {
-    func addUpdaters() {
+    internal func addUpdaters() {
         addTimerUpdater()
+        addPollutionMovementUpdater()
     }
     
-    func cancelUpdaters() {
+    internal func cancelUpdaters() {
         self.cancellables.removeAll()
     }
     
@@ -32,8 +33,7 @@ extension GameScene {
         let subscription = publisher
         subscription
             .sink { [self] _ in
-                if self.timer < 1 { return }
-                
+                if timer < 1 { return }
                 self.timer -= 1
                 
                 if CGFloat.random(in: 0...1) < self.birdSpawnnerChance {
@@ -43,6 +43,25 @@ extension GameScene {
                 if self.timer % 10 == 0 {
                     self.birdSpawnnerChance += .random(in: 0...0.2)
                 }
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func addPollutionMovementUpdater() {
+        let publisher = Timer
+            .publish(every: 1.0, on: .main, in: .default)
+            .autoconnect()
+        
+        let subscription = publisher
+        subscription
+            .sink { [self] _ in
+                
+                guard let pollution = enemies[.pollution]?.first as? PollutionNode else { return }
+                
+                pollution.applyForce(towards: CGPoint(
+                    x: CGFloat.random(in: bounds.minX...bounds.maxX),
+                    y: CGFloat.random(in: bounds.minY...bounds.maxY)), withMagnitude: 50_000)
+                
             }
             .store(in: &cancellables)
     }

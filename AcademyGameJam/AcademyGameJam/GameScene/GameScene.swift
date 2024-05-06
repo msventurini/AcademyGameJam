@@ -22,6 +22,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     
     var virtualController: GCVirtualController? //Controllers
     var player: Player? // Adicione uma propriedade para armazenar o jogador
+    var enemies: [EnemyTypes:[SKSpriteNode]] = [:]
     var cameraNode: SKCameraNode? // Propriedade para a câmera
     var cancellables: Set<AnyCancellable> = Set<AnyCancellable>() // Guarda todos os updaters canceláveis
     
@@ -60,7 +61,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
                     Int(self.score),
                     context: 0,
                     player: GKLocalPlayer.local,
-                    leaderboardIDs: ["finished10levels"]
+                    leaderboardIDs: ["finishedlevelsADAJAM"]
                 )
             } catch {
                 print("Error on: \(#function): \(error.localizedDescription)")
