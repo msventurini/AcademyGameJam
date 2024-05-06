@@ -61,6 +61,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         player?.movementCancel()
         virtualController = nil
         pauseIsEnable = false
+        Task{
+            await sendLeaderboard()
+        }
         gameEnd = true
     }
     
