@@ -11,7 +11,9 @@ import SwiftUI
 struct AcademyGameJamApp: App {
     var body: some Scene {
         WindowGroup {
-            GameView()
+            NavigationStack {
+                Menu()
+            }
         }
     }
 }

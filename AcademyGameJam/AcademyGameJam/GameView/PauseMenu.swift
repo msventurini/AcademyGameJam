@@ -15,6 +15,7 @@ struct PauseMenu: View {
         NavigationStack {
             VStack {
                 CustomButton(label: "Restart", iconName: "arrow.counterclockwise.circle.fill")
+                
                 CustomButton(label: "Ranking", iconName: "list.number").onTapGesture {
                     showRanking.toggle()
                 }
@@ -26,7 +27,6 @@ struct PauseMenu: View {
                 }
                 
                 NavigationLink(destination: CreditsView()) {
-                   
                     CustomButton(label: "Credits", iconName: "list.star")
                 }
                 .padding(.top, 20)

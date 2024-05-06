@@ -88,6 +88,7 @@ struct GameView: View {
                     .environmentObject(soundManager)
             }
         }
+        .navigationBarBackButtonHidden()
     }
 }
 
