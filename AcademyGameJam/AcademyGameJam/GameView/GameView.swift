@@ -74,6 +74,7 @@ struct GameView: View {
                                         .shadow(color: .black.opacity(0.45), radius: 5, y: 5)
                                 }
                         }
+                        .disabled(!scene.pauseIsEnable)
                     }
                     
                     Spacer()

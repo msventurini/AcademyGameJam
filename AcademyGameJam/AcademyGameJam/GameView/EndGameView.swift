@@ -14,16 +14,12 @@ struct EndGameView: View {
     
     var body: some View {
         VStack {
-            Text("\(Int(score))")
+            Text("Score: \(Int(score))")
                 .font(.title)
                 .foregroundStyle(.white)
                 .frame(width: UIScreen.main.bounds.width * 0.30, height: 60)
+                .shadow(color: .black.opacity(0.45), radius: 5, y: 5)
                 .padding(.horizontal, 10)
-                .background(
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.green) // Definindo a cor de fundo do botão
-                        .shadow(color: .black.opacity(0.45), radius: 5, y: 5)
-                )
             
             CustomButton(label: "Restart", iconName: "arrow.counterclockwise.circle.fill")
             
@@ -31,7 +27,7 @@ struct EndGameView: View {
         }
         .padding(.horizontal, 80)
         .padding(.vertical, 20)
-        .background(Color.white)
+        .background(.ultraThinMaterial)
         .cornerRadius(10)
     }
 }
