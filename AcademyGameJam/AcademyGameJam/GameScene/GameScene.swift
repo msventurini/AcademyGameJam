@@ -56,11 +56,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         }
     }
     
-    func endGame(){
+    func endGame() {
         cancelUpdaters()
         player?.movementCancel()
         virtualController = nil
         pauseIsEnable = false
+        Task{
+            await sendLeaderboard()
+        }
         gameEnd = true
     }
     
