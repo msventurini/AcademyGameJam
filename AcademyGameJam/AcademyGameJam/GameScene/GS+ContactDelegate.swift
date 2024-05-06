@@ -29,12 +29,15 @@ extension GameScene {
             enableInteraction(with: node, highlightSize: size)
         }
         
-        if contactMask == (PhysicsCategory.pollution | PhysicsCategory.player) {
-            
+        if contactMask == (PhysicsCategory.enemy | PhysicsCategory.player) {
+            guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable) else { return }
+            interactable.startInteraction()
+        }
+
+        if contactMask == (PhysicsCategory.pollution | PhysicsCategory.player) {    
             // if pollution touched player...
             self.player?.movementSpeed = 0.5
             decreasePollen(50.0)
-            
         }
     }
     
@@ -53,10 +56,8 @@ extension GameScene {
         }
         
         if contactMask == (PhysicsCategory.pollution | PhysicsCategory.player) {
-            
             // if pollution stopped touching player...
             self.player?.movementSpeed = 5
-            
         }
     }
 }
