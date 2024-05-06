@@ -9,9 +9,12 @@ import Foundation
 import SpriteKit
 
 class PollutionNode: SKSpriteNode {
-        
+    var interactionEnabled: Bool = true
+    
+    weak var player: Player?
+    weak var pollenDelegate: (any PollenDelegate)?
+    
     init(position: CGPoint) {
-        
         super.init(texture: nil, color: UIColor.clear, size: CGSize(width: 500, height: 500))
         
         self.colorBlendFactor = 1.0
@@ -49,3 +52,15 @@ class PollutionNode: SKSpriteNode {
     }
 }
 
+extension PollutionNode: Interactable {
+    func startInteraction() {
+        guard let player else { return }
+        
+        self.player?.movementSpeed = 0.5
+        pollenDelegate?.decreasePollen(50.0)
+    }
+    
+    func endInteraction() {
+        self.player?.movementSpeed = 5
+    }
+}

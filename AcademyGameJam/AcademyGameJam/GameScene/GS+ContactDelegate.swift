@@ -9,7 +9,6 @@ import Foundation
 import SpriteKit
 
 extension GameScene {
-    
     func didBegin(_ contact: SKPhysicsContact) {
         let bodyA = contact.bodyA
         let bodyB = contact.bodyB
@@ -35,9 +34,8 @@ extension GameScene {
         }
 
         if contactMask == (PhysicsCategory.pollution | PhysicsCategory.player) {    
-            // if pollution touched player...
-            self.player?.movementSpeed = 0.5
-            decreasePollen(50.0)
+            guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable) else { return }
+            interactable.startInteraction()
         }
     }
     
@@ -56,8 +54,8 @@ extension GameScene {
         }
         
         if contactMask == (PhysicsCategory.pollution | PhysicsCategory.player) {
-            // if pollution stopped touching player...
-            self.player?.movementSpeed = 5
+            guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable) else { return }
+            interactable.endInteraction()
         }
     }
 }
