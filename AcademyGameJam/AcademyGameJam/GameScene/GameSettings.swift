@@ -13,6 +13,7 @@ struct GameSettings {
     let tree: Tree
     let player: Player
     let score: Score
+    let bird: Enemies.Bird
     
     struct Map {
         let width: Int
@@ -48,5 +49,14 @@ struct GameSettings {
     
     struct Score {
         let basePoints: Float
+    }
+    
+    struct Enemies {
+        struct Bird {
+            let size: CGSize
+            let movementSpeed: CGFloat
+            let knockbackForce: CGFloat
+            let approachBeforeAttackRadius: CGFloat
+        }
     }
 }

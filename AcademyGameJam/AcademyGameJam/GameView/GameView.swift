@@ -10,6 +10,8 @@ import SpriteKit
 
 struct GameView: View {
     @StateObject private var scene: GameScene = GameScene()
+    @StateObject var soundManager: MusicController = MusicController()
+
                                    
     var time: (hour: String, minute: String) {
         let time = scene.timer.quotientAndRemainder(dividingBy: 60)
@@ -65,6 +67,13 @@ struct GameView: View {
                         } label: {
                             Image(systemName: scene.isScenePaused ? "play.fill" : "pause.fill")
                                 .font(.largeTitle)
+                                .foregroundColor(.white)
+                                .padding(10)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .foregroundStyle(.ultraThinMaterial)
+                                        .shadow(color: .black.opacity(0.45), radius: 5, y: 5)
+                                }
                         }
                     }
                     
@@ -76,6 +85,7 @@ struct GameView: View {
             
             if scene.isScenePaused {
                 PauseMenu()
+                    .environmentObject(soundManager)
             }
         }
     }

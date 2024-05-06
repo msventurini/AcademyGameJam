@@ -60,6 +60,10 @@ extension GameScene {
         if let progressBar = interactable.childNode(withName: "ProgressBar") {
             progressBar.removeFromParent()
         }
+        
+        if let foo = interactable as? Interactable {
+            foo.endInteraction()
+        }
     }
 }
 
@@ -74,8 +78,7 @@ extension GameScene {
         }
         
         let progressBar = ProgressBarNode(size: .init(width: size.width * 2, height: settings.map.tileSize.height/3))
-        
-        progressBar.zPosition = node.zPosition + 1
+
         progressBar.position.y = progressBar.position.y - progressBar.size.height - size.height * 0.5
         node.addChild(progressBar)
         
@@ -86,7 +89,7 @@ extension GameScene {
                 .group([
                     .run {
                         if let interactable = node as? Interactable {
-                            interactable.interact()
+                            interactable.startInteraction()
                         }
                         
                         self.disableInteraction(of: node)
