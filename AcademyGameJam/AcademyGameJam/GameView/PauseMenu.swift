@@ -9,6 +9,7 @@ import GameKit
 struct PauseMenu: View {
     @State var showRanking: Bool = false
     @State var showSettings: Bool = false
+    @EnvironmentObject var soundManager: MusicController
     
     var body: some View {
         NavigationStack {
@@ -17,8 +18,12 @@ struct PauseMenu: View {
                 CustomButton(label: "Ranking", iconName: "list.number").onTapGesture {
                     showRanking.toggle()
                 }
-                                
-                CustomButton(label: "Settings", iconName: "gearshape.fill")
+                
+                
+                NavigationLink(destination: MusicGameCard()) {
+                   
+                    CustomButton(label: "Settings", iconName: "gearshape.fill")
+                }
                 
                 NavigationLink(destination: CreditsView()) {
                    

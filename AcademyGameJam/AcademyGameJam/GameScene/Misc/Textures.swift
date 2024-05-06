@@ -11,4 +11,5 @@ import SpriteKit
 struct Textures {
     static let flower: SKTexture = SKTexture(imageNamed: "flower-test")
     static let backgroundTile: SKTexture = SKTexture(imageNamed: "tile-test")
+    static let pollution: SKTexture = SKTexture(imageNamed: "flower-test")
 }
