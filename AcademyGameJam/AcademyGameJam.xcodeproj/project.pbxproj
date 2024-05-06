@@ -35,6 +35,8 @@
 		A79BCD8E2BE7F0C800C2B4ED /* TileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BCD8D2BE7F0C800C2B4ED /* TileNode.swift */; };
 		A79BCD912BE7F4F200C2B4ED /* UIColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BCD902BE7F4F200C2B4ED /* UIColor+RGBA.swift */; };
 		A79BCD932BE8172200C2B4ED /* GS+Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BCD922BE8172200C2B4ED /* GS+Score.swift */; };
+		A7E3FD2E2BE82CFC00803DC0 /* BirdNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E3FD2D2BE82CFC00803DC0 /* BirdNode.swift */; };
+		A7E3FD302BE82EEF00803DC0 /* GS+Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E3FD2F2BE82EEF00803DC0 /* GS+Bird.swift */; };
 		A7F53B642BE5DD0400BC64D7 /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B632BE5DD0400BC64D7 /* MapNode.swift */; };
 		A7F53B672BE5E43F00BC64D7 /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B662BE5E43F00BC64D7 /* Tokens.swift */; };
 		A7F53B692BE6902700BC64D7 /* GS+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B682BE6902700BC64D7 /* GS+Map.swift */; };
@@ -74,6 +76,8 @@
 		A79BCD8D2BE7F0C800C2B4ED /* TileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileNode.swift; sourceTree = "<group>"; };
 		A79BCD902BE7F4F200C2B4ED /* UIColor+RGBA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGBA.swift"; sourceTree = "<group>"; };
 		A79BCD922BE8172200C2B4ED /* GS+Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Score.swift"; sourceTree = "<group>"; };
+		A7E3FD2D2BE82CFC00803DC0 /* BirdNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdNode.swift; sourceTree = "<group>"; };
+		A7E3FD2F2BE82EEF00803DC0 /* GS+Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Bird.swift"; sourceTree = "<group>"; };
 		A7F53B632BE5DD0400BC64D7 /* MapNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNode.swift; sourceTree = "<group>"; };
 		A7F53B662BE5E43F00BC64D7 /* Tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
 		A7F53B682BE6902700BC64D7 /* GS+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Map.swift"; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				A7F53B622BE5DCC100BC64D7 /* Map */,
 				318A81F92BE6FE2C006A6E32 /* Tree */,
 				7B38A18B2BE5C36200B4A99C /* Player */,
+				A7E3FD2C2BE82CD300803DC0 /* Enemies */,
 				1C032EBC2BE6A34500A9775B /* Misc */,
 				A72134ED2BE75979003362B1 /* Protocols */,
 			);
@@ -226,6 +231,23 @@
 				A79BCD902BE7F4F200C2B4ED /* UIColor+RGBA.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A7E3FD2B2BE82CCB00803DC0 /* Bird */ = {
+			isa = PBXGroup;
+			children = (
+				A7E3FD2F2BE82EEF00803DC0 /* GS+Bird.swift */,
+				A7E3FD2D2BE82CFC00803DC0 /* BirdNode.swift */,
+			);
+			path = Bird;
+			sourceTree = "<group>";
+		};
+		A7E3FD2C2BE82CD300803DC0 /* Enemies */ = {
+			isa = PBXGroup;
+			children = (
+				A7E3FD2B2BE82CCB00803DC0 /* Bird */,
+			);
+			path = Enemies;
 			sourceTree = "<group>";
 		};
 		A7F53B622BE5DCC100BC64D7 /* Map */ = {
@@ -330,12 +352,14 @@
 				23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenu.swift in Sources */,
 				A7F53B642BE5DD0400BC64D7 /* MapNode.swift in Sources */,
 				1CA4FD442BE7FF77001FF87E /* GS+AddBoundaries.swift in Sources */,
+				A7E3FD2E2BE82CFC00803DC0 /* BirdNode.swift in Sources */,
 				7B38A1992BE5C36200B4A99C /* GameScene.swift in Sources */,
 				A7F53B672BE5E43F00BC64D7 /* Tokens.swift in Sources */,
 				A72134F72BE7694B003362B1 /* GS+PollenDelegate.swift in Sources */,
 				7B38A1932BE5C36200B4A99C /* MyPlayerEnum.swift in Sources */,
 				A7F53B722BE6B0D400BC64D7 /* GameSettings.swift in Sources */,
 				A72134F32BE75B7F003362B1 /* Sizeable.swift in Sources */,
+				A7E3FD302BE82EEF00803DC0 /* GS+Bird.swift in Sources */,
 				A7F53B6C2BE6ADC100BC64D7 /* FlowerNode.swift in Sources */,
 				7B38A17B2BE5C33D00B4A99C /* AcademyGameJamApp.swift in Sources */,
 				A72134EF2BE75995003362B1 /* Interactable.swift in Sources */,

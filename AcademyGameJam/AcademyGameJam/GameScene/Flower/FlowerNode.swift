@@ -21,15 +21,16 @@ class FlowerNode: SKSpriteNode {
         
         super.init(texture: Textures.flower, color: .clear, size: trueSize)
         
-        self.name = "Flower"
-        
         self.physicsBody = SKPhysicsBody(rectangleOf: trueSize)
         self.physicsBody?.isDynamic = false
         
         self.physicsBody?.categoryBitMask = PhysicsCategory.interactable
         self.physicsBody?.contactTestBitMask = PhysicsCategory.player
-        self.physicsBody?.collisionBitMask = PhysicsCategory.interactable        
+        self.physicsBody?.collisionBitMask = PhysicsCategory.interactable
         
+        self.zPosition = Layers.Interactable
+        
+        self.name = "Flower"
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,7 +39,7 @@ class FlowerNode: SKSpriteNode {
 }
 
 extension FlowerNode: Interactable {
-    func interact() {
+    func startInteraction() {
         self.interactionEnabled = false
         pollenDelegate?.increasePollen(pollen)
     }

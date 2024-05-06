@@ -16,7 +16,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         map: .init(map: 200, tile: 25, tilePollenRange: 50..<500),
         tree: .init(quantity: 4, size: .init(width: 100, height: 100), numberOfFlowersAround: 10, treeRadius: 100),
         player: .init(movementSpeed: 5, pollenDisperseRate: 1),
-        score: .init(basePoints: 0.5)
+        score: .init(basePoints: 0.5),
+        bird: .init(size: .init(width: 40, height: 30), movementSpeed: 15, knockbackForce: 50, approachBeforeAttackRadius: 50)
     )
     
     var virtualController: GCVirtualController? //Controllers
@@ -26,6 +27,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     
     var map: MapNode?
     var bounds: CGRect = .zero
+    
+    var birdSpawnnerChance: CGFloat = 0.3
     
     var interactable: SKNode?
     
@@ -85,8 +88,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        guard let viewLocation = touches.first?.location(in: view) else { return }
-//        
-//        let sceneLocation = convertPoint(fromView: viewLocation)
+        guard let viewLocation = touches.first?.location(in: view) else { return }
+        
+        let sceneLocation = convertPoint(fromView: viewLocation)
+        
+        spawnBird()
     }
 }

@@ -35,6 +35,11 @@ extension GameScene {
             
             enableInteraction(with: node, highlightSize: size)
         }
+        
+        if contactMask == (PhysicsCategory.enemy | PhysicsCategory.player) {
+            guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable) else { return }
+            interactable.startInteraction()
+        }
     }
     
     
