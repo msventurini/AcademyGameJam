@@ -13,11 +13,22 @@
 		1C032EBE2BE6A38F00A9775B /* Layers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EBD2BE6A38F00A9775B /* Layers.swift */; };
 		1C032EC02BE6A39700A9775B /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EBF2BE6A39700A9775B /* Textures.swift */; };
 		1C032EC22BE6A3AA00A9775B /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C032EC12BE6A3AA00A9775B /* PhysicsCategory.swift */; };
+		1C8564DF2BE8134D00051EA2 /* PollutionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8564DE2BE8134D00051EA2 /* PollutionNode.swift */; };
+		1C8564E22BE8138100051EA2 /* GS+Pollution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8564E12BE8138100051EA2 /* GS+Pollution.swift */; };
+		1C8564E42BE82D5100051EA2 /* EnemyTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8564E32BE82D5100051EA2 /* EnemyTypes.swift */; };
+		1C8564E72BE854BA00051EA2 /* Pollution.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C8564E52BE854BA00051EA2 /* Pollution.sks */; };
+		1C8564E82BE854BA00051EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C8564E62BE854BA00051EA2 /* Assets.xcassets */; };
+		1C8564EE2BE869D500051EA2 /* PolenTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C8564ED2BE869D500051EA2 /* PolenTrail.sks */; };
 		1CA4FD442BE7FF77001FF87E /* GS+AddBoundaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4FD432BE7FF77001FF87E /* GS+AddBoundaries.swift */; };
 		23B0DBEF2BE730140089CFAF /* GameCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B0DBEE2BE730140089CFAF /* GameCenterView.swift */; };
 		23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */; };
+		23C1158D2BE8544000922780 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1158C2BE8544000922780 /* CustomButton.swift */; };
+		23C1158F2BE8545A00922780 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1158E2BE8545A00922780 /* CreditsView.swift */; };
+		23C115912BE8580300922780 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C115902BE8580300922780 /* MusicController.swift */; };
+		23C115942BE8589100922780 /* MusicGameCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C115932BE8589100922780 /* MusicGameCard.swift */; };
 		318A81FB2BE6FE61006A6E32 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A81FA2BE6FE61006A6E32 /* TreeNode.swift */; };
 		318A81FD2BE6FFA8006A6E32 /* GS+Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A81FC2BE6FFA8006A6E32 /* GS+Tree.swift */; };
+		318A81FF2BE84A94006A6E32 /* EndGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A81FE2BE84A93006A6E32 /* EndGameView.swift */; };
 		7B38A17B2BE5C33D00B4A99C /* AcademyGameJamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A17A2BE5C33D00B4A99C /* AcademyGameJamApp.swift */; };
 		7B38A17F2BE5C33E00B4A99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B38A17E2BE5C33E00B4A99C /* Assets.xcassets */; };
 		7B38A1822BE5C33E00B4A99C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B38A1812BE5C33E00B4A99C /* Preview Assets.xcassets */; };
@@ -32,9 +43,12 @@
 		A72134F52BE768DE003362B1 /* PollenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72134F42BE768DE003362B1 /* PollenDelegate.swift */; };
 		A72134F72BE7694B003362B1 /* GS+PollenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72134F62BE7694B003362B1 /* GS+PollenDelegate.swift */; };
 		A75A14E12BE6FFD800033D5C /* GS+Interactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */; };
+		A776BC9C2BE86B5100A15102 /* backgroundmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A776BC9B2BE86B5100A15102 /* backgroundmusic.mp3 */; };
 		A79BCD8E2BE7F0C800C2B4ED /* TileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BCD8D2BE7F0C800C2B4ED /* TileNode.swift */; };
 		A79BCD912BE7F4F200C2B4ED /* UIColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BCD902BE7F4F200C2B4ED /* UIColor+RGBA.swift */; };
 		A79BCD932BE8172200C2B4ED /* GS+Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BCD922BE8172200C2B4ED /* GS+Score.swift */; };
+		A7E3FD2E2BE82CFC00803DC0 /* BirdNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E3FD2D2BE82CFC00803DC0 /* BirdNode.swift */; };
+		A7E3FD302BE82EEF00803DC0 /* GS+Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E3FD2F2BE82EEF00803DC0 /* GS+Bird.swift */; };
 		A7F53B642BE5DD0400BC64D7 /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B632BE5DD0400BC64D7 /* MapNode.swift */; };
 		A7F53B672BE5E43F00BC64D7 /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B662BE5E43F00BC64D7 /* Tokens.swift */; };
 		A7F53B692BE6902700BC64D7 /* GS+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B682BE6902700BC64D7 /* GS+Map.swift */; };
@@ -51,12 +65,24 @@
 		1C032EBD2BE6A38F00A9775B /* Layers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layers.swift; sourceTree = "<group>"; };
 		1C032EBF2BE6A39700A9775B /* Textures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
 		1C032EC12BE6A3AA00A9775B /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		1C8564DE2BE8134D00051EA2 /* PollutionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionNode.swift; sourceTree = "<group>"; };
+		1C8564E12BE8138100051EA2 /* GS+Pollution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Pollution.swift"; sourceTree = "<group>"; };
+		1C8564E32BE82D5100051EA2 /* EnemyTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyTypes.swift; sourceTree = "<group>"; };
+		1C8564E52BE854BA00051EA2 /* Pollution.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Pollution.sks; sourceTree = "<group>"; };
+		1C8564E62BE854BA00051EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C8564ED2BE869D500051EA2 /* PolenTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PolenTrail.sks; sourceTree = "<group>"; };
 		1CA4FD432BE7FF77001FF87E /* GS+AddBoundaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+AddBoundaries.swift"; sourceTree = "<group>"; };
 		23B0DBEE2BE730140089CFAF /* GameCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterView.swift; sourceTree = "<group>"; };
 		23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenu.swift; sourceTree = "<group>"; };
 		23B9A0FF2BE71F0000F4E5A0 /* AcademyGameJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AcademyGameJam.entitlements; sourceTree = "<group>"; };
+		23C1158C2BE8544000922780 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		23C1158E2BE8545A00922780 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		23C115902BE8580300922780 /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
+		23C115932BE8589100922780 /* MusicGameCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicGameCard.swift; sourceTree = "<group>"; };
+		23C115972BE85A1F00922780 /* backgroundmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundmusic.mp3; sourceTree = "<group>"; };
 		318A81FA2BE6FE61006A6E32 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		318A81FC2BE6FFA8006A6E32 /* GS+Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Tree.swift"; sourceTree = "<group>"; };
+		318A81FE2BE84A93006A6E32 /* EndGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameView.swift; sourceTree = "<group>"; };
 		7B38A1772BE5C33D00B4A99C /* AcademyGameJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcademyGameJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B38A17A2BE5C33D00B4A99C /* AcademyGameJamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyGameJamApp.swift; sourceTree = "<group>"; };
 		7B38A17E2BE5C33E00B4A99C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,9 +98,12 @@
 		A72134F42BE768DE003362B1 /* PollenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenDelegate.swift; sourceTree = "<group>"; };
 		A72134F62BE7694B003362B1 /* GS+PollenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+PollenDelegate.swift"; sourceTree = "<group>"; };
 		A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Interactions.swift"; sourceTree = "<group>"; };
+		A776BC9B2BE86B5100A15102 /* backgroundmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundmusic.mp3; sourceTree = "<group>"; };
 		A79BCD8D2BE7F0C800C2B4ED /* TileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileNode.swift; sourceTree = "<group>"; };
 		A79BCD902BE7F4F200C2B4ED /* UIColor+RGBA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGBA.swift"; sourceTree = "<group>"; };
 		A79BCD922BE8172200C2B4ED /* GS+Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Score.swift"; sourceTree = "<group>"; };
+		A7E3FD2D2BE82CFC00803DC0 /* BirdNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdNode.swift; sourceTree = "<group>"; };
+		A7E3FD2F2BE82EEF00803DC0 /* GS+Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Bird.swift"; sourceTree = "<group>"; };
 		A7F53B632BE5DD0400BC64D7 /* MapNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNode.swift; sourceTree = "<group>"; };
 		A7F53B662BE5E43F00BC64D7 /* Tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
 		A7F53B682BE6902700BC64D7 /* GS+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Map.swift"; sourceTree = "<group>"; };
@@ -106,12 +135,30 @@
 			path = Misc;
 			sourceTree = "<group>";
 		};
+		1C8564E02BE8135400051EA2 /* Pollution */ = {
+			isa = PBXGroup;
+			children = (
+				1C8564E12BE8138100051EA2 /* GS+Pollution.swift */,
+				1C8564DE2BE8134D00051EA2 /* PollutionNode.swift */,
+				1C8564E32BE82D5100051EA2 /* EnemyTypes.swift */,
+			);
+			path = Pollution;
+			sourceTree = "<group>";
+		};
 		23B0DBED2BE730020089CFAF /* GameCenter */ = {
 			isa = PBXGroup;
 			children = (
 				23B0DBEE2BE730140089CFAF /* GameCenterView.swift */,
 			);
 			path = GameCenter;
+			sourceTree = "<group>";
+		};
+		23C115922BE8587300922780 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				23C115902BE8580300922780 /* MusicController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		318A81F92BE6FE2C006A6E32 /* Tree */ = {
@@ -126,6 +173,9 @@
 		7B38A16E2BE5C33D00B4A99C = {
 			isa = PBXGroup;
 			children = (
+				1C8564ED2BE869D500051EA2 /* PolenTrail.sks */,
+				1C8564E52BE854BA00051EA2 /* Pollution.sks */,
+				1C8564E62BE854BA00051EA2 /* Assets.xcassets */,
 				7B38A1792BE5C33D00B4A99C /* AcademyGameJam */,
 				7B38A1782BE5C33D00B4A99C /* Products */,
 			);
@@ -142,6 +192,8 @@
 		7B38A1792BE5C33D00B4A99C /* AcademyGameJam */ = {
 			isa = PBXGroup;
 			children = (
+				23C115972BE85A1F00922780 /* backgroundmusic.mp3 */,
+				23C115922BE8587300922780 /* Controllers */,
 				23B0DBED2BE730020089CFAF /* GameCenter */,
 				23B9A0FF2BE71F0000F4E5A0 /* AcademyGameJam.entitlements */,
 				7B38A17E2BE5C33E00B4A99C /* Assets.xcassets */,
@@ -158,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				A79BCD8F2BE7F4D400C2B4ED /* Extensions */,
+				A776BC9B2BE86B5100A15102 /* backgroundmusic.mp3 */,
 				7B38A1812BE5C33E00B4A99C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -185,10 +238,12 @@
 				A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */,
 				A79BCD922BE8172200C2B4ED /* GS+Score.swift */,
 				A7F53B712BE6B0D400BC64D7 /* GameSettings.swift */,
+				1C8564E02BE8135400051EA2 /* Pollution */,
 				A7F53B6A2BE6ADB300BC64D7 /* Flower */,
 				A7F53B622BE5DCC100BC64D7 /* Map */,
 				318A81F92BE6FE2C006A6E32 /* Tree */,
 				7B38A18B2BE5C36200B4A99C /* Player */,
+				A7E3FD2C2BE82CD300803DC0 /* Enemies */,
 				1C032EBC2BE6A34500A9775B /* Misc */,
 				EA013A112BE758EC008BC412 /* SKNode+AnimationExtension.swift */,
 				A72134ED2BE75979003362B1 /* Protocols */,
@@ -219,6 +274,10 @@
 			children = (
 				7B38A18D2BE5C36200B4A99C /* GameView.swift */,
 				23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenu.swift */,
+				318A81FE2BE84A93006A6E32 /* EndGameView.swift */,
+				23C1158C2BE8544000922780 /* CustomButton.swift */,
+				23C1158E2BE8545A00922780 /* CreditsView.swift */,
+				23C115932BE8589100922780 /* MusicGameCard.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -229,6 +288,23 @@
 				A79BCD902BE7F4F200C2B4ED /* UIColor+RGBA.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A7E3FD2B2BE82CCB00803DC0 /* Bird */ = {
+			isa = PBXGroup;
+			children = (
+				A7E3FD2F2BE82EEF00803DC0 /* GS+Bird.swift */,
+				A7E3FD2D2BE82CFC00803DC0 /* BirdNode.swift */,
+			);
+			path = Bird;
+			sourceTree = "<group>";
+		};
+		A7E3FD2C2BE82CD300803DC0 /* Enemies */ = {
+			isa = PBXGroup;
+			children = (
+				A7E3FD2B2BE82CCB00803DC0 /* Bird */,
+			);
+			path = Enemies;
 			sourceTree = "<group>";
 		};
 		A7F53B622BE5DCC100BC64D7 /* Map */ = {
@@ -316,8 +392,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A776BC9C2BE86B5100A15102 /* backgroundmusic.mp3 in Resources */,
 				7B38A1822BE5C33E00B4A99C /* Preview Assets.xcassets in Resources */,
+				1C8564EE2BE869D500051EA2 /* PolenTrail.sks in Resources */,
 				7B38A17F2BE5C33E00B4A99C /* Assets.xcassets in Resources */,
+				1C8564E72BE854BA00051EA2 /* Pollution.sks in Resources */,
+				1C8564E82BE854BA00051EA2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,24 +413,31 @@
 				23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenu.swift in Sources */,
 				A7F53B642BE5DD0400BC64D7 /* MapNode.swift in Sources */,
 				1CA4FD442BE7FF77001FF87E /* GS+AddBoundaries.swift in Sources */,
+				A7E3FD2E2BE82CFC00803DC0 /* BirdNode.swift in Sources */,
 				7B38A1992BE5C36200B4A99C /* GameScene.swift in Sources */,
 				A7F53B672BE5E43F00BC64D7 /* Tokens.swift in Sources */,
 				A72134F72BE7694B003362B1 /* GS+PollenDelegate.swift in Sources */,
 				7B38A1932BE5C36200B4A99C /* MyPlayerEnum.swift in Sources */,
 				A7F53B722BE6B0D400BC64D7 /* GameSettings.swift in Sources */,
 				A72134F32BE75B7F003362B1 /* Sizeable.swift in Sources */,
+				A7E3FD302BE82EEF00803DC0 /* GS+Bird.swift in Sources */,
+				23C115942BE8589100922780 /* MusicGameCard.swift in Sources */,
+				23C115912BE8580300922780 /* MusicController.swift in Sources */,
 				A7F53B6C2BE6ADC100BC64D7 /* FlowerNode.swift in Sources */,
 				7B38A17B2BE5C33D00B4A99C /* AcademyGameJamApp.swift in Sources */,
 				EA013A122BE758EC008BC412 /* SKNode+AnimationExtension.swift in Sources */,
+				318A81FF2BE84A94006A6E32 /* EndGameView.swift in Sources */,
 				A72134EF2BE75995003362B1 /* Interactable.swift in Sources */,
 				7B38A1942BE5C36200B4A99C /* Player.swift in Sources */,
 				1C032EB72BE6A30500A9775B /* GS+AddUpdaters.swift in Sources */,
 				A72134EC2BE7490D003362B1 /* ProgressBarNode.swift in Sources */,
 				7B38A1982BE5C36200B4A99C /* GS+VirtualControllers.swift in Sources */,
+				1C8564E22BE8138100051EA2 /* GS+Pollution.swift in Sources */,
 				1C032EBE2BE6A38F00A9775B /* Layers.swift in Sources */,
 				A79BCD912BE7F4F200C2B4ED /* UIColor+RGBA.swift in Sources */,
 				A72134F52BE768DE003362B1 /* PollenDelegate.swift in Sources */,
 				1C032EBB2BE6A33100A9775B /* GS+DidMove.swift in Sources */,
+				1C8564DF2BE8134D00051EA2 /* PollutionNode.swift in Sources */,
 				1C032EC02BE6A39700A9775B /* Textures.swift in Sources */,
 				A7F53B692BE6902700BC64D7 /* GS+Map.swift in Sources */,
 				318A81FB2BE6FE61006A6E32 /* TreeNode.swift in Sources */,
@@ -358,8 +445,11 @@
 				7B38A1962BE5C36200B4A99C /* GameView.swift in Sources */,
 				318A81FD2BE6FFA8006A6E32 /* GS+Tree.swift in Sources */,
 				23B0DBEF2BE730140089CFAF /* GameCenterView.swift in Sources */,
+				23C1158F2BE8545A00922780 /* CreditsView.swift in Sources */,
+				23C1158D2BE8544000922780 /* CustomButton.swift in Sources */,
 				1C032EB92BE6A31F00A9775B /* GS+ContactDelegate.swift in Sources */,
 				1C032EC22BE6A3AA00A9775B /* PhysicsCategory.swift in Sources */,
+				1C8564E42BE82D5100051EA2 /* EnemyTypes.swift in Sources */,
 				A75A14E12BE6FFD800033D5C /* GS+Interactions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,12 +585,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyGameJam/Preview Content\"";
-				DEVELOPMENT_TEAM = V9T7U9428G;
+				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TPM3CS87N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FlowerHive;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.adventure-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -514,7 +605,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gstvGameTest.AcademyGameJam;
+				PRODUCT_BUNDLE_IDENTIFIER = gstvGameTest.AcademyGameJam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = GameJamProvisionProfile;
@@ -533,12 +624,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyGameJam/Preview Content\"";
-				DEVELOPMENT_TEAM = V9T7U9428G;
+				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TPM3CS87N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FlowerHive;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.adventure-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -551,7 +643,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gstvGameTest.AcademyGameJam;
+				PRODUCT_BUNDLE_IDENTIFIER = gstvGameTest.AcademyGameJam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = GameJamProvisionProfile;

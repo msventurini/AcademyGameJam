@@ -25,6 +25,7 @@ class Player: SKSpriteNode {
     init(movementSpeed: CGFloat) {
         let playerSize = CGSize(width: 32, height: 32)
         let playerColor = UIColor.yellow
+        
         self.movementSpeed = movementSpeed
         
         let defaultTexture = SKTexture(image: .playerSouthTexture0)
@@ -43,13 +44,16 @@ class Player: SKSpriteNode {
         pb.allowsRotation = false
 
         pb.categoryBitMask = PhysicsCategory.player
-        pb.contactTestBitMask = PhysicsCategory.interactable
+        pb.contactTestBitMask = PhysicsCategory.interactable + PhysicsCategory.pollution
         pb.collisionBitMask = PhysicsCategory.player
-        
+
         self.physicsBody = pb
         
         movementAnimationSouth()
 
+        self.zPosition = Layers.Player        
+        
+        self.name = "Player"
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,11 +61,7 @@ class Player: SKSpriteNode {
     }
     
     func move(x: CGFloat, y: CGFloat) {
-        
         let playerMovementAction = SKAction.customAction(withDuration: 1.0) { node, eleapsedTime in
-            
-            //            if let playerNode = self.player {
-            
             if let node = node as? SKSpriteNode {
                 node.position.x += x * self.movementSpeed
                 node.position.y += y * self.movementSpeed
@@ -219,5 +219,16 @@ class Player: SKSpriteNode {
         if action(forKey: "walk") != nil {
             removeAction(forKey: "walk")
         }
+    }
+    
+    public func applyForce(towards targetPoint: CGPoint, withMagnitude magnitude: CGFloat) {
+        let vector = self.position.vector(to: targetPoint)
+        
+        let length = sqrt(vector.dx * vector.dx + vector.dy * vector.dy)
+        let normalizedVector = CGVector(dx: vector.dx / length, dy: vector.dy / length)
+        
+        let force = CGVector(dx: normalizedVector.dx * magnitude, dy: normalizedVector.dy * magnitude)
+        
+        self.physicsBody?.applyForce(force)
     }
 }

@@ -14,6 +14,8 @@ class ProgressBarNode: SKSpriteNode {
     init(size: CGSize) {
         super.init(texture: nil, color: .clear, size: size)
         
+        self.zPosition = Layers.UIElement
+        
         let outerBar = SKShapeNode(rectOf: size)
         outerBar.lineWidth = 5
         outerBar.strokeColor = .black
@@ -25,6 +27,7 @@ class ProgressBarNode: SKSpriteNode {
         innerBar.setScale(0)
         
         innerBar.run(.scaleY(to: 1, duration: 0.01))
+        innerBar.zPosition = outerBar.zPosition - 1
         
         outerBar.addChild(innerBar)
         

@@ -10,22 +10,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     @Published var score: Float = 0
     @Published var isScenePaused = false
     @Published var pollen: Float = 0
+    @Published var gameEnd = false
+    @Published var pauseIsEnable = true
 
     let settings: GameSettings = .init(
         flower: .init(quantity: 1000, size: .init(width: 40, height: 40 * 0.8), pollenMultiplier: 10),
         map: .init(map: 200, tile: 25, tilePollenRange: 50..<500),
         tree: .init(quantity: 4, size: .init(width: 100, height: 100), numberOfFlowersAround: 10, treeRadius: 100),
         player: .init(movementSpeed: 5, pollenDisperseRate: 1),
-        score: .init(basePoints: 0.5)
+        score: .init(basePoints: 0.5),
+        bird: .init(size: .init(width: 40, height: 30), movementSpeed: 15, knockbackForce: 50, approachBeforeAttackRadius: 50)
     )
     
     var virtualController: GCVirtualController? //Controllers
     var player: Player? // Adicione uma propriedade para armazenar o jogador
+    var enemies: [EnemyTypes:[SKSpriteNode]] = [:]
     var cameraNode: SKCameraNode? // Propriedade para a câmera
     var cancellables: Set<AnyCancellable> = Set<AnyCancellable>() // Guarda todos os updaters canceláveis
     
     var map: MapNode?
     var bounds: CGRect = .zero
+    
+    var birdSpawnnerChance: CGFloat = 0.3
     
     var interactable: SKNode?
     
@@ -50,6 +56,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         }
     }
     
+    func endGame(){
+        cancelUpdaters()
+        player?.movementCancel()
+        virtualController = nil
+        pauseIsEnable = false
+        gameEnd = true
+    }
+    
     func sendLeaderboard() async {
         Task{
             do {
@@ -57,7 +71,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
                     Int(self.score),
                     context: 0,
                     player: GKLocalPlayer.local,
-                    leaderboardIDs: ["finished10levels"]
+                    leaderboardIDs: ["finishedlevelsADAJAM"]
                 )
             } catch {
                 print("Error on: \(#function): \(error.localizedDescription)")
@@ -85,8 +99,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        guard let viewLocation = touches.first?.location(in: view) else { return }
-//        
-//        let sceneLocation = convertPoint(fromView: viewLocation)
+        guard let viewLocation = touches.first?.location(in: view) else { return }
+        
+        let sceneLocation = convertPoint(fromView: viewLocation)
+        
+        spawnBird()
     }
 }

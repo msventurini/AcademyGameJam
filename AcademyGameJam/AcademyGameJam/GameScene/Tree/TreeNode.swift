@@ -22,6 +22,8 @@ class TreeNode: SKSpriteNode {
         self.physicsBody?.contactTestBitMask = PhysicsCategory.player
         self.physicsBody?.collisionBitMask = PhysicsCategory.interactable
         
+        self.zPosition = Layers.Interactable
+        
         self.name = "Tree"
     }
     
@@ -31,7 +33,7 @@ class TreeNode: SKSpriteNode {
 }
 
 extension TreeNode: Interactable {
-    func interact() {
+    func startInteraction() {
         self.interactionEnabled = false
         pollenDelegate?.increasePollen(300)
     }
