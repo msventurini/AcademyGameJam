@@ -9,6 +9,7 @@ import Foundation
 
 protocol Interactable {
     var interactionEnabled: Bool { get set }
+    var hasProgressionBar: Bool { get }
     
     func startInteraction()
     func endInteraction()

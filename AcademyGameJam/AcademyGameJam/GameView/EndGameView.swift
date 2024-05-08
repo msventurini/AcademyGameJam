@@ -9,8 +9,10 @@ import SwiftUI
 import GameKit
 
 struct EndGameView: View {
-    @State var show: Bool = false
+    @EnvironmentObject private var router: Router
+    
     @Binding var score: Float
+    @Binding var shouldRestart: Bool
     
     var body: some View {
         VStack {
@@ -22,8 +24,14 @@ struct EndGameView: View {
                 .padding(.horizontal, 10)
             
             CustomButton(label: "Restart", iconName: "arrow.counterclockwise.circle.fill")
+                .onTapGesture {
+                    shouldRestart = true
+                }
             
             CustomButton(label: "Menu", iconName: "line.3.horizontal")
+                .onTapGesture {
+                    router.pop(toRoot: true)
+                }
         }
         .padding(.horizontal, 80)
         .padding(.vertical, 20)
@@ -33,5 +41,6 @@ struct EndGameView: View {
 }
 
 #Preview {
-    EndGameView(score: .constant(10))
+    EndGameView(score: .constant(10), shouldRestart: .constant(false))
+        .environmentObject(Router())
 }

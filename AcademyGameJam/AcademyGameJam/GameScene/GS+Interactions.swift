@@ -9,28 +9,11 @@ import Foundation
 import SpriteKit
 
 extension GameScene {
-    internal func enableInteraction(with node: SKNode, highlightSize: CGSize) {
+    internal func enableInteraction(with node: SKNode, selectorSize: CGSize) {
         if let interactable = node as? Interactable, !interactable.interactionEnabled { return }
         
         interactable = node
-        // TODO: Enable the interaction button
-        
-        let radius = highlightSize.width < highlightSize.height ? highlightSize.width : highlightSize.height
-        let stroke = SKShapeNode(circleOfRadius: radius)
-        
-        // TODO: Use a color defined on the `Tokens` struct
-        stroke.strokeColor = .tintColor
-        stroke.lineWidth = 2
-        stroke.name = "outline"
-        stroke.zPosition = node.zPosition + 1
-        
-        stroke.setScale(0)
-        
-        stroke.run(.sequence([
-            .scale(to: 1, duration: 0.25)
-        ]))
-        
-        node.addChild(stroke)
+        addSelector(to: interactable!, size: selectorSize)
     }
     
     internal func disableInteraction(of node: SKNode) {
@@ -38,19 +21,17 @@ extension GameScene {
             interactable = nil
         }
         
-        node.childNode(withName: "outline")?
-            .run(.scale(to: 0, duration: 0.15)) {
-                node.childNode(withName: "outline")?.removeFromParent()
-            }
-        
-        // TODO: Disable the interaction button
+        removeSelector(from: node)
     }
     
     internal func interact() {
-        guard let interactable else { return }
+        guard let interactable = interactable as? Interactable,
+              let node = interactable as? SKNode else { return }
         
-        if let interactableNode = interactable as? Interactable, interactableNode.interactionEnabled {
-            addProgressBar(to: interactable)
+        if interactable.hasProgressionBar {
+            addProgressBar(to: node)
+        } else if interactable.interactionEnabled {
+            interactable.startInteraction()
         }
     }
     
@@ -69,6 +50,32 @@ extension GameScene {
 
 
 extension GameScene {
+    fileprivate func addSelector(to node: SKNode, size: CGSize) {
+        let radius = size.width < size.height ? size.width : size.height
+        let stroke = SKShapeNode(circleOfRadius: radius)
+        
+        // TODO: Use a color defined on the `Tokens` struct
+        stroke.strokeColor = .tintColor
+        stroke.lineWidth = 2
+        stroke.name = "outline"
+        stroke.zPosition = node.zPosition + 1
+        
+        stroke.setScale(0)
+        
+        stroke.run(.sequence([
+            .scale(to: 1, duration: 0.25)
+        ]))
+        
+        node.addChild(stroke)
+    }
+    
+    fileprivate func removeSelector(from node: SKNode) {
+        node.childNode(withName: "outline")?
+            .run(.scale(to: 0, duration: 0.15)) {
+                node.childNode(withName: "outline")?.removeFromParent()
+            }
+    }
+    
     fileprivate func addProgressBar(to node: SKNode) {
         let size: CGSize
         if let sizeable = node as? Sizeable {

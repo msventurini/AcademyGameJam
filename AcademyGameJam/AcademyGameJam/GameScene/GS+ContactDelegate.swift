@@ -14,9 +14,10 @@ extension GameScene {
         let bodyB = contact.bodyB
         let contactMask = bodyA.categoryBitMask | bodyB.categoryBitMask
         
+        guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable) else { return }
+        
         if contactMask == (PhysicsCategory.interactable | PhysicsCategory.player) {
-            guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable),
-                  let node = (interactable as? SKNode) else { return }
+            guard let node = (interactable as? SKNode) else { return }
             
             let size: CGSize
             if let sizeable = node as? Sizeable {
@@ -25,16 +26,10 @@ extension GameScene {
                 size = node.frame.size
             }
             
-            enableInteraction(with: node, highlightSize: size)
+            enableInteraction(with: node, selectorSize: size)
         }
         
         if contactMask == (PhysicsCategory.enemy | PhysicsCategory.player) {
-            guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable) else { return }
-            interactable.startInteraction()
-        }
-
-        if contactMask == (PhysicsCategory.pollution | PhysicsCategory.player) {    
-            guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable) else { return }
             interactable.startInteraction()
         }
     }
@@ -46,16 +41,10 @@ extension GameScene {
         let bodyB = contact.bodyB
         let contactMask = bodyA.categoryBitMask | bodyB.categoryBitMask
         
-        if contactMask == (PhysicsCategory.interactable | PhysicsCategory.player) {
-            guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable),
-                  let node = (interactable as? SKNode) else { return }
-            
-            disableInteraction(of: node)
-        }
+        guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable),
+              let node = (interactable as? SKNode) else { return }
         
-        if contactMask == (PhysicsCategory.pollution | PhysicsCategory.player) {
-            guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable) else { return }
-            interactable.endInteraction()
-        }
+        disableInteraction(of: node)
+        interactable.endInteraction()
     }
 }

@@ -13,9 +13,7 @@ struct AcademyGameJamApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                Menu()
-            }
+            RouterView(initialRoute: Routes.MainMenu)
             .environmentObject(soundManager)
         }
     }

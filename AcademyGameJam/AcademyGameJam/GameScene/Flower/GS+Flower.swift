@@ -24,10 +24,12 @@ extension GameScene {
             instantiatedFlowers.append(flower)
         }
         
-        DispatchQueue.global(qos: .userInteractive).async {
-            var positionatedFlowers = [SKNode]()
-            
+        var positionatedFlowers = children.filter({ $0.name == "Flower" || $0.name == "Tree" })
+        
+        DispatchQueue.global().async {
             for flower in instantiatedFlowers {
+                var attempt: Int = 0
+                
                 var point: CGPoint
                 repeat {
                     point = CGPoint(
@@ -41,6 +43,10 @@ extension GameScene {
                         positionatedFlowers.append(flower)
                         break
                     }
+                    
+                    if attempt == 5 { break }
+                    
+                    attempt += 1
                 }
                 while true
             }

@@ -45,31 +45,33 @@ struct MusicGameCard: View {
                         }
                     
                     
-                    Text(soundManager.isPlaying ? "on": "off")
+                    Text(soundManager.isPlaying ? "On": "Off")
                         .foregroundColor(.white)
                         .fontWeight(.semibold)
-                    
-                }.padding(.bottom, 12)
+                }
+                .padding(.bottom, 12)
+                
                 HStack {
                     Image(systemName: "speaker.wave.1")
+                    
                     Slider(value: $soundManager.volume, in: 0.0...1.0)
                         .padding(.horizontal)
                         .tint(soundManager.isPlaying ? Color.green : Color.gray)
+                    
                     Image(systemName: "speaker.wave.3")
-                }.padding(.horizontal, 20)
+                }
+                .padding(.horizontal, 20)
                 
                 Spacer()
             }
-            .frame(maxWidth: UIScreen.main.bounds.width * 0.5, maxHeight: UIScreen.main.bounds.height * 0.80)
             .background(Color.green.opacity(0.4))
             .cornerRadius(12)
         }
     }
     
-    func iconLabel() -> String {
-        guard soundManager.isPlaying else {
-            return "speaker.slash"
-        }
+    private func iconLabel() -> String {
+        guard soundManager.isPlaying else { return "speaker.slash" }
+        
         switch soundManager.volume {
         case 0.0:
             return "speaker.slash"

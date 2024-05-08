@@ -36,10 +36,10 @@ struct GameSettings {
     }
     
     struct Tree {
-        let quantity: Int
         let size: CGSize
         let numberOfFlowersAround: Int
-        let treeRadius: CGFloat
+        let flowerRadius: CGFloat
+        let flowerRadiusRandomRange: Range<CGFloat>
     }
     
     struct Player {

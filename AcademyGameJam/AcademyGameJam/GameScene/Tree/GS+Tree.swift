@@ -10,54 +10,41 @@ import SpriteKit
 
 extension GameScene{
     internal func setupTrees(center: CGPoint) {
-        for i in 0..<settings.tree.quantity {
+        let pointA = CGPoint(x: center.x + (bounds.width * 0.25) + CGFloat.random(in: -100...100), y: center.y + (bounds.width * 0.25) + CGFloat.random(in: -100...100))
+        let pointB = CGPoint(x: center.x + (bounds.width * 0.25) + CGFloat.random(in: -100...100), y: center.y - (bounds.width * 0.25) + CGFloat.random(in: -100...100))
+        let pointC = CGPoint(x: center.x - (bounds.width * 0.25) + CGFloat.random(in: -100...100), y: center.y - (bounds.width * 0.25) + CGFloat.random(in: -100...100))
+        let pointD = CGPoint(x: center.x - (bounds.width * 0.25) + CGFloat.random(in: -100...100), y: center.y + (bounds.width * 0.25) + CGFloat.random(in: -100...100))
+        
+        let points = [pointA, pointB, pointC, pointD]
+        for point in points {
             let tree = TreeNode(size: settings.tree.size)
             tree.pollenDelegate = self
+            tree.position = point
             
-            var point: CGPoint = .zero
+            addChild(tree)
             
-            // Posicionamento de cada árvore
-            switch i {
-            case 0:
-                point = CGPoint(x: center.x + 1500 + randomNumber(), y: center.y + 1700 + randomNumber())
-            case 1:
-                point = CGPoint(x: center.x + 1600 + randomNumber(), y: center.y - 1700 + randomNumber())
-            case 2:
-                point = CGPoint(x: center.x - 1500 + randomNumber(), y: center.y + 1700 + randomNumber())
-            case 3:
-                point = CGPoint(x: center.x - 1500 + randomNumber(), y: center.y - 1700 + randomNumber())
-            default:
-                break
-            }
-            
-            if i < 4 {
-                tree.position = point
-                addChild(tree)
-                
-                // Adicionar flores ao redor de cada árvore
-                setupFlowersAroundTree(around: point)
-            }
+            setupFlowersAroundTree(around: point)
         }
     }
-    // Método para adicionar flores ao redor de uma posição central (árvore)
+    
     func setupFlowersAroundTree(around treePosition: CGPoint) {
-        let radius: CGFloat = settings.tree.treeRadius
+        let radiusBonus = CGFloat.random(in: settings.tree.flowerRadiusRandomRange)
+        
         for i in 0..<settings.tree.numberOfFlowersAround {
             let angle = CGFloat(i) * (2 * .pi / CGFloat(settings.tree.numberOfFlowersAround))
-            let xOffset = radius * cos(angle)
-            let yOffset = radius * sin(angle)
+            
+            
+            let xOffset = (settings.tree.flowerRadius + radiusBonus) * cos(angle)
+            let yOffset = (settings.tree.flowerRadius + radiusBonus) * sin(angle)
+            
             let flowerPosition = CGPoint(x: treePosition.x + xOffset, y: treePosition.y + yOffset)
             
             let flower = FlowerNode(size: settings.flower.size, pollenMultiplier: settings.flower.pollenMultiplier)
+            
             flower.pollenDelegate = self
             flower.position = flowerPosition
             
             addChild(flower)
         }
-    }
-    
-    //gera um numero aletório entre -100 e 100
-    func randomNumber() -> CGFloat {
-        return CGFloat.random(in: -100...100)
     }
 }

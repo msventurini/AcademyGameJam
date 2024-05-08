@@ -35,7 +35,7 @@ extension MapNode {
         }
         
         func polinate(_ quantity: Float) -> Bool {
-            if pollen + quantity >= maxPollen { return false }
+            if pollen >= maxPollen { return false }
             
             pollen += quantity
             color = color.interpolate(to: colorGoal, progress: CGFloat(pollen/maxPollen))

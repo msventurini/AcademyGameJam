@@ -10,6 +10,8 @@ import SpriteKit
 
 class BirdNode: SKSpriteNode {
     var interactionEnabled: Bool = true
+    let hasProgressionBar: Bool = false
+    
     let settings: GameSettings.Enemies.Bird
     
     weak var player: Player?
@@ -47,19 +49,8 @@ class BirdNode: SKSpriteNode {
         
         run(.move(to: .init(x: x, y: y), duration: 2)) { [weak self] in
             guard let self else { return }
-            self.applyForce(towards: player.position, withMagnitude: 2000)
+            SpriteKitUtility.applyForce(to: self, towards: player.position, withMagnitude: 2000)
         }
-    }
-
-    public func applyForce(towards targetPoint: CGPoint, withMagnitude magnitude: CGFloat) {
-        let vector = self.position.vector(to: targetPoint)
-        
-        let length = sqrt(vector.dx * vector.dx + vector.dy * vector.dy)
-        let normalizedVector = CGVector(dx: vector.dx / length, dy: vector.dy / length)
-        
-        let force = CGVector(dx: normalizedVector.dx * magnitude, dy: normalizedVector.dy * magnitude)
-        
-        self.physicsBody?.applyForce(force)
     }
 }
 
@@ -76,19 +67,5 @@ extension BirdNode: Interactable {
             .scale(to: 0, duration: 1),
             .removeFromParent()
         ]))
-    }
-}
-
-
-extension CGPoint {
-    public func distanceFromCGPoint(_ point: CGPoint) -> CGFloat {
-        return sqrt(pow(self.x - point.x,2) + pow(self.y - point.y,2))
-    }
-    public func vector(to point: CGPoint) -> CGVector {
-        return CGVector(dx: point.x - self.x, dy: point.y - self.y)
-    }
-    public func normalized() -> CGVector {
-        let length = sqrt(x * x + y * y)
-        return CGVector(dx: x / length, dy: y / length)
     }
 }
