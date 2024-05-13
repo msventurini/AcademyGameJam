@@ -41,6 +41,7 @@
 		A72134F32BE75B7F003362B1 /* Sizeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72134F22BE75B7F003362B1 /* Sizeable.swift */; };
 		A72134F52BE768DE003362B1 /* PollenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72134F42BE768DE003362B1 /* PollenDelegate.swift */; };
 		A72134F72BE7694B003362B1 /* GS+PollenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72134F62BE7694B003362B1 /* GS+PollenDelegate.swift */; };
+		A7479F6B2BF2B64100FF9CFB /* CGPoint+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7479F6A2BF2B64100FF9CFB /* CGPoint+Hashable.swift */; };
 		A75A14E12BE6FFD800033D5C /* GS+Interactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */; };
 		A76F54762BEB343F00AF6982 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76F54752BEB343F00AF6982 /* PlayerDelegate.swift */; };
 		A76F54782BEB368200AF6982 /* Player+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76F54772BEB368200AF6982 /* Player+Animation.swift */; };
@@ -109,6 +110,7 @@
 		A72134F22BE75B7F003362B1 /* Sizeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizeable.swift; sourceTree = "<group>"; };
 		A72134F42BE768DE003362B1 /* PollenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenDelegate.swift; sourceTree = "<group>"; };
 		A72134F62BE7694B003362B1 /* GS+PollenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+PollenDelegate.swift"; sourceTree = "<group>"; };
+		A7479F6A2BF2B64100FF9CFB /* CGPoint+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Hashable.swift"; sourceTree = "<group>"; };
 		A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Interactions.swift"; sourceTree = "<group>"; };
 		A76F54752BEB343F00AF6982 /* PlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
 		A76F54772BEB368200AF6982 /* Player+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Animation.swift"; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			children = (
 				A79BCD902BE7F4F200C2B4ED /* UIColor+RGBA.swift */,
 				A786C8EE2BEB0E8000A6A28E /* CGPoint+Vector.swift */,
+				A7479F6A2BF2B64100FF9CFB /* CGPoint+Hashable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				7B38A1982BE5C36200B4A99C /* GS+VirtualControllers.swift in Sources */,
 				1C8564E22BE8138100051EA2 /* GS+Pollution.swift in Sources */,
 				1C032EBE2BE6A38F00A9775B /* Layers.swift in Sources */,
+				A7479F6B2BF2B64100FF9CFB /* CGPoint+Hashable.swift in Sources */,
 				A79BCD912BE7F4F200C2B4ED /* UIColor+RGBA.swift in Sources */,
 				A72134F52BE768DE003362B1 /* PollenDelegate.swift in Sources */,
 				1C032EBB2BE6A33100A9775B /* GS+DidMove.swift in Sources */,

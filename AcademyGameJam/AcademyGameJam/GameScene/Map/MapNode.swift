@@ -12,7 +12,7 @@ class MapNode: SKNode {
     public let width: CGFloat
     public let height: CGFloat
     
-    public private(set) var tiles: [TileNode] = []
+    public private(set) var tiles: [CGPoint : TileNode] = [:]
 
     init(settings: GameSettings.Map) {
         self.width = CGFloat(settings.width) * settings.tileSize.width
@@ -22,13 +22,14 @@ class MapNode: SKNode {
         
         for column in 0..<settings.width {
             for row in 0..<settings.height {
-                let tile = TileNode(coordinate: .init(x: column, y: row), size: settings.tileSize, pollenRange: settings.tilePollenRange)
+                let coordinate = CGPoint(x: column, y: row)
+                let tile = TileNode(coordinate: coordinate, size: settings.tileSize, pollenRange: settings.tilePollenRange)
                 
                 tile.position.x = CGFloat(column) * settings.tileSize.width
                 tile.position.y = CGFloat(row) * settings.tileSize.height
                 
                 addChild(tile)
-                tiles.append(tile)
+                tiles.updateValue(tile, forKey: coordinate)
             }
         }
         

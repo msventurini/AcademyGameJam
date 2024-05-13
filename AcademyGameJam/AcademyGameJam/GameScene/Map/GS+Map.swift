@@ -23,6 +23,6 @@ extension GameScene {
     internal func mapTile(at coordinate: CGPoint) -> MapNode.TileNode? {
         guard let map else { return nil }
         
-        return map.tiles.first(where: { $0.coordinate == coordinate })
+        return map.tiles[coordinate]
     }
 }

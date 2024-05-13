@@ -148,6 +148,7 @@ struct GameView: View {
                             .frame(width: reader.frame(in: .global).height * 0.2)
                         }
                         .frame(height: reader.frame(in: .global).height * 0.2)
+                        .padding(.top)
                         
                         HStack {
                             Image(systemName: "speaker.wave.1")
