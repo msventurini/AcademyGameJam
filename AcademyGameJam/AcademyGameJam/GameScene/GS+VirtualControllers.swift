@@ -10,7 +10,7 @@ extension GameScene {
         let controllerConfig = GCVirtualController.Configuration()
         
         controllerConfig.elements = [
-            GCInputButtonA, GCInputButtonB,
+            GCInputButtonA,
             GCInputLeftThumbstick,
         ]
         
@@ -36,14 +36,6 @@ extension GameScene {
                 if pressed {
                     self.interact()
                 } else {
-                    self.cancelInteraction()
-                }
-            }
-            
-            controller.extendedGamepad?.buttonB.pressedChangedHandler = { button, value, pressed in
-                if pressed {
-                    print("B")
-                    
                     self.cancelInteraction()
                 }
             }
