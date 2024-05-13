@@ -34,6 +34,9 @@ class ProgressBarNode: SKSpriteNode {
         self.innerBar = innerBar
         
         self.name = "ProgressBar"
+        
+        self.setScale(0)
+        self.run(.scale(to: 1, duration: 0.25))
     }
     
     required init?(coder aDecoder: NSCoder) {

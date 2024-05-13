@@ -131,7 +131,7 @@ class Player: SKSpriteNode {
         run(movementConstantAnimation, withKey: "walk")
       }
     
-    func movementCancel() {
+    func cancelMovement() {
         if action(forKey: "walk") != nil {
             removeAction(forKey: "walk")
         }

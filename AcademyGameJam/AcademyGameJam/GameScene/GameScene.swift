@@ -41,7 +41,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         return emitter
     }()
     
-    var interactable: SKNode?
+    var interactables: [SKNode] = []
+    var isInteracting: Bool = false
     
     override var isPaused: Bool { // Cancelar todos os updaters quando for pausar o jogo (e adicionar de novo dps)
         didSet {

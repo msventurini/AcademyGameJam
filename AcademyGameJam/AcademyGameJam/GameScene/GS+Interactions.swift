@@ -12,39 +12,34 @@ extension GameScene {
     internal func enableInteraction(with node: SKNode, selectorSize: CGSize) {
         if let interactable = node as? Interactable, !interactable.interactionEnabled { return }
         
-        interactable = node
-        addSelector(to: interactable!, size: selectorSize)
+        interactables.append(node)
+        addSelector(to: node, size: selectorSize)
     }
     
     internal func disableInteraction(of node: SKNode) {
-        if interactable == node {
-            interactable = nil
-        }
-        
+        interactables.removeAll(where: { $0 == node })
         removeSelector(from: node)
-    }
-    
-    internal func interact() {
-        guard let interactable = interactable as? Interactable,
-              let node = interactable as? SKNode else { return }
-        
-        if interactable.hasProgressionBar {
-            addProgressBar(to: node)
-        } else if interactable.interactionEnabled {
-            interactable.startInteraction()
-        }
+        removeProgressBar(from: node)
+        isInteracting = false
     }
     
     internal func cancelInteraction() {
-        guard let interactable else { return }
+        guard isInteracting, let node = interactables.first else { return }
+        disableInteraction(of: node)
+    }
+    
+    internal func interact() {
+        guard let node = interactables.first,
+              let interactable = node as? Interactable else { return }
         
-        if let progressBar = interactable.childNode(withName: "ProgressBar") {
-            progressBar.removeFromParent()
+        if interactable.hasProgressionBar {
+            addProgressBar(to: node)
+        } else if interactable.interactionEnabled {
+            interactable.startInteraction()
+            interactables.remove(at: 0)
         }
         
-        if let foo = interactable as? Interactable {
-            foo.endInteraction()
-        }
+        isInteracting = true
     }
 }
 
@@ -61,7 +56,6 @@ extension GameScene {
         stroke.zPosition = node.zPosition + 1
         
         stroke.setScale(0)
-        
         stroke.run(.sequence([
             .scale(to: 1, duration: 0.25)
         ]))
@@ -100,6 +94,11 @@ extension GameScene {
                         }
                         
                         self.disableInteraction(of: node)
+                        
+                        if let button = self.virtualController?.controller?.extendedGamepad?.buttonA,
+                           button.isPressed {
+                            self.interact()
+                        }
                     },
                     .run {
                         progressBar.run(.scale(to: 0, duration: 0.15))
@@ -109,5 +108,14 @@ extension GameScene {
                     progressBar.removeFromParent()
                 }
             ]))
+    }
+    
+    fileprivate func removeProgressBar(from node: SKNode) {
+        guard let progressBar = node.childNode(withName: "ProgressBar") else { return }
+        
+        progressBar.run(.sequence([
+            .scale(to: 0, duration: 0.25),
+            .removeFromParent()
+        ]))
     }
 }

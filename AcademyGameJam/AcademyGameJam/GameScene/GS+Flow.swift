@@ -19,7 +19,7 @@ extension GameScene {
     
     internal func endGame() {
         cancelUpdaters()
-        player?.movementCancel()
+        player?.cancelMovement()
         virtualController = nil
         
         Task {

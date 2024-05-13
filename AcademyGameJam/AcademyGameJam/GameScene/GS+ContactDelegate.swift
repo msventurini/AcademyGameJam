@@ -39,7 +39,8 @@ extension GameScene {
     func didEnd(_ contact: SKPhysicsContact) {
         let bodyA = contact.bodyA
         let bodyB = contact.bodyB
-        let contactMask = bodyA.categoryBitMask | bodyB.categoryBitMask
+        // contactMask, for future use, if necessary...
+        let _ = bodyA.categoryBitMask | bodyB.categoryBitMask
         
         guard let interactable = (bodyA.node as? Interactable) ?? (bodyB.node as? Interactable),
               let node = (interactable as? SKNode) else { return }
