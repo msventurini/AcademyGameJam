@@ -34,6 +34,7 @@ struct MainMenuView: View {
                         .onTapGesture {
                             router.push(Routes.Game(shouldRestart: $shouldRestart))
                         }
+                        .disabled(shouldRestart)
                     
                     HStack(spacing: 16) {
                         CustomButton(label: "Ranking", iconName: "list.number", buttonWidth: reader.size.width * 0.3)

@@ -11,10 +11,11 @@ import SpriteKit
 class Player: SKSpriteNode {
     weak var pollenDelegate: (any PollenDelegate)?
     
-    var playerDirection: CGVector = CGVector(dx: 0, dy: 0)
     var movementSpeed: CGFloat // Velocidade de movimento do jogador
 
     var pollenEmitter: SKEmitterNode
+    
+    var direction: AnimationDirection = .south
     
     init(movementSpeed: CGFloat, pollenEmitter: SKEmitterNode) {
         let playerSize = CGSize(width: 32, height: 32)
@@ -47,7 +48,7 @@ class Player: SKSpriteNode {
         
         self.name = "Player"
         
-        runMovementAnimation(direction: .south)
+        runMovementAnimation(direction: direction)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -75,10 +76,13 @@ class Player: SKSpriteNode {
             
             if abs(x - y) < 0.25 {
                 runMovementAnimation(direction: .southWest)
+                direction = .southWest
             } else if abs(x) > abs(y) {
                 runMovementAnimation(direction: .west)
+                direction = .west
             } else {
                 runMovementAnimation(direction: .south)
+                direction = .south
             }
             
             
@@ -86,32 +90,42 @@ class Player: SKSpriteNode {
             
             if abs(abs(x) - y) < 0.25 {
                 runMovementAnimation(direction: .northWest)
+                direction = .northWest
             } else if abs(x) > abs(y) {
                 runMovementAnimation(direction: .west)
+                direction = .west
             } else {
                 runMovementAnimation(direction: .north)
+                direction = .north
             }
             
         } else if x > 0 && y < 0 {
             
             if abs((x) - abs(y)) < 0.25 {
                 runMovementAnimation(direction: .southEast)
+                direction = .southEast
             } else if abs(x) > abs(y) {
                 runMovementAnimation(direction: .east)
+                direction = .east
             } else {
                 runMovementAnimation(direction: .south)
+                direction = .south
             }
             
         } else if x > 0 && y > 0 {
             if abs(x - y) < 0.25 {
                 runMovementAnimation(direction: .northEast)
+                direction = .northEast
             } else if x > y {
                 runMovementAnimation(direction: .east)
+                direction = .east
             } else {
                 runMovementAnimation(direction: .north)
+                direction = .north
             }
         } else {
             runMovementAnimation(direction: .south)
+            direction = .south
         }
         
         run(movementConstantAnimation, withKey: "walk")

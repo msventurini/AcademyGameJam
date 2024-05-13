@@ -60,7 +60,11 @@ extension BirdNode: Interactable {
         
         pollenDelegate?.decreasePollen(50)
         
-        player.run(.move(by: .init(dx: .random(in: -100...100), dy: .random(in: -100...100)), duration: 0.7))
+        let coordinate = player.direction.coordinate()
+        let randomIntensityMultiplier = CGFloat.random(in: 0.5...1)
+        let knockback = CGVector(dx: (coordinate.x * -1) * settings.knockbackForce * randomIntensityMultiplier, dy: (coordinate.y * -1) * settings.knockbackForce * randomIntensityMultiplier)
+        
+        player.run(.move(by: knockback, duration: 0.7))
         
         run(.sequence([
             .wait(forDuration: 3),
