@@ -33,7 +33,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     var birdSpawnnerChance: CGFloat = 0.1
     
     lazy var pollenEmitter: SKEmitterNode = {
-        let emitter = SKEmitterNode(fileNamed: "PolenTrail") ?? SKEmitterNode()
+        let emitter = SKEmitterNode(fileNamed: "PollenTrail") ?? SKEmitterNode()
         emitter.name = "PollenTrail"
         emitter.targetNode = self
         emitter.alpha = 0

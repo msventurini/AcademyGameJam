@@ -11,11 +11,13 @@ protocol Interactable {
     var interactionEnabled: Bool { get set }
     var hasProgressionBar: Bool { get }
     
+    func prepareInteraction()
     func startInteraction()
     func endInteraction()
 }
 
 extension Interactable {
+    func prepareInteraction() {}
     func startInteraction() {}
     func endInteraction() {}
 }

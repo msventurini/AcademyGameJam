@@ -21,6 +21,9 @@ extension GameScene {
         removeSelector(from: node)
         removeProgressBar(from: node)
         isInteracting = false
+        if let interactable = node as? Interactable {
+            interactable.endInteraction()
+        }
     }
     
     internal func cancelInteraction() {
@@ -31,6 +34,8 @@ extension GameScene {
     internal func interact() {
         guard let node = interactables.first,
               let interactable = node as? Interactable else { return }
+        
+        interactable.prepareInteraction()
         
         if interactable.hasProgressionBar {
             addProgressBar(to: node)
@@ -105,7 +110,7 @@ extension GameScene {
                     }
                 ]),
                 .run {
-                    progressBar.removeFromParent()
+                    self.disableInteraction(of: node)
                 }
             ]))
     }

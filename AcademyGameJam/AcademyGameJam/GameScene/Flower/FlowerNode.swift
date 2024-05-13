@@ -16,6 +16,15 @@ class FlowerNode: SKSpriteNode {
     
     weak var pollenDelegate: (any PollenDelegate)?
     
+    lazy private var dirtEmitter: SKEmitterNode = {
+        let emitter = SKEmitterNode(fileNamed: "Dirt") ?? SKEmitterNode()
+        emitter.name = "Dirt"
+        emitter.alpha = 0
+        emitter.setScale(0)
+        
+        return emitter
+    }()
+    
     init(size: CGSize, pollenMultiplier: Float) {
         let multiplier = CGFloat.random(in: 0.5...1.0)
         let trueSize = CGSize.init(width: size.width * multiplier, height: size.height * multiplier)
@@ -42,8 +51,27 @@ class FlowerNode: SKSpriteNode {
 }
 
 extension FlowerNode: Interactable {
+    func prepareInteraction() {
+        dirtEmitter.run(.group([
+            .fadeAlpha(to: 1, duration: 0.15),
+            .scale(to: 1, duration: 0.15)
+        ]))
+        
+        self.addChild(dirtEmitter)
+    }
+    
     func startInteraction() {
         self.interactionEnabled = false
         pollenDelegate?.increasePollen(pollen)
+    }
+    
+    func endInteraction() {
+        dirtEmitter.run(.sequence([
+            .group([
+                .fadeOut(withDuration: 0.25),
+                .scaleY(to: 0, duration: 0.3)
+            ]),
+            .removeFromParent()
+        ]))
     }
 }
