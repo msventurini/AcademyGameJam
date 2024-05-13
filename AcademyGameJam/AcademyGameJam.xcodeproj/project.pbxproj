@@ -18,7 +18,7 @@
 		1C8564E42BE82D5100051EA2 /* EnemyTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8564E32BE82D5100051EA2 /* EnemyTypes.swift */; };
 		1C8564E72BE854BA00051EA2 /* Pollution.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C8564E52BE854BA00051EA2 /* Pollution.sks */; };
 		1C8564E82BE854BA00051EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C8564E62BE854BA00051EA2 /* Assets.xcassets */; };
-		1C8564EE2BE869D500051EA2 /* PolenTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C8564ED2BE869D500051EA2 /* PolenTrail.sks */; };
+		1C8564EE2BE869D500051EA2 /* PollenTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C8564ED2BE869D500051EA2 /* PollenTrail.sks */; };
 		1CA4FD442BE7FF77001FF87E /* GS+AddBoundaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4FD432BE7FF77001FF87E /* GS+AddBoundaries.swift */; };
 		23B0DBEF2BE730140089CFAF /* GameCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B0DBEE2BE730140089CFAF /* GameCenterView.swift */; };
 		23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenuView.swift */; };
@@ -42,6 +42,7 @@
 		A72134F52BE768DE003362B1 /* PollenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72134F42BE768DE003362B1 /* PollenDelegate.swift */; };
 		A72134F72BE7694B003362B1 /* GS+PollenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72134F62BE7694B003362B1 /* GS+PollenDelegate.swift */; };
 		A7479F6B2BF2B64100FF9CFB /* CGPoint+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7479F6A2BF2B64100FF9CFB /* CGPoint+Hashable.swift */; };
+		A7479F6D2BF2BDFF00FF9CFB /* Dirt.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7479F6C2BF2BDFF00FF9CFB /* Dirt.sks */; };
 		A75A14E12BE6FFD800033D5C /* GS+Interactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */; };
 		A76F54762BEB343F00AF6982 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76F54752BEB343F00AF6982 /* PlayerDelegate.swift */; };
 		A76F54782BEB368200AF6982 /* Player+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76F54772BEB368200AF6982 /* Player+Animation.swift */; };
@@ -84,7 +85,7 @@
 		1C8564E32BE82D5100051EA2 /* EnemyTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyTypes.swift; sourceTree = "<group>"; };
 		1C8564E52BE854BA00051EA2 /* Pollution.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Pollution.sks; sourceTree = "<group>"; };
 		1C8564E62BE854BA00051EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1C8564ED2BE869D500051EA2 /* PolenTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PolenTrail.sks; sourceTree = "<group>"; };
+		1C8564ED2BE869D500051EA2 /* PollenTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PollenTrail.sks; sourceTree = "<group>"; };
 		1CA4FD432BE7FF77001FF87E /* GS+AddBoundaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+AddBoundaries.swift"; sourceTree = "<group>"; };
 		23B0DBEE2BE730140089CFAF /* GameCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterView.swift; sourceTree = "<group>"; };
 		23B9A0FD2BE6F2DF00F4E5A0 /* PauseMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuView.swift; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 		A72134F42BE768DE003362B1 /* PollenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenDelegate.swift; sourceTree = "<group>"; };
 		A72134F62BE7694B003362B1 /* GS+PollenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+PollenDelegate.swift"; sourceTree = "<group>"; };
 		A7479F6A2BF2B64100FF9CFB /* CGPoint+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Hashable.swift"; sourceTree = "<group>"; };
+		A7479F6C2BF2BDFF00FF9CFB /* Dirt.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Dirt.sks; sourceTree = "<group>"; };
 		A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Interactions.swift"; sourceTree = "<group>"; };
 		A76F54752BEB343F00AF6982 /* PlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
 		A76F54772BEB368200AF6982 /* Player+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Animation.swift"; sourceTree = "<group>"; };
@@ -202,7 +204,8 @@
 		7B38A16E2BE5C33D00B4A99C = {
 			isa = PBXGroup;
 			children = (
-				1C8564ED2BE869D500051EA2 /* PolenTrail.sks */,
+				A7479F6C2BF2BDFF00FF9CFB /* Dirt.sks */,
+				1C8564ED2BE869D500051EA2 /* PollenTrail.sks */,
 				1C8564E52BE854BA00051EA2 /* Pollution.sks */,
 				1C8564E62BE854BA00051EA2 /* Assets.xcassets */,
 				A7D5F4D02BEB1BCA00336F1A /* RouterSwiftUI */,
@@ -280,7 +283,6 @@
 				7B38A18B2BE5C36200B4A99C /* Player */,
 				A7E3FD2C2BE82CD300803DC0 /* Enemies */,
 				1C032EBC2BE6A34500A9775B /* Misc */,
-				EA013A112BE758EC008BC412 /* SKNode+AnimationExtension.swift */,
 				A72134ED2BE75979003362B1 /* Protocols */,
 			);
 			path = GameScene;
@@ -331,6 +333,7 @@
 		A79BCD8F2BE7F4D400C2B4ED /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EA013A112BE758EC008BC412 /* SKNode+AnimationExtension.swift */,
 				A79BCD902BE7F4F200C2B4ED /* UIColor+RGBA.swift */,
 				A786C8EE2BEB0E8000A6A28E /* CGPoint+Vector.swift */,
 				A7479F6A2BF2B64100FF9CFB /* CGPoint+Hashable.swift */,
@@ -454,7 +457,8 @@
 			files = (
 				A776BC9C2BE86B5100A15102 /* backgroundmusic.mp3 in Resources */,
 				7B38A1822BE5C33E00B4A99C /* Preview Assets.xcassets in Resources */,
-				1C8564EE2BE869D500051EA2 /* PolenTrail.sks in Resources */,
+				A7479F6D2BF2BDFF00FF9CFB /* Dirt.sks in Resources */,
+				1C8564EE2BE869D500051EA2 /* PollenTrail.sks in Resources */,
 				7B38A17F2BE5C33E00B4A99C /* Assets.xcassets in Resources */,
 				1C8564E72BE854BA00051EA2 /* Pollution.sks in Resources */,
 				1C8564E82BE854BA00051EA2 /* Assets.xcassets in Resources */,
