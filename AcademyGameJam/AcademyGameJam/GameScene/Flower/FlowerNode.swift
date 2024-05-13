@@ -9,8 +9,11 @@ import Foundation
 import SpriteKit
 
 class FlowerNode: SKSpriteNode {
-    private let pollen: Float
     var interactionEnabled: Bool = true
+    let hasProgressionBar: Bool = true
+    
+    private let pollen: Float
+    
     weak var pollenDelegate: (any PollenDelegate)?
     
     init(size: CGSize, pollenMultiplier: Float) {

@@ -9,7 +9,9 @@ import Foundation
 import SpriteKit
 
 class TreeNode: SKSpriteNode {
-    var interactionEnabled: Bool = false
+    var interactionEnabled: Bool = true
+    let hasProgressionBar: Bool = true
+    
     weak var pollenDelegate: (any PollenDelegate)?
     
     init(size: CGSize) {

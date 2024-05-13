@@ -30,13 +30,16 @@ extension GameScene {
                     endGame()
                     return
                 }
+                
                 self.timer -= 1
                 
-                if CGFloat.random(in: 0...1) < self.birdSpawnnerChance {
-                    spawnBird()
+                if self.timer % 10 == 0 {
+                    if CGFloat.random(in: 0...1) < self.birdSpawnnerChance {
+                        spawnBird()
+                    }
                 }
                 
-                if self.timer % 10 == 0 {
+                if self.timer % 30 == 0 {
                     self.birdSpawnnerChance += .random(in: 0...0.2)
                 }
             }
@@ -54,7 +57,7 @@ extension GameScene {
                 
                 guard let pollution = enemies[.pollution]?.first as? PollutionNode else { return }
                 
-                pollution.applyForce(towards: CGPoint(
+                SpriteKitUtility.applyForce(to: pollution, towards: CGPoint(
                     x: CGFloat.random(in: bounds.minX...bounds.maxX),
                     y: CGFloat.random(in: bounds.minY...bounds.maxY)), withMagnitude: 50_000)
                 

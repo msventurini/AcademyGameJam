@@ -9,15 +9,13 @@ import Foundation
 import SpriteKit
 
 extension GameScene {
-    
     internal func addPollution() {
         let pollution = PollutionNode(position: CGPoint(x: bounds.maxX - 700, y: bounds.maxY - 700))
-        pollution.player = player
         pollution.pollenDelegate = self
+        pollution.playerDelegate = self
         
         self.enemies[.pollution] = [pollution]
         
         self.addChild(pollution)
     }
-    
 }

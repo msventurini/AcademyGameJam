@@ -10,7 +10,7 @@ import SpriteKit
 
 extension MapNode {
     class TileNode: SKSpriteNode {
-        private let colorGoal = Tokens.green()
+        private let colorGoal = Tokens.Colors.green
         
         public let maxPollen: Float
         public private(set) var pollen: Float = 0
@@ -26,7 +26,7 @@ extension MapNode {
             self.zPosition = -1
             self.anchorPoint = .zero
             self.colorBlendFactor = 1.0
-            self.color = Tokens.yellow()
+            self.color = Tokens.Colors.yellow
             self.name = "MapTile"
         }
         
@@ -35,7 +35,7 @@ extension MapNode {
         }
         
         func polinate(_ quantity: Float) -> Bool {
-            if pollen + quantity >= maxPollen { return false }
+            if pollen >= maxPollen { return false }
             
             pollen += quantity
             color = color.interpolate(to: colorGoal, progress: CGFloat(pollen/maxPollen))

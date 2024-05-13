@@ -11,7 +11,6 @@ struct PhysicsCategory {
     static let general: UInt32 =          0x1 << 0 // PhysicsCategory zero colide com tudo
     static let player: UInt32 =           0x1 << 1
     static let interactable: UInt32 =     0x1 << 2
-    static let pollution: UInt32 =        0x1 << 3
-    static let enemy: UInt32 =            0x1 << 4
+    static let enemy: UInt32 =            0x1 << 3
     
 }

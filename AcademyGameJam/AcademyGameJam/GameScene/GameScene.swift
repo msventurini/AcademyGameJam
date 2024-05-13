@@ -6,17 +6,16 @@ import GameController
 
 class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     
-    @Published var timer: Int = 300 // Tempo de jogo
+    @Published var timer: Int = 180 // Tempo de jogo
     @Published var score: Float = 0
     @Published var isScenePaused = false
     @Published var pollen: Float = 0
-    @Published var gameEnd = false
-    @Published var pauseIsEnable = true
+    @Published var isGameOver = false
 
     let settings: GameSettings = .init(
-        flower: .init(quantity: 1000, size: .init(width: 40, height: 40 * 0.8), pollenMultiplier: 10),
+        flower: .init(quantity: 500, size: .init(width: 40, height: 40 * 0.8), pollenMultiplier: 10),
         map: .init(map: 200, tile: 25, tilePollenRange: 50..<500),
-        tree: .init(quantity: 4, size: .init(width: 100, height: 100), numberOfFlowersAround: 10, treeRadius: 100),
+        tree: .init(size: .init(width: 100, height: 100), numberOfFlowersAround: 10, flowerRadius: 100, flowerRadiusRandomRange: 0..<101),
         player: .init(movementSpeed: 5, pollenDisperseRate: 1),
         score: .init(basePoints: 0.5),
         bird: .init(size: .init(width: 40, height: 30), movementSpeed: 15, knockbackForce: 50, approachBeforeAttackRadius: 50)
@@ -31,14 +30,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     var map: MapNode?
     var bounds: CGRect = .zero
     
-    var birdSpawnnerChance: CGFloat = 0.3
+    var birdSpawnnerChance: CGFloat = 0.1
     
-    var interactable: SKNode?
+    lazy var pollenEmitter: SKEmitterNode = {
+        let emitter = SKEmitterNode(fileNamed: "PolenTrail") ?? SKEmitterNode()
+        emitter.name = "PollenTrail"
+        emitter.targetNode = self
+        emitter.alpha = 0
+        
+        return emitter
+    }()
+    
+    var interactables: [SKNode] = []
+    var isInteracting: Bool = false
     
     override var isPaused: Bool { // Cancelar todos os updaters quando for pausar o jogo (e adicionar de novo dps)
         didSet {
             isScenePaused = isPaused
             if oldValue == isPaused { return }
+            
             if isPaused {
                 cancelUpdaters()
             } else {
@@ -46,45 +56,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
             }
         }
     }
-
-    func pausePlayDidTapped() {
-        isPaused.toggle()
-        if isPaused {
-            virtualController = nil
-        } else {
-            setupVirtualController()
-        }
-    }
-    
-    func endGame() {
-        cancelUpdaters()
-        player?.movementCancel()
-        virtualController = nil
-        pauseIsEnable = false
-        Task{
-            await sendLeaderboard()
-        }
-        gameEnd = true
-    }
-    
-    func sendLeaderboard() async {
-        Task{
-            do {
-                try await GKLeaderboard.submitScore(
-                    Int(self.score),
-                    context: 0,
-                    player: GKLocalPlayer.local,
-                    leaderboardIDs: ["finishedlevelsADAJAM"]
-                )
-            } catch {
-                print("Error on: \(#function): \(error.localizedDescription)")
-            }
-        }
-    }
-    
-//    override func update(_ currentTime: TimeInterval) {
-//        actionVirtualButtons()
-//    }
     
     override func didFinishUpdate() {
         if let player = player,
@@ -104,8 +75,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let viewLocation = touches.first?.location(in: view) else { return }
         
-        let sceneLocation = convertPoint(fromView: viewLocation)
+        let location = convertPoint(fromView: viewLocation)
         
-        spawnBird()
+        print("tap", location)
     }
 }

@@ -8,30 +8,23 @@
 import Foundation
 import SpriteKit
 
-
-enum PlayerAnimationDirection {
-    case south
-}
-
 class Player: SKSpriteNode {
-    // TODO: Why?   V
-    var moveTimer: Timer? // Temporizador para controlar o movimento contínuo
-    
     weak var pollenDelegate: (any PollenDelegate)?
     
-    var playerDirection: CGVector = CGVector(dx: 0, dy: 0)
     var movementSpeed: CGFloat // Velocidade de movimento do jogador
+
+    var pollenEmitter: SKEmitterNode
     
-    init(movementSpeed: CGFloat) {
+    var direction: AnimationDirection = .south
+    
+    init(movementSpeed: CGFloat, pollenEmitter: SKEmitterNode) {
         let playerSize = CGSize(width: 32, height: 32)
-        let playerColor = UIColor.yellow
-        
-        self.movementSpeed = movementSpeed
-        
         let defaultTexture = SKTexture(image: .playerSouthTexture0)
         
-        super.init(texture: defaultTexture, color: .clear, size: playerSize)
+        self.movementSpeed = movementSpeed
+        self.pollenEmitter = pollenEmitter
         
+        super.init(texture: defaultTexture, color: .clear, size: playerSize)
         
         self.name = "player"
         
@@ -44,16 +37,18 @@ class Player: SKSpriteNode {
         pb.allowsRotation = false
 
         pb.categoryBitMask = PhysicsCategory.player
-        pb.contactTestBitMask = PhysicsCategory.interactable + PhysicsCategory.pollution
+        pb.contactTestBitMask = PhysicsCategory.interactable + PhysicsCategory.enemy
         pb.collisionBitMask = PhysicsCategory.player
 
         self.physicsBody = pb
         
-        movementAnimationSouth()
-
-        self.zPosition = Layers.Player        
+        self.addChild(pollenEmitter)
+        
+        self.zPosition = Layers.Player
         
         self.name = "Player"
+        
+        runMovementAnimation(direction: direction)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -61,7 +56,7 @@ class Player: SKSpriteNode {
     }
     
     func move(x: CGFloat, y: CGFloat) {
-        let playerMovementAction = SKAction.customAction(withDuration: 1.0) { node, eleapsedTime in
+        let movementAction = SKAction.customAction(withDuration: 1.0) { node, elapsedTime in
             if let node = node as? SKSpriteNode {
                 node.position.x += x * self.movementSpeed
                 node.position.y += y * self.movementSpeed
@@ -69,166 +64,77 @@ class Player: SKSpriteNode {
                 
                 node.physicsBody?.velocity = CGVector(dx: x * 100, dy: y * 100)
                 
-                if x != 0 || y != 0 {
+                if (x != 0 || y != 0) && elapsedTime.truncatingRemainder(dividingBy: 10) == 0 {
                     self.pollenDelegate?.dispersePollen(at: node.position)
                 }
             }
         }
         
-        let movementConstantAnimation = SKAction.repeatForever(playerMovementAction)
+        let movementConstantAnimation = SKAction.repeatForever(movementAction)
         
         if x < 0 && y < 0 {
             
             if abs(x - y) < 0.25 {
-                movementAnimationSouthWest()
+                runMovementAnimation(direction: .southWest)
+                direction = .southWest
             } else if abs(x) > abs(y) {
-                movementAnimationWest()
+                runMovementAnimation(direction: .west)
+                direction = .west
             } else {
-                movementAnimationSouth()
+                runMovementAnimation(direction: .south)
+                direction = .south
             }
             
             
         } else if x < 0 && y > 0 {
             
             if abs(abs(x) - y) < 0.25 {
-                movementAnimationNorthWest()
+                runMovementAnimation(direction: .northWest)
+                direction = .northWest
             } else if abs(x) > abs(y) {
-                movementAnimationWest()
+                runMovementAnimation(direction: .west)
+                direction = .west
             } else {
-                movementAnimationNorth()
+                runMovementAnimation(direction: .north)
+                direction = .north
             }
             
         } else if x > 0 && y < 0 {
             
             if abs((x) - abs(y)) < 0.25 {
-                movementAnimationSouthEast()
+                runMovementAnimation(direction: .southEast)
+                direction = .southEast
             } else if abs(x) > abs(y) {
-                movementAnimationEast()
+                runMovementAnimation(direction: .east)
+                direction = .east
             } else {
-                movementAnimationSouth()
+                runMovementAnimation(direction: .south)
+                direction = .south
             }
             
         } else if x > 0 && y > 0 {
             if abs(x - y) < 0.25 {
-                movementAnimationNorthEast()
+                runMovementAnimation(direction: .northEast)
+                direction = .northEast
             } else if x > y {
-                movementAnimationEast()
+                runMovementAnimation(direction: .east)
+                direction = .east
             } else {
-                movementAnimationNorth()
+                runMovementAnimation(direction: .north)
+                direction = .north
             }
         } else {
-            movementAnimationSouth()
+            runMovementAnimation(direction: .south)
+            direction = .south
         }
-            
-        
-        
-        print(y.description)
-        
         
         run(movementConstantAnimation, withKey: "walk")
       }
     
-    func movementAnimationNorth() {
-        
-        let animation = SKAction.animate(with: [.init(image: .playerNorthTexture0), .init(image: .playerNorthTexture1)], timePerFrame: 0.15)
-        
-        let movementAnimation = SKAction.repeatForever(animation)
-        
-        run(movementAnimation)
-        
-    }
-    
-    func movementAnimationSouth() {
-        
-        let animation = SKAction.animate(with: [.init(image: .playerSouthTexture0), .init(image: .playerSouthTexture1)], timePerFrame: 0.15)
-        
-        let movementAnimation = SKAction.repeatForever(animation)
-        
-        run(movementAnimation)
-        
-    }
-    
-    func movementAnimationEast() {
-        
-        let animation = SKAction.animate(with: [.init(image: .playerEastTexture0), .init(image: .playerEastTexture1)], timePerFrame: 0.15)
-        
-        let movementAnimation = SKAction.repeatForever(animation)
-        
-        run(movementAnimation)
-        
-    }
-    
-    func movementAnimationWest() {
-        
-        let animation = SKAction.animate(with: [.init(image: .playerWestTexture0), .init(image: .playerWestTexture1)], timePerFrame: 0.15)
-        
-        let movementAnimation = SKAction.repeatForever(animation)
-        
-        run(movementAnimation)
-        
-    }
-    
-    
-    func movementAnimationNorthWest() {
-        
-        let animation = SKAction.animate(with: [.init(image: .playerNorthWestTexture0), .init(image: .playerNorthWestTexture1)], timePerFrame: 0.15)
-        
-        let movementAnimation = SKAction.repeatForever(animation)
-        
-        run(movementAnimation)
-        
-    }
-    
-    func movementAnimationNorthEast() {
-        
-        let animation = SKAction.animate(with: [.init(image: .playerNorthEastTexture0), .init(image: .playerNorthEastTexture1)], timePerFrame: 0.15)
-        
-        let movementAnimation = SKAction.repeatForever(animation)
-        
-        run(movementAnimation)
-        
-    }
-    
-    func movementAnimationSouthWest() {
-        
-        let animation = SKAction.animate(with: [.init(image: .playerSouthWestTexture0), .init(image: .playerSouthWestTexture1)], timePerFrame: 0.15)
-        
-        let movementAnimation = SKAction.repeatForever(animation)
-        
-        run(movementAnimation)
-        
-    }
-    
-    func movementAnimationSouthEast() {
-        
-        let animation = SKAction.animate(with: [.init(image: .playerSouthEastTexture0), .init(image: .playerSouthEastTexture1)], timePerFrame: 0.15)
-        
-        let movementAnimation = SKAction.repeatForever(animation)
-        
-        run(movementAnimation)
-        
-    }
-    
-
-    
-    
-    
-
-    
-    func movementCancel() {
+    func cancelMovement() {
         if action(forKey: "walk") != nil {
             removeAction(forKey: "walk")
         }
     }
-    
-    public func applyForce(towards targetPoint: CGPoint, withMagnitude magnitude: CGFloat) {
-        let vector = self.position.vector(to: targetPoint)
-        
-        let length = sqrt(vector.dx * vector.dx + vector.dy * vector.dy)
-        let normalizedVector = CGVector(dx: vector.dx / length, dy: vector.dy / length)
-        
-        let force = CGVector(dx: normalizedVector.dx * magnitude, dy: normalizedVector.dy * magnitude)
-        
-        self.physicsBody?.applyForce(force)
-    }
 }
+

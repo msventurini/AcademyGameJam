@@ -5,12 +5,11 @@ import SpriteKit
 //EXTENTION CONTROLLERS
 
 extension GameScene {
-    
     func setupVirtualController() {
         let controllerConfig = GCVirtualController.Configuration()
         
         controllerConfig.elements = [
-            GCInputButtonA, GCInputButtonB,
+            GCInputButtonA,
             GCInputLeftThumbstick,
         ]
         
@@ -26,24 +25,16 @@ extension GameScene {
     func actionVirtualButtons() {
         if let controller = virtualController?.controller {
             controller.extendedGamepad?.leftThumbstick.valueChangedHandler = { (dpad, xValue, yValue) in
-                self.player?.movementCancel()
+                self.player?.cancelMovement()
                 self.playerMovement(direction: CGVector(dx: CGFloat(xValue), dy: CGFloat(yValue)))
                 
                 self.cancelInteraction()
             }
-            
+
             controller.extendedGamepad?.buttonA.pressedChangedHandler = { button, value, pressed in
                 if pressed {
                     self.interact()
                 } else {
-                    self.cancelInteraction()
-                }
-            }
-            
-            controller.extendedGamepad?.buttonB.pressedChangedHandler = { button, value, pressed in
-                if pressed {
-                    print("B")
-                    
                     self.cancelInteraction()
                 }
             }

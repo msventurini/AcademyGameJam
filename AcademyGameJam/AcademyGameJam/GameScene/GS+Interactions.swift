@@ -9,13 +9,44 @@ import Foundation
 import SpriteKit
 
 extension GameScene {
-    internal func enableInteraction(with node: SKNode, highlightSize: CGSize) {
+    internal func enableInteraction(with node: SKNode, selectorSize: CGSize) {
         if let interactable = node as? Interactable, !interactable.interactionEnabled { return }
         
-        interactable = node
-        // TODO: Enable the interaction button
+        interactables.append(node)
+        addSelector(to: node, size: selectorSize)
+    }
+    
+    internal func disableInteraction(of node: SKNode) {
+        interactables.removeAll(where: { $0 == node })
+        removeSelector(from: node)
+        removeProgressBar(from: node)
+        isInteracting = false
+    }
+    
+    internal func cancelInteraction() {
+        guard isInteracting, let node = interactables.first else { return }
+        disableInteraction(of: node)
+    }
+    
+    internal func interact() {
+        guard let node = interactables.first,
+              let interactable = node as? Interactable else { return }
         
-        let radius = highlightSize.width < highlightSize.height ? highlightSize.width : highlightSize.height
+        if interactable.hasProgressionBar {
+            addProgressBar(to: node)
+        } else if interactable.interactionEnabled {
+            interactable.startInteraction()
+            interactables.remove(at: 0)
+        }
+        
+        isInteracting = true
+    }
+}
+
+
+extension GameScene {
+    fileprivate func addSelector(to node: SKNode, size: CGSize) {
+        let radius = size.width < size.height ? size.width : size.height
         let stroke = SKShapeNode(circleOfRadius: radius)
         
         // TODO: Use a color defined on the `Tokens` struct
@@ -25,7 +56,6 @@ extension GameScene {
         stroke.zPosition = node.zPosition + 1
         
         stroke.setScale(0)
-        
         stroke.run(.sequence([
             .scale(to: 1, duration: 0.25)
         ]))
@@ -33,42 +63,13 @@ extension GameScene {
         node.addChild(stroke)
     }
     
-    internal func disableInteraction(of node: SKNode) {
-        if interactable == node {
-            interactable = nil
-        }
-        
+    fileprivate func removeSelector(from node: SKNode) {
         node.childNode(withName: "outline")?
             .run(.scale(to: 0, duration: 0.15)) {
                 node.childNode(withName: "outline")?.removeFromParent()
             }
-        
-        // TODO: Disable the interaction button
     }
     
-    internal func interact() {
-        guard let interactable else { return }
-        
-        if let interactableNode = interactable as? Interactable, interactableNode.interactionEnabled {
-            addProgressBar(to: interactable)
-        }
-    }
-    
-    internal func cancelInteraction() {
-        guard let interactable else { return }
-        
-        if let progressBar = interactable.childNode(withName: "ProgressBar") {
-            progressBar.removeFromParent()
-        }
-        
-        if let foo = interactable as? Interactable {
-            foo.endInteraction()
-        }
-    }
-}
-
-
-extension GameScene {
     fileprivate func addProgressBar(to node: SKNode) {
         let size: CGSize
         if let sizeable = node as? Sizeable {
@@ -93,6 +94,11 @@ extension GameScene {
                         }
                         
                         self.disableInteraction(of: node)
+                        
+                        if let button = self.virtualController?.controller?.extendedGamepad?.buttonA,
+                           button.isPressed {
+                            self.interact()
+                        }
                     },
                     .run {
                         progressBar.run(.scale(to: 0, duration: 0.15))
@@ -102,5 +108,14 @@ extension GameScene {
                     progressBar.removeFromParent()
                 }
             ]))
+    }
+    
+    fileprivate func removeProgressBar(from node: SKNode) {
+        guard let progressBar = node.childNode(withName: "ProgressBar") else { return }
+        
+        progressBar.run(.sequence([
+            .scale(to: 0, duration: 0.25),
+            .removeFromParent()
+        ]))
     }
 }
