@@ -15,6 +15,7 @@ struct AcademyGameJamApp: App {
         WindowGroup {
             RouterView(initialRoute: Routes.MainMenu)
             .environmentObject(soundManager)
+            .preferredColorScheme(.light)
         }
     }
 }

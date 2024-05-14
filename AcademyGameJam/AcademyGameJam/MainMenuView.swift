@@ -17,6 +17,28 @@ struct MainMenuView: View {
     
     var body: some View {
        GeometryReader { reader in
+           VStack {
+//               Spacer()
+               
+               HStack {
+                   Image("bee")
+                       .resizable()
+                       .scaledToFit()
+                       .frame(height: reader.frame(in: .global).width * 0.3)
+
+                   Spacer()
+                   
+                   Image("bee")
+                       .resizable()
+                       .scaledToFit()
+                       .frame(height: reader.frame(in: .global).width * 0.3)
+                       .scaleEffect(x: -1)
+               }
+               
+               Spacer()
+           }
+           .padding()
+           
             HStack {
                 Spacer()
                 
