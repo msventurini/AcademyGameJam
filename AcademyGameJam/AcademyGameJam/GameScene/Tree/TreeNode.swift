@@ -26,7 +26,7 @@ class TreeNode: SKSpriteNode {
         
         self.zPosition = Layers.Interactable
         
-        self.name = "Tree"
+        self.name = NodeName.tree.rawValue
     }
     
     required init?(coder aDecoder: NSCoder) {

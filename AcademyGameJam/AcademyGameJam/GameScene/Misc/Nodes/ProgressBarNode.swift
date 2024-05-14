@@ -33,7 +33,7 @@ class ProgressBarNode: SKSpriteNode {
         
         self.innerBar = innerBar
         
-        self.name = "ProgressBar"
+        self.name = NodeName.progressBar.rawValue
         
         self.setScale(0)
         self.run(.scale(to: 1, duration: 0.25))

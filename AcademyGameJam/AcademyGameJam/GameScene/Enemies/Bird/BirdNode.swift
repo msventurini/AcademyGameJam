@@ -35,6 +35,7 @@ class BirdNode: SKSpriteNode {
         self.physicsBody?.collisionBitMask = PhysicsCategory.enemy
         
         self.zPosition = Layers.Enemy
+        self.name = NodeName.bird.rawValue
     }
     
     required init?(coder aDecoder: NSCoder) {

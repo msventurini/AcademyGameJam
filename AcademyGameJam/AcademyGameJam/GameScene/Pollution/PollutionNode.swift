@@ -34,7 +34,7 @@ class PollutionNode: SKSpriteNode {
         let emitter = SKEmitterNode(fileNamed: "Pollution") ?? SKEmitterNode()
         
         self.addChild(emitter)
-        
+        self.name = NodeName.pollutionCloud.rawValue
     }
     
     required init?(coder aDecoder: NSCoder) {

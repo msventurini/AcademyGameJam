@@ -26,8 +26,6 @@ class Player: SKSpriteNode {
         
         super.init(texture: defaultTexture, color: .clear, size: playerSize)
         
-        self.name = "player"
-        
         let pb = SKPhysicsBody(circleOfRadius: playerSize.width / 2)
         
         pb.isDynamic = true
@@ -46,7 +44,7 @@ class Player: SKSpriteNode {
         
         self.zPosition = Layers.Player
         
-        self.name = "Player"
+        self.name = NodeName.bee.rawValue
         
         runMovementAnimation(direction: direction)
     }

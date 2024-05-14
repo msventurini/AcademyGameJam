@@ -18,8 +18,6 @@ struct MainMenuView: View {
     var body: some View {
        GeometryReader { reader in
            VStack {
-//               Spacer()
-               
                HStack {
                    Image("bee")
                        .resizable()

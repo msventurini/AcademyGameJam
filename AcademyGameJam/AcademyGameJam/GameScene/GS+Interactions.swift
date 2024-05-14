@@ -57,7 +57,7 @@ extension GameScene {
         // TODO: Use a color defined on the `Tokens` struct
         stroke.strokeColor = .tintColor
         stroke.lineWidth = 2
-        stroke.name = "outline"
+        stroke.name = NodeName.interactableHighlight.rawValue
         stroke.zPosition = node.zPosition + 1
         
         stroke.setScale(0)
@@ -69,10 +69,11 @@ extension GameScene {
     }
     
     fileprivate func removeSelector(from node: SKNode) {
-        node.childNode(withName: "outline")?
-            .run(.scale(to: 0, duration: 0.15)) {
-                node.childNode(withName: "outline")?.removeFromParent()
-            }
+        node.childNode(withName: "NodeName.interactableHighlight.rawValue")?
+            .run(.sequence([
+                .scale(to: 0, duration: 0.15),
+                .removeFromParent()
+            ]))
     }
     
     fileprivate func addProgressBar(to node: SKNode) {
@@ -116,7 +117,7 @@ extension GameScene {
     }
     
     fileprivate func removeProgressBar(from node: SKNode) {
-        guard let progressBar = node.childNode(withName: "ProgressBar") else { return }
+        guard let progressBar = node.childNode(withName: NodeName.progressBar.rawValue) else { return }
         
         progressBar.run(.sequence([
             .scale(to: 0, duration: 0.25),

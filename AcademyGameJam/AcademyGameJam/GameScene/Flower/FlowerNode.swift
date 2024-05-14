@@ -18,7 +18,7 @@ class FlowerNode: SKSpriteNode {
     
     lazy private var dirtEmitter: SKEmitterNode = {
         let emitter = SKEmitterNode(fileNamed: "Dirt") ?? SKEmitterNode()
-        emitter.name = "Dirt"
+        emitter.name = NodeName.dirt.rawValue
         emitter.alpha = 0
         emitter.setScale(0)
         
@@ -42,7 +42,7 @@ class FlowerNode: SKSpriteNode {
         
         self.zPosition = Layers.Interactable
         
-        self.name = "Flower"
+        self.name = NodeName.flower.rawValue
     }
     
     required init?(coder aDecoder: NSCoder) {

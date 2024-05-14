@@ -25,7 +25,7 @@ extension GameScene {
             instantiatedFlowers.append(flower)
         }
         
-        var positionatedFlowers = children.filter({ $0.name == "Flower" || $0.name == "Tree" })
+        var positionatedFlowers = children.filter({ $0.name == NodeName.flower.rawValue || $0.name == NodeName.tree.rawValue })
         
         DispatchQueue.global().async {
             for flower in instantiatedFlowers {

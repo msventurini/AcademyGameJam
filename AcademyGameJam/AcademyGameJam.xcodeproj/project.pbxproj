@@ -43,6 +43,7 @@
 		A72134F72BE7694B003362B1 /* GS+PollenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72134F62BE7694B003362B1 /* GS+PollenDelegate.swift */; };
 		A7479F6B2BF2B64100FF9CFB /* CGPoint+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7479F6A2BF2B64100FF9CFB /* CGPoint+Hashable.swift */; };
 		A7479F6D2BF2BDFF00FF9CFB /* Dirt.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7479F6C2BF2BDFF00FF9CFB /* Dirt.sks */; };
+		A7479F6F2BF4189C00FF9CFB /* Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7479F6E2BF4189C00FF9CFB /* Names.swift */; };
 		A75A14E12BE6FFD800033D5C /* GS+Interactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */; };
 		A76F54762BEB343F00AF6982 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76F54752BEB343F00AF6982 /* PlayerDelegate.swift */; };
 		A76F54782BEB368200AF6982 /* Player+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76F54772BEB368200AF6982 /* Player+Animation.swift */; };
@@ -113,6 +114,7 @@
 		A72134F62BE7694B003362B1 /* GS+PollenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+PollenDelegate.swift"; sourceTree = "<group>"; };
 		A7479F6A2BF2B64100FF9CFB /* CGPoint+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Hashable.swift"; sourceTree = "<group>"; };
 		A7479F6C2BF2BDFF00FF9CFB /* Dirt.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Dirt.sks; sourceTree = "<group>"; };
+		A7479F6E2BF4189C00FF9CFB /* Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Names.swift; sourceTree = "<group>"; };
 		A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Interactions.swift"; sourceTree = "<group>"; };
 		A76F54752BEB343F00AF6982 /* PlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
 		A76F54772BEB368200AF6982 /* Player+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Animation.swift"; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				A72134EB2BE7490D003362B1 /* ProgressBarNode.swift */,
+				A7479F6E2BF4189C00FF9CFB /* Names.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				23B9A0FE2BE6F2DF00F4E5A0 /* PauseMenuView.swift in Sources */,
 				A76F54762BEB343F00AF6982 /* PlayerDelegate.swift in Sources */,
 				A7F53B642BE5DD0400BC64D7 /* MapNode.swift in Sources */,
+				A7479F6F2BF4189C00FF9CFB /* Names.swift in Sources */,
 				1CA4FD442BE7FF77001FF87E /* GS+AddBoundaries.swift in Sources */,
 				A7E3FD2E2BE82CFC00803DC0 /* BirdNode.swift in Sources */,
 				7B38A1992BE5C36200B4A99C /* GameScene.swift in Sources */,
