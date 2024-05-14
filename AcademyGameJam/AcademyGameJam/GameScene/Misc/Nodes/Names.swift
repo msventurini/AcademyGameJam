@@ -8,5 +8,5 @@
 import Foundation
 
 enum NodeName: String {
-    case flower, tree, progressBar, interactableHighlight, dirt, bird, pollutionCloud, bee
+    case flower, tree, progressBar, interactableHighlight, dirt, bird, pollutionCloud, bee, map
 }

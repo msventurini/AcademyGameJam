@@ -26,7 +26,7 @@ extension GameScene: PollenDelegate {
     }
     
     internal func dispersePollen(at position: CGPoint) {
-        let nodes = nodes(at: position).filter({ $0.name == "MapTile" })
+        let nodes = nodes(at: position).filter({ $0.name == NodeName.map.rawValue })
         
         DispatchQueue.global(qos: .userInteractive).sync { [weak self] in
             guard let self else { return }
@@ -51,6 +51,13 @@ extension GameScene: PollenDelegate {
                     if polinated {
                         decreasePollen(settings.player.pollenDisperseRate)
                         increaseScore(by: tile.pollen/tile.maxPollen)
+                        
+                        if tile.pollen/tile.maxPollen >= 0.25 && tile.canSpawnSmallFlower() {
+                            let x = tile.position.x + .random(in: 0..<tile.size.width)
+                            let y = tile.position.y + .random(in: 0..<tile.size.height)
+                            
+                            spawnSmallFlower(at: .init(x: x, y: y))
+                        }
                     }
                 }
                 

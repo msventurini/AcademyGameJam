@@ -26,7 +26,7 @@ extension GameScene {
         setupVirtualController()
         
         //MARK: - ADD MAP
-        setupMap(center: center)
+        setupMap()
         addBoundaries()
         
         //MARK: - ADD TREES

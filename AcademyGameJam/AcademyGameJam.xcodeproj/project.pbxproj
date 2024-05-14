@@ -44,6 +44,7 @@
 		A7479F6B2BF2B64100FF9CFB /* CGPoint+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7479F6A2BF2B64100FF9CFB /* CGPoint+Hashable.swift */; };
 		A7479F6D2BF2BDFF00FF9CFB /* Dirt.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7479F6C2BF2BDFF00FF9CFB /* Dirt.sks */; };
 		A7479F6F2BF4189C00FF9CFB /* Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7479F6E2BF4189C00FF9CFB /* Names.swift */; };
+		A7479F712BF4209C00FF9CFB /* CGSize+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7479F702BF4209C00FF9CFB /* CGSize+Math.swift */; };
 		A75A14E12BE6FFD800033D5C /* GS+Interactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */; };
 		A76F54762BEB343F00AF6982 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76F54752BEB343F00AF6982 /* PlayerDelegate.swift */; };
 		A76F54782BEB368200AF6982 /* Player+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76F54772BEB368200AF6982 /* Player+Animation.swift */; };
@@ -115,6 +116,7 @@
 		A7479F6A2BF2B64100FF9CFB /* CGPoint+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Hashable.swift"; sourceTree = "<group>"; };
 		A7479F6C2BF2BDFF00FF9CFB /* Dirt.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Dirt.sks; sourceTree = "<group>"; };
 		A7479F6E2BF4189C00FF9CFB /* Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Names.swift; sourceTree = "<group>"; };
+		A7479F702BF4209C00FF9CFB /* CGSize+Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Math.swift"; sourceTree = "<group>"; };
 		A75A14E02BE6FFD800033D5C /* GS+Interactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Interactions.swift"; sourceTree = "<group>"; };
 		A76F54752BEB343F00AF6982 /* PlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
 		A76F54772BEB368200AF6982 /* Player+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Animation.swift"; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				A79BCD902BE7F4F200C2B4ED /* UIColor+RGBA.swift */,
 				A786C8EE2BEB0E8000A6A28E /* CGPoint+Vector.swift */,
 				A7479F6A2BF2B64100FF9CFB /* CGPoint+Hashable.swift */,
+				A7479F702BF4209C00FF9CFB /* CGSize+Math.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				7B38A1942BE5C36200B4A99C /* Player.swift in Sources */,
 				A7D5F4D62BEB1BEC00336F1A /* Routes.swift in Sources */,
 				1C032EB72BE6A30500A9775B /* GS+AddUpdaters.swift in Sources */,
+				A7479F712BF4209C00FF9CFB /* CGSize+Math.swift in Sources */,
 				A72134EC2BE7490D003362B1 /* ProgressBarNode.swift in Sources */,
 				A7D5F4D12BEB1BCA00336F1A /* HashableBinding.swift in Sources */,
 				7B38A1982BE5C36200B4A99C /* GS+VirtualControllers.swift in Sources */,

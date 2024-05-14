@@ -69,7 +69,7 @@ extension GameScene {
     }
     
     fileprivate func removeSelector(from node: SKNode) {
-        node.childNode(withName: "NodeName.interactableHighlight.rawValue")?
+        node.childNode(withName: NodeName.interactableHighlight.rawValue)?
             .run(.sequence([
                 .scale(to: 0, duration: 0.15),
                 .removeFromParent()

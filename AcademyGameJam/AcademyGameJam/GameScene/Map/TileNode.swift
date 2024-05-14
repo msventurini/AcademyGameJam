@@ -10,6 +10,9 @@ import SpriteKit
 
 extension MapNode {
     class TileNode: SKSpriteNode {
+        private let maxSmallFlowers: Int = .random(in: 0..<5)
+        private var smallFlowersSpawned: Int = 0
+        
         private let colorGoal = Tokens.Colors.green
         
         public let maxPollen: Float
@@ -27,7 +30,8 @@ extension MapNode {
             self.anchorPoint = .zero
             self.colorBlendFactor = 1.0
             self.color = Tokens.Colors.yellow
-            self.name = "MapTile"
+            
+            self.name = NodeName.map.rawValue
         }
         
         required init?(coder aDecoder: NSCoder) {
@@ -39,6 +43,14 @@ extension MapNode {
             
             pollen += quantity
             color = color.interpolate(to: colorGoal, progress: CGFloat(pollen/maxPollen))
+            
+            return true
+        }
+        
+        func canSpawnSmallFlower() -> Bool {
+            if smallFlowersSpawned >= maxSmallFlowers { return false }
+            
+            smallFlowersSpawned += 1
             
             return true
         }

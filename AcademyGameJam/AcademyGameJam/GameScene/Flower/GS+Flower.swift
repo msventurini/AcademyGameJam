@@ -53,4 +53,15 @@ extension GameScene {
             }
         }
     }
+    
+    internal func spawnSmallFlower(at position: CGPoint) {
+        let flower = FlowerNode(size: settings.flower.size/3, pollenMultiplier: settings.flower.pollenMultiplier/3)
+        flower.pollenDelegate = self
+        flower.position = position
+        
+        self.addChild(flower)
+        
+        flower.setScale(0)
+        flower.run(.scale(to: 1, duration: 1))
+    }
 }
