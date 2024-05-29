@@ -27,6 +27,8 @@ extension GameScene {
         
         var positionatedFlowers = children.filter({ $0.name == "Flower" || $0.name == "Tree" })
         
+        print(positionatedFlowers.contains(where: { $0.name == "Tree" }))
+        
         DispatchQueue.global().async {
             for flower in instantiatedFlowers {
                 var attempt: Int = 0

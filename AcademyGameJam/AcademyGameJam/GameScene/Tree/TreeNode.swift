@@ -15,7 +15,7 @@ class TreeNode: SKSpriteNode {
     weak var pollenDelegate: (any PollenDelegate)?
     
     init(size: CGSize) {
-        super.init(texture: Textures.flower, color: .clear, size: size)
+        super.init(texture: Textures.tree, color: .clear, size: size)
         
         self.physicsBody = SKPhysicsBody(rectangleOf: size)
         self.physicsBody?.isDynamic = false

@@ -36,6 +36,7 @@
 		7B38A1962BE5C36200B4A99C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A18D2BE5C36200B4A99C /* GameView.swift */; };
 		7B38A1982BE5C36200B4A99C /* GS+VirtualControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A18F2BE5C36200B4A99C /* GS+VirtualControllers.swift */; };
 		7B38A1992BE5C36200B4A99C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A1902BE5C36200B4A99C /* GameScene.swift */; };
+		A71630F62BF42F3100B85781 /* backgroundmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23C115972BE85A1F00922780 /* backgroundmusic.mp3 */; };
 		A72134EC2BE7490D003362B1 /* ProgressBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72134EB2BE7490D003362B1 /* ProgressBarNode.swift */; };
 		A72134EF2BE75995003362B1 /* Interactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72134EE2BE75995003362B1 /* Interactable.swift */; };
 		A72134F32BE75B7F003362B1 /* Sizeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72134F22BE75B7F003362B1 /* Sizeable.swift */; };
@@ -47,7 +48,6 @@
 		A76F54762BEB343F00AF6982 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76F54752BEB343F00AF6982 /* PlayerDelegate.swift */; };
 		A76F54782BEB368200AF6982 /* Player+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76F54772BEB368200AF6982 /* Player+Animation.swift */; };
 		A76F547A2BEB399C00AF6982 /* GS+Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76F54792BEB399C00AF6982 /* GS+Player.swift */; };
-		A776BC9C2BE86B5100A15102 /* backgroundmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A776BC9B2BE86B5100A15102 /* backgroundmusic.mp3 */; };
 		A776BC9E2BE86DC700A15102 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A776BC9D2BE86DC700A15102 /* MainMenuView.swift */; };
 		A786C8EF2BEB0E8000A6A28E /* CGPoint+Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786C8EE2BEB0E8000A6A28E /* CGPoint+Vector.swift */; };
 		A786C8F22BEB0EDE00A6A28E /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786C8F12BEB0EDE00A6A28E /* Utility.swift */; };
@@ -117,7 +117,6 @@
 		A76F54752BEB343F00AF6982 /* PlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
 		A76F54772BEB368200AF6982 /* Player+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Animation.swift"; sourceTree = "<group>"; };
 		A76F54792BEB399C00AF6982 /* GS+Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Player.swift"; sourceTree = "<group>"; };
-		A776BC9B2BE86B5100A15102 /* backgroundmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundmusic.mp3; sourceTree = "<group>"; };
 		A776BC9D2BE86DC700A15102 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		A786C8EE2BEB0E8000A6A28E /* CGPoint+Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Vector.swift"; sourceTree = "<group>"; };
 		A786C8F12BEB0EDE00A6A28E /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -245,7 +244,6 @@
 		7B38A1802BE5C33E00B4A99C /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				A776BC9B2BE86B5100A15102 /* backgroundmusic.mp3 */,
 				7B38A1812BE5C33E00B4A99C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -455,8 +453,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A776BC9C2BE86B5100A15102 /* backgroundmusic.mp3 in Resources */,
 				7B38A1822BE5C33E00B4A99C /* Preview Assets.xcassets in Resources */,
+				A71630F62BF42F3100B85781 /* backgroundmusic.mp3 in Resources */,
 				A7479F6D2BF2BDFF00FF9CFB /* Dirt.sks in Resources */,
 				1C8564EE2BE869D500051EA2 /* PollenTrail.sks in Resources */,
 				7B38A17F2BE5C33E00B4A99C /* Assets.xcassets in Resources */,
