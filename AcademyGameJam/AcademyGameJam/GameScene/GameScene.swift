@@ -72,11 +72,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let viewLocation = touches.first?.location(in: view) else { return }
-        
-        let location = convertPoint(fromView: viewLocation)
-        
-        print("tap", location)
-    }
+// MARK: - ONLY FOR DEBUGGING PURPOSES
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        guard let viewLocation = touches.first?.location(in: view) else { return }
+//        
+//        let location = convertPoint(fromView: viewLocation)
+//        
+//        print("tap", location)
+//    }
 }

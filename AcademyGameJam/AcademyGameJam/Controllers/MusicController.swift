@@ -11,7 +11,7 @@ final class MusicController: ObservableObject {
     
     var player: AVAudioPlayer?
 
-    var volume: Float = 0.0 {
+    var volume: Float = 1.0 {
         didSet {
             player?.volume = volume
             if volume == 0 {

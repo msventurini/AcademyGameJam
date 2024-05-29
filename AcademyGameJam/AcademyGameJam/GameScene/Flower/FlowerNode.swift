@@ -27,14 +27,30 @@ class FlowerNode: SKSpriteNode {
     
     let variation: Int
     
-    init(size: CGSize, pollenMultiplier: Float) {
+    init(size: CGSize, pollenMultiplier: Float, isInteractable: Bool = true) {
         let multiplier = CGFloat.random(in: 0.5...1.0)
         let trueSize = CGSize.init(width: size.width * multiplier, height: size.height * multiplier)
         
         self.pollen = Float(trueSize.width + trueSize.height)/2 * pollenMultiplier
         self.variation = Int.random(in: 0...1)
         
-        super.init(texture: variation == 0 ? Textures.flower1_down : Textures.flower2_down, color: .clear, size: trueSize)
+        self.interactionEnabled = isInteractable
+        
+        let texture: SKTexture
+        switch (variation, interactionEnabled) {
+        case (0, true):
+            texture = Textures.flower1_down
+        case (0, false):
+            texture = Textures.flower1_normal
+        case (1, true):
+            texture = Textures.flower2_down
+        case (1, false):
+            texture = Textures.flower2_normal
+        default:
+            texture = Textures.flower1_normal
+        }
+        
+        super.init(texture: texture, color: .clear, size: trueSize)
         
         self.physicsBody = SKPhysicsBody(rectangleOf: trueSize)
         self.physicsBody?.isDynamic = false

@@ -55,7 +55,7 @@ extension GameScene {
     }
     
     internal func spawnSmallFlower(at position: CGPoint) {
-        let flower = FlowerNode(size: settings.flower.size/3, pollenMultiplier: settings.flower.pollenMultiplier/3)
+        let flower = FlowerNode(size: settings.flower.size/3, pollenMultiplier: settings.flower.pollenMultiplier/3, isInteractable: false)
         flower.pollenDelegate = self
         flower.position = position
         
