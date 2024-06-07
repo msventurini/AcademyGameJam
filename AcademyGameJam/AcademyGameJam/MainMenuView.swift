@@ -43,7 +43,7 @@ struct MainMenuView: View {
                 VStack(spacing: 16) {
                     Spacer()
                     
-                    Text("Flower Hive")
+                    Text("Garden's Guardian")
                         .font(.largeTitle)
                         .bold()
                     
