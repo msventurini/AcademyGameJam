@@ -10,7 +10,7 @@ import SpriteKit
 
 extension GameScene {
     internal func addPollution() {
-        let pollution = PollutionNode(position: CGPoint(x: bounds.maxX - 700, y: bounds.maxY - 700))
+        let pollution = PollutionNode(position: CGPoint(x: custom_bounds.maxX - 700, y: custom_bounds.maxY - 700))
         pollution.pollenDelegate = self
         pollution.playerDelegate = self
         

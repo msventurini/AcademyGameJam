@@ -10,10 +10,10 @@ import SpriteKit
 
 extension GameScene {
     internal func setupFlowers() {
-        let range = (x: settings.flower.size.width/2  + bounds.minX..<bounds.maxX - settings.flower.size.width/2,
-                     y: settings.flower.size.height/2 + bounds.minY..<bounds.maxY - settings.flower.size.height/2)
+        let range = (x: settings.flower.size.width/2  + custom_bounds.minX..<custom_bounds.maxX - settings.flower.size.width/2,
+                     y: settings.flower.size.height/2 + custom_bounds.minY..<custom_bounds.maxY - settings.flower.size.height/2)
         
-        let initialPosition = CGPoint(x: bounds.maxX * 1.5, y: bounds.maxY * 1.5)
+        let initialPosition = CGPoint(x: custom_bounds.maxX * 1.5, y: custom_bounds.maxY * 1.5)
         
         var instantiatedFlowers = [SKNode]()
         for _ in 0..<settings.flower.quantity {

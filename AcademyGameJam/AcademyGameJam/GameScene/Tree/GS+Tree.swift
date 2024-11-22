@@ -10,10 +10,10 @@ import SpriteKit
 
 extension GameScene{
     internal func setupTrees(center: CGPoint) {
-        let pointA = CGPoint(x: center.x + (bounds.width * 0.25) + CGFloat.random(in: -100...100), y: center.y + (bounds.width * 0.25) + CGFloat.random(in: -100...100))
-        let pointB = CGPoint(x: center.x + (bounds.width * 0.25) + CGFloat.random(in: -100...100), y: center.y - (bounds.width * 0.25) + CGFloat.random(in: -100...100))
-        let pointC = CGPoint(x: center.x - (bounds.width * 0.25) + CGFloat.random(in: -100...100), y: center.y - (bounds.width * 0.25) + CGFloat.random(in: -100...100))
-        let pointD = CGPoint(x: center.x - (bounds.width * 0.25) + CGFloat.random(in: -100...100), y: center.y + (bounds.width * 0.25) + CGFloat.random(in: -100...100))
+        let pointA = CGPoint(x: center.x + (custom_bounds.width * 0.25) + CGFloat.random(in: -100...100), y: center.y + (custom_bounds.width * 0.25) + CGFloat.random(in: -100...100))
+        let pointB = CGPoint(x: center.x + (custom_bounds.width * 0.25) + CGFloat.random(in: -100...100), y: center.y - (custom_bounds.width * 0.25) + CGFloat.random(in: -100...100))
+        let pointC = CGPoint(x: center.x - (custom_bounds.width * 0.25) + CGFloat.random(in: -100...100), y: center.y - (custom_bounds.width * 0.25) + CGFloat.random(in: -100...100))
+        let pointD = CGPoint(x: center.x - (custom_bounds.width * 0.25) + CGFloat.random(in: -100...100), y: center.y + (custom_bounds.width * 0.25) + CGFloat.random(in: -100...100))
         
         let points = [pointA, pointB, pointC, pointD]
         for point in points {

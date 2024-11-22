@@ -5,7 +5,6 @@ import SpriteKit
 import GameController
 
 class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
-    
     @Published var timer: Int = 180 // Tempo de jogo
     @Published var score: Float = 0
     @Published var isScenePaused = false
@@ -28,7 +27,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     var cancellables: Set<AnyCancellable> = Set<AnyCancellable>() // Guarda todos os updaters canceláveis
     
     var map: MapNode?
-    var bounds: CGRect = .zero
+    var custom_bounds: CGRect = .zero
     
     var birdSpawnnerChance: CGFloat = 0.1
     
@@ -62,11 +61,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
            let camera = cameraNode,
            let scene = scene {
             
-            if player.position.x - scene.size.width/2 > bounds.minX && player.position.x + scene.size.width/2 < bounds.maxX {
+            if player.position.x - scene.size.width/2 > custom_bounds.minX && player.position.x + scene.size.width/2 < custom_bounds.maxX {
                 camera.position.x = player.position.x
             }
             
-            if player.position.y - scene.size.height/2 > bounds.minY && player.position.y + scene.size.height/2 < bounds.maxY {
+            if player.position.y - scene.size.height/2 > custom_bounds.minY && player.position.y + scene.size.height/2 < custom_bounds.maxY {
                 camera.position.y = player.position.y
             }
         }

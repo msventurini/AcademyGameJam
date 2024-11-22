@@ -58,8 +58,8 @@ extension GameScene {
                 guard let pollution = enemies[.pollution]?.first as? PollutionNode else { return }
                 
                 SpriteKitUtility.applyForce(to: pollution, towards: CGPoint(
-                    x: CGFloat.random(in: bounds.minX...bounds.maxX),
-                    y: CGFloat.random(in: bounds.minY...bounds.maxY)), withMagnitude: 50_000)
+                    x: CGFloat.random(in: custom_bounds.minX...custom_bounds.maxX),
+                    y: CGFloat.random(in: custom_bounds.minY...custom_bounds.maxY)), withMagnitude: 50_000)
                 
             }
             .store(in: &cancellables)

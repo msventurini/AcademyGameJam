@@ -11,7 +11,7 @@ extension GameScene {
     internal func setupMap() {
         let grid = MapNode(settings: settings.map)
         
-        bounds = .init(origin: .zero, size: .init(width: grid.width, height: grid.height))
+        custom_bounds = .init(origin: .zero, size: .init(width: grid.width, height: grid.height))
         
         self.map = grid
         self.addChild(grid)
