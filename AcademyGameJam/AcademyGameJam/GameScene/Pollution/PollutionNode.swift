@@ -32,6 +32,7 @@ class PollutionNode: SKSpriteNode {
         self.physicsBody = pb
         
         let emitter = SKEmitterNode(fileNamed: "Pollution") ?? SKEmitterNode()
+        emitter.zPosition = Layers.Particles
         
         self.addChild(emitter)
         self.name = NodeName.pollutionCloud.rawValue

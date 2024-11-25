@@ -36,6 +36,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         emitter.name = "PollenTrail"
         emitter.targetNode = self
         emitter.alpha = 0
+        emitter.zPosition = Layers.Particles
         
         return emitter
     }()

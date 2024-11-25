@@ -21,6 +21,7 @@ class FlowerNode: SKSpriteNode {
         emitter.name = NodeName.dirt.rawValue
         emitter.alpha = 0
         emitter.setScale(0)
+        emitter.zPosition = Layers.Particles
         
         return emitter
     }()
