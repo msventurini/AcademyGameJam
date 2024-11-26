@@ -49,29 +49,38 @@ struct MainMenuView: View {
                     
                     Spacer()
                     
-                    CustomButton(label: "Play", iconName: "play.fill", buttonWidth: reader.size.width * 0.3)
-                        .padding(.bottom)
-                        .onTapGesture {
-                            router.push(Routes.Game(shouldRestart: $shouldRestart))
-                        }
-                        .disabled(shouldRestart)
-                    
+                    Button {
+                        router.push(Routes.Game(shouldRestart: $shouldRestart))
+                    } label: {
+                        CustomButton(label: "Play", iconName: "play.fill")
+                    }
+                    .padding(.bottom)
+                    .disabled(shouldRestart)
+                    .frame(maxWidth: reader.size.width * 0.4)
+
                     HStack(spacing: 16) {
-                        CustomButton(label: "Ranking", iconName: "list.number", buttonWidth: reader.size.width * 0.3)
-                            .onTapGesture {
-                                showRanking.toggle()
+                        Button {
+                            showRanking.toggle()
+                        } label: {
+                            CustomButton(label: "Ranking", iconName: "list.number")
                         }
                         
-                        CustomButton(label: "Credits", iconName: "person.3", buttonWidth: reader.size.width * 0.3)
-                            .onTapGesture {
-                                router.push(Routes.Credits)
-                            }
+                        Button {
+                            router.push(Routes.Tutorial)
+                        } label: {
+                            CustomButton(label: "Tutorial", iconName: "book.closed.fill")
+                        }
+                        
+                        Button {
+                            router.push(Routes.Credits)
+                        } label: {
+                            CustomButton(label: "Credits", iconName: "person.3")
+                        }
                     }
                 }
                 
                 Spacer()
             }
-            .padding()
         }
        .onChange(of: shouldRestart) {
            if shouldRestart {

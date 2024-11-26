@@ -41,7 +41,7 @@ struct GameCenterUtility {
                     score,
                     context: 0,
                     player: GKLocalPlayer.local,
-                    leaderboardIDs: ["finishedlevelsADAJAM"]
+                    leaderboardIDs: ["HighScore241126"]
                 )
             } catch {
                 print("Error on: \(#function): \(error.localizedDescription)")

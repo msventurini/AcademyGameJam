@@ -13,6 +13,7 @@ enum Routes: Route {
     case Game(shouldRestart: Binding<Bool>)
     case Credits
     case GameCenter
+    case Tutorial
     
     func generateView() -> AnyView {
         switch self {
@@ -24,6 +25,8 @@ enum Routes: Route {
             return AnyView(CreditsView())
         case .GameCenter:
             return AnyView(GameCenterView())
+        case .Tutorial:
+            return AnyView(TutorialView())
         }
     }
 }

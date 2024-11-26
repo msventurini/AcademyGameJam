@@ -64,6 +64,7 @@
 		A7D5F4D32BEB1BCA00336F1A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5F4CD2BEB1BCA00336F1A /* Router.swift */; };
 		A7D5F4D42BEB1BCA00336F1A /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5F4CF2BEB1BCA00336F1A /* RouterView.swift */; };
 		A7D5F4D62BEB1BEC00336F1A /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5F4D52BEB1BEC00336F1A /* Routes.swift */; };
+		A7E1A6E12CF65CF600E85DBB /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1A6E02CF65CF600E85DBB /* TutorialView.swift */; };
 		A7E3FD2E2BE82CFC00803DC0 /* BirdNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E3FD2D2BE82CFC00803DC0 /* BirdNode.swift */; };
 		A7E3FD302BE82EEF00803DC0 /* GS+Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E3FD2F2BE82EEF00803DC0 /* GS+Bird.swift */; };
 		A7F53B642BE5DD0400BC64D7 /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F53B632BE5DD0400BC64D7 /* MapNode.swift */; };
@@ -136,6 +137,7 @@
 		A7D5F4CE2BEB1BCA00336F1A /* RouterSwiftUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouterSwiftUI.h; sourceTree = "<group>"; };
 		A7D5F4CF2BEB1BCA00336F1A /* RouterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
 		A7D5F4D52BEB1BEC00336F1A /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		A7E1A6E02CF65CF600E85DBB /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		A7E3FD2D2BE82CFC00803DC0 /* BirdNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdNode.swift; sourceTree = "<group>"; };
 		A7E3FD2F2BE82EEF00803DC0 /* GS+Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GS+Bird.swift"; sourceTree = "<group>"; };
 		A7F53B632BE5DD0400BC64D7 /* MapNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNode.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				23C1158C2BE8544000922780 /* CustomButton.swift */,
 				23C1158E2BE8545A00922780 /* CreditsView.swift */,
 				23C115932BE8589100922780 /* MusicGameCard.swift */,
+				A7E1A6E02CF65CF600E85DBB /* TutorialView.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				A7479F6F2BF4189C00FF9CFB /* Names.swift in Sources */,
 				1CA4FD442BE7FF77001FF87E /* GS+AddBoundaries.swift in Sources */,
 				A7E3FD2E2BE82CFC00803DC0 /* BirdNode.swift in Sources */,
+				A7E1A6E12CF65CF600E85DBB /* TutorialView.swift in Sources */,
 				7B38A1992BE5C36200B4A99C /* GameScene.swift in Sources */,
 				A7F53B672BE5E43F00BC64D7 /* Tokens.swift in Sources */,
 				A76F54782BEB368200AF6982 /* Player+Animation.swift in Sources */,
@@ -667,12 +671,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AcademyGameJam/AcademyGameJam.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyGameJam/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TPM3CS87N5;
+				DEVELOPMENT_TEAM = 73DNAYF2TM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Garden's Guardian";
@@ -689,13 +691,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gstvGameTest.AcademyGameJam;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamejam.gardensguardian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = gameJamProvisonProfilev3;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -706,12 +709,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AcademyGameJam/AcademyGameJam.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyGameJam/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TPM3CS87N5;
+				DEVELOPMENT_TEAM = 73DNAYF2TM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Garden's Guardian";
@@ -727,13 +728,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gstvGameTest.AcademyGameJam;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamejam.gardensguardian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = gameJamProvisonProfilev3;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
